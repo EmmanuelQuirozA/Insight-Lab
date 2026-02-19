@@ -451,9 +451,9 @@ function App() {
         themeLabel={t.themeToggle}
         theme={theme}
         themeTransitionKey={themeTransitionKey}
-        languageLabel={t.languageToggle}
+        language={language}
         onThemeToggle={toggleTheme}
-        onLanguageToggle={() => setLanguage((prev) => (prev === 'es' ? 'en' : 'es'))}
+        onLanguageChange={setLanguage}
       />
 
       <main>
