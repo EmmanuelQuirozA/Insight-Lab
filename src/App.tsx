@@ -126,7 +126,7 @@ const copy = {
       { label: 'Privacidad', href: '#' },
       { label: 'LinkedIn', href: '#' },
     ],
-    footerCopyright: '© 2026 RevenueOS Agency. All rights reserved.',
+    footerCopyright: '© 2026 Insight Lab Agency. All rights reserved.',
   },
   en: {
     badge: 'For High-Ticket & B2B Businesses',
@@ -246,7 +246,7 @@ const copy = {
       { label: 'Privacy', href: '#' },
       { label: 'LinkedIn', href: '#' },
     ],
-    footerCopyright: '© 2026 RevenueOS Agency. All rights reserved.',
+    footerCopyright: '© 2026 Insight Lab Agency. All rights reserved.',
   },
 } as const
 
@@ -433,10 +433,10 @@ function App() {
     <div className="app-shell">
       <Header
         logo={
-          <a href="#" className="brand" aria-label="RevenueOS home">
+          <a href="#" className="brand" aria-label="Insight Lab home">
             <span className="brand-icon">▥</span>
             <span className="brand-text">
-              Revenue<span className="accent">OS</span>
+              Insight<span className="accent">Lab</span>
             </span>
           </a>
         }
@@ -513,7 +513,7 @@ function App() {
           </section>
         </section>
 
-        <section className="comparison-section" ref={comparisonSectionRef}>
+        <section className="comparison-section bg-white" ref={comparisonSectionRef}>
           <div className="container">
             <div className={`comparison-heading ${comparisonVisible ? 'is-visible' : ''}`}>
               <h2>{t.comparisonTitle}</h2>
@@ -578,7 +578,7 @@ function App() {
           </div>
         </section>
 
-        <section className="specialties-section" ref={specialtiesSectionRef}>
+        <section className="specialties-section bg-white" ref={specialtiesSectionRef}>
           <div className="container">
             <h2 className={`specialties-title ${specialtiesVisible ? 'is-visible' : ''}`}>
               {t.specialtiesTitle}
@@ -664,8 +664,8 @@ function App() {
       </main>
 
       <Footer
-        brandName="Revenue"
-        brandAccent="OS"
+        brandName="Insight"
+        brandAccent="Lab"
         links={t.footerLinks}
         socialLinks={[
           { label: 'Facebook', href: '#', icon: 'facebook' },
