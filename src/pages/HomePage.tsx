@@ -440,7 +440,7 @@ function HomePage() {
       <Header
         logo={
           <a href="#" className="brand" aria-label="Insight Lab home">
-            <span className="brand-icon">▥</span>
+            <img src="/brand/insight-lab-logo-placeholder.svg" alt="Insight Lab logo" className="brand-icon" />
             <span className="brand-text">
               Insight<span className="accent">Lab</span>
             </span>

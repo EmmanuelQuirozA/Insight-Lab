@@ -22,7 +22,7 @@ function Footer({ brandName, brandAccent, links, socialLinks, copyright }: Foote
     <footer className="site-footer">
       <div className="container footer-inner">
         <a href="#" className="footer-brand" aria-label="RevenueOS home">
-          <span className="footer-brand-icon">▥</span>
+          <img src="/brand/insight-lab-logo-placeholder.svg" alt="Insight Lab logo" className="footer-brand-icon" />
           <span>
             {brandName}
             <span className="accent">{brandAccent}</span>
