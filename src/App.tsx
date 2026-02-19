@@ -253,6 +253,7 @@ const copy = {
 function App() {
   const [language, setLanguage] = useState<Language>('es')
   const [theme, setTheme] = useState<Theme>('light')
+  const [themeTransitionKey, setThemeTransitionKey] = useState(0)
   const [pillarsVisible, setPillarsVisible] = useState(false)
   const [cardsLift, setCardsLift] = useState(false)
   const [specialtiesVisible, setSpecialtiesVisible] = useState(false)
@@ -429,6 +430,11 @@ function App() {
     [t.nav],
   )
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
+    setThemeTransitionKey((prev) => prev + 1)
+  }
+
   return (
     <div className="app-shell">
       <Header
@@ -443,8 +449,10 @@ function App() {
         navItems={navItems}
         ctaLabel={t.ctaHeader}
         themeLabel={t.themeToggle}
+        theme={theme}
+        themeTransitionKey={themeTransitionKey}
         languageLabel={t.languageToggle}
-        onThemeToggle={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
+        onThemeToggle={toggleTheme}
         onLanguageToggle={() => setLanguage((prev) => (prev === 'es' ? 'en' : 'es'))}
       />
 
@@ -513,7 +521,7 @@ function App() {
           </section>
         </section>
 
-        <section className="comparison-section bg-white" ref={comparisonSectionRef}>
+        <section className="comparison-section" ref={comparisonSectionRef}>
           <div className="container">
             <div className={`comparison-heading ${comparisonVisible ? 'is-visible' : ''}`}>
               <h2>{t.comparisonTitle}</h2>
@@ -578,7 +586,7 @@ function App() {
           </div>
         </section>
 
-        <section className="specialties-section bg-white" ref={specialtiesSectionRef}>
+        <section className="specialties-section" ref={specialtiesSectionRef}>
           <div className="container">
             <h2 className={`specialties-title ${specialtiesVisible ? 'is-visible' : ''}`}>
               {t.specialtiesTitle}
