@@ -126,7 +126,7 @@ button {
 .primary-btn {
   background: var(--primary);
   color: white;
-  padding: 14px 24px;
+  padding: 10px 14px;
 }
 
 .primary-btn:hover {
@@ -184,7 +184,7 @@ button {
 }
 
 .theme-toggle-radial.is-sun {
-  background: radial-gradient(circle, rgba(255, 202, 59, 0.55) 0%, rgba(255, 184, 3, 0.25) 50%, rgba(7, 22, 58, 0) 100%);
+  background: #1e293b;
 }
 
 .theme-toggle-icon {
