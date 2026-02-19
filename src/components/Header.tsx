@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type CSSProperties, type MouseEvent as ReactMouseEvent, type ReactNode } from 'react'
 
 type HeaderNavItem = {
   key: string
@@ -31,6 +31,7 @@ function Header({
   const showMoon = theme === 'light'
   const toggleThemeClass = showMoon ? 'is-light' : 'is-dark'
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
+  const [themePulseOrigin, setThemePulseOrigin] = useState({ x: '50%', y: '50%' })
   const languageMenuRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -52,6 +53,24 @@ function Header({
     setIsLanguageOpen(false)
   }
 
+  const handleThemeToggle = (event: ReactMouseEvent<HTMLButtonElement>) => {
+    const { left, top, width, height } = event.currentTarget.getBoundingClientRect()
+    const x = `${event.clientX - left}px`
+    const y = `${event.clientY - top}px`
+
+    setThemePulseOrigin({
+      x: Number.isFinite(event.clientX) ? x : `${width / 2}px`,
+      y: Number.isFinite(event.clientY) ? y : `${height / 2}px`,
+    })
+
+    onThemeToggle()
+  }
+
+  const radialStyle = {
+    '--radial-origin-x': themePulseOrigin.x,
+    '--radial-origin-y': themePulseOrigin.y,
+  } as CSSProperties
+
   return (
     <header className="site-header">
       <div className="container header-inner">
@@ -68,7 +87,7 @@ function Header({
         <div className="header-actions">
           <button
             className={`ghost-btn theme-toggle ${toggleThemeClass}`}
-            onClick={onThemeToggle}
+            onClick={handleThemeToggle}
             type="button"
             aria-label={themeLabel}
             title={themeLabel}
@@ -76,6 +95,7 @@ function Header({
             <span
               key={`${theme}-${themeTransitionKey}`}
               className={`theme-toggle-radial ${showMoon ? 'is-moon' : 'is-sun'}`}
+              style={radialStyle}
               aria-hidden="true"
             />
             <span className="theme-toggle-icon" aria-hidden="true">
