@@ -11,6 +11,7 @@
   --legacy-bg: #f1f4f9;
   --legacy-border: #e2e8f2;
   --legacy-dot: #ef4444;
+  --section-contrast: #ffffff;
 }
 
 :root[data-theme='dark'] {
@@ -26,6 +27,7 @@
   --legacy-bg: #13213f;
   --legacy-border: #25355b;
   --legacy-dot: #f87171;
+  --section-contrast: #13203f;
 }
 
 * {
@@ -139,6 +141,90 @@ button {
   border: 1px solid var(--line);
   color: var(--muted);
   padding: 10px 14px;
+}
+
+.theme-toggle {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  overflow: hidden;
+  isolation: isolate;
+  transition: background-color 240ms ease, box-shadow 240ms ease;
+}
+
+.theme-toggle.is-light {
+  background: #eef3f8;
+  box-shadow: inset 0 0 0 1px #dde6f2;
+}
+
+.theme-toggle.is-dark {
+  background: #07163a;
+  box-shadow: inset 0 0 0 1px #152a56;
+}
+
+.theme-toggle-radial {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transform: scale(0);
+  animation: theme-radial 520ms ease-out forwards;
+  z-index: 0;
+}
+
+.theme-toggle-radial.is-moon {
+  background: radial-gradient(circle, rgba(228, 235, 246, 0.9) 0%, rgba(229, 237, 247, 0.42) 52%, rgba(238, 243, 248, 0) 100%);
+}
+
+.theme-toggle-radial.is-sun {
+  background: radial-gradient(circle, rgba(255, 202, 59, 0.55) 0%, rgba(255, 184, 3, 0.25) 50%, rgba(7, 22, 58, 0) 100%);
+}
+
+.theme-toggle-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 1.15rem;
+  line-height: 1;
+  transform: translateY(0);
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.theme-toggle.is-light .theme-toggle-icon {
+  color: #63789f;
+}
+
+.theme-toggle.is-dark .theme-toggle-icon {
+  color: #ffbf1c;
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: translateY(-1px) scale(1.05);
+}
+
+@keyframes theme-radial {
+  from {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.9);
+    opacity: 1;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hero {
@@ -351,6 +437,7 @@ h1 {
 
 .comparison-section {
   padding: 24px 0 72px;
+  background: var(--section-contrast);
 }
 
 .comparison-heading {
@@ -578,6 +665,7 @@ h1 {
 
 .specialties-section {
   padding: 8px 0 96px;
+  background: var(--section-contrast);
 }
 
 .specialties-title {
