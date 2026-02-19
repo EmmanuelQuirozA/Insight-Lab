@@ -204,6 +204,50 @@ button {
   transform: translateY(-1px) scale(1.05);
 }
 
+
+.language-menu {
+  position: relative;
+}
+
+.language-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 74px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 10px 30px rgba(10, 17, 37, 0.14);
+  display: grid;
+  gap: 4px;
+  z-index: 20;
+}
+
+.language-option {
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.language-option:hover,
+.language-option.is-active {
+  background: var(--pill-bg);
+  color: var(--text);
+}
+
 @keyframes theme-radial {
   from {
     transform: scale(0);

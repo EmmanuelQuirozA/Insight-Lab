@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 
 type HeaderNavItem = {
   key: string
@@ -12,9 +12,9 @@ type HeaderProps = {
   themeLabel: string
   theme: 'light' | 'dark'
   themeTransitionKey: number
-  languageLabel: string
+  language: 'es' | 'en'
   onThemeToggle: () => void
-  onLanguageToggle: () => void
+  onLanguageChange: (language: 'es' | 'en') => void
 }
 
 function Header({
@@ -24,12 +24,33 @@ function Header({
   themeLabel,
   theme,
   themeTransitionKey,
-  languageLabel,
+  language,
   onThemeToggle,
-  onLanguageToggle,
+  onLanguageChange,
 }: HeaderProps) {
   const showMoon = theme === 'light'
   const toggleThemeClass = showMoon ? 'is-light' : 'is-dark'
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false)
+  const languageMenuRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const handleDocumentClick = (event: MouseEvent) => {
+      if (!languageMenuRef.current?.contains(event.target as Node)) {
+        setIsLanguageOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleDocumentClick)
+
+    return () => {
+      document.removeEventListener('mousedown', handleDocumentClick)
+    }
+  }, [])
+
+  const handleLanguageSelection = (nextLanguage: 'es' | 'en') => {
+    onLanguageChange(nextLanguage)
+    setIsLanguageOpen(false)
+  }
 
   return (
     <header className="site-header">
@@ -62,9 +83,36 @@ function Header({
             </span>
             <span className="sr-only">{themeLabel}</span>
           </button>
-          <button className="ghost-btn" onClick={onLanguageToggle} type="button">
-            {languageLabel}
-          </button>
+          <div className="language-menu" ref={languageMenuRef}>
+            <button
+              className="ghost-btn language-trigger"
+              onClick={() => setIsLanguageOpen((prev) => !prev)}
+              type="button"
+              aria-label="Seleccionar idioma"
+              aria-haspopup="menu"
+              aria-expanded={isLanguageOpen}
+            >
+              <i className="bi bi-globe2" aria-hidden="true" />
+              <span>{language}</span>
+            </button>
+
+            {isLanguageOpen && (
+              <div className="language-dropdown" role="menu" aria-label="Opciones de idioma">
+                {(['es', 'en'] as const).map((option) => (
+                  <button
+                    key={option}
+                    className={`language-option ${language === option ? 'is-active' : ''}`}
+                    onClick={() => handleLanguageSelection(option)}
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked={language === option}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <button className="primary-btn" type="button">
             {ctaLabel}
           </button>
