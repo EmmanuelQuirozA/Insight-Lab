@@ -11,6 +11,8 @@ const copy = {
     navAbout: 'Nosotros',
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
+    topTitleStart: 'No hablamos de likes.',
+    topTitleAccent: 'Hablamos de crecimiento real.',
     heroLead: 'En Insight Lab creemos que el marketing no es improvisación.',
     heroAccent: 'Es arquitectura. Es ingeniería. Es precisión.',
     intro:
@@ -42,6 +44,8 @@ const copy = {
     navAbout: 'About Us',
     ctaHeader: 'Book your audit',
     themeToggle: 'Theme',
+    topTitleStart: 'We do not talk about likes.',
+    topTitleAccent: 'We talk about real growth.',
     heroLead: 'At Insight Lab, we believe marketing is not improvisation.',
     heroAccent: 'It is architecture. It is engineering. It is precision.',
     intro:
@@ -114,6 +118,11 @@ function AboutPage() {
 
       <main>
         <section className="container about-page">
+          <header className="about-page-title" aria-label="about page heading">
+            <h1>{t.topTitleStart}</h1>
+            <p>{t.topTitleAccent}</p>
+          </header>
+
           <article className="about-hero-card">
             <p>{t.heroLead}</p>
             <strong>{t.heroAccent}</strong>
