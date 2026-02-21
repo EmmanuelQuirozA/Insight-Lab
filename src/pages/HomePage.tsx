@@ -10,7 +10,7 @@ type Theme = 'light' | 'dark'
 const copy = {
   es: {
     badge: 'Para Negocios High-Ticket & B2B',
-    headlineTop: 'No generamos leads.',
+    headlineTop: 'Generamos más que leads.',
     headlineMiddle: 'Construimos sistemas que',
     headlineAccent: 'convierten.',
     description:
@@ -440,7 +440,7 @@ function HomePage() {
       <Header
         logo={
           <a href="#" className="brand" aria-label="Insight Lab home">
-            <img src="/brand/insight-lab-logo-placeholder.svg" alt="Insight Lab logo" className="brand-icon" />
+            <img src="/brand/logo_minimal.png" alt="Insight Lab logo" className="brand-icon" />
             <span className="brand-text">
               Insight<span className="accent">Lab</span>
             </span>
