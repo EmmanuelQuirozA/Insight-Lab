@@ -19,6 +19,7 @@ const copy = {
     secondary: 'Ver Cómo Funciona',
     nav: {
       about: 'Nosotros',
+      solutions: 'Soluciones',
     },
     ctaHeader: 'Agenda tu auditoría',
     totalRevenue: 'Pipeline Total de Revenue',
@@ -136,6 +137,7 @@ const copy = {
     secondary: 'See How It Works',
     nav: {
       about: 'About Us',
+      solutions: 'Solutions',
     },
     ctaHeader: 'Request an Audit',
     totalRevenue: 'Total Revenue Pipeline',
@@ -415,7 +417,10 @@ function HomePage() {
   const t = copy[language]
 
   const navItems = useMemo(
-    () => [{ key: 'about', label: t.nav.about, href: '/about' }],
+    () => [
+      { key: 'about', label: t.nav.about, href: '/about' },
+      { key: 'solutions', label: t.nav.solutions, href: '/solutions' },
+    ],
     [t.nav],
   )
 

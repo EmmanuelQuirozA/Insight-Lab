@@ -9,6 +9,7 @@ type Theme = 'light' | 'dark'
 const copy = {
   es: {
     navAbout: 'Nosotros',
+    navSolutions: 'Soluciones',
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
     topTitleStart: 'No hablamos de likes.',
@@ -42,6 +43,7 @@ const copy = {
   },
   en: {
     navAbout: 'About Us',
+    navSolutions: 'Solutions',
     ctaHeader: 'Book your audit',
     themeToggle: 'Theme',
     topTitleStart: 'We do not talk about likes.',
@@ -88,7 +90,13 @@ function AboutPage() {
 
   const t = copy[language]
 
-  const navItems = useMemo(() => [{ key: 'about', label: t.navAbout, href: '/about' }], [t.navAbout])
+  const navItems = useMemo(
+    () => [
+      { key: 'about', label: t.navAbout, href: '/about' },
+      { key: 'solutions', label: t.navSolutions, href: '/solutions' },
+    ],
+    [t.navAbout, t.navSolutions],
+  )
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
