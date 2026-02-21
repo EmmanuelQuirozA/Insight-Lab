@@ -1244,6 +1244,36 @@ h1 {
   max-width: 920px;
 }
 
+.about-page > * {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: about-fade-up 620ms cubic-bezier(0.2, 0.75, 0.15, 1) forwards;
+}
+
+.about-page > *:nth-child(1) {
+  animation-delay: 40ms;
+}
+
+.about-page > *:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.about-page > *:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.about-page > *:nth-child(4) {
+  animation-delay: 280ms;
+}
+
+.about-page > *:nth-child(5) {
+  animation-delay: 360ms;
+}
+
+.about-page > *:nth-child(6) {
+  animation-delay: 440ms;
+}
+
 .about-hero-card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -1251,6 +1281,12 @@ h1 {
   border-radius: 14px;
   padding: 24px;
   box-shadow: 0 10px 30px rgb(17 40 86 / 10%);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.about-hero-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgb(17 40 86 / 14%);
 }
 
 .about-hero-card p {
@@ -1282,12 +1318,11 @@ h1 {
   display: flex;
   align-items: flex-start;
   gap: 8px;
+  transition: transform 220ms ease, color 220ms ease;
 }
 
-.about-bullets li.is-dot::before {
-  content: '◉';
-  color: var(--primary);
-  line-height: 1.4;
+.about-bullets li:hover {
+  transform: translateX(5px);
 }
 
 .about-bullet-icon {
@@ -1304,6 +1339,12 @@ h1 {
   padding: 24px;
   display: grid;
   gap: 16px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.about-combine-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgb(17 40 86 / 12%);
 }
 
 .about-combine-card h3 {
@@ -1331,6 +1372,13 @@ h1 {
   padding: 10px;
   font-size: 0.85rem;
   font-weight: 600;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.about-combine-item:hover {
+  transform: translateY(-2px) scale(1.01);
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
+  box-shadow: 0 8px 18px rgb(17 40 86 / 10%);
 }
 
 .about-combine-item i {
@@ -1385,6 +1433,47 @@ h1 {
   padding: 34px 24px;
   display: grid;
   gap: 12px;
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.about-vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgb(5 12 34 / 40%);
+}
+
+@keyframes about-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page > * {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .about-hero-card,
+  .about-bullets li,
+  .about-combine-card,
+  .about-combine-item,
+  .about-vision-card {
+    transition: none;
+  }
+
+  .about-hero-card:hover,
+  .about-bullets li:hover,
+  .about-combine-card:hover,
+  .about-combine-item:hover,
+  .about-vision-card:hover {
+    transform: none;
+  }
 }
 
 .about-vision-card span {

@@ -122,16 +122,12 @@ function AboutPage() {
           <p className="about-intro">{t.intro}</p>
 
           <ul className="about-bullets">
-            {t.bullets.map((item, index) => {
-              const useCheckIcon = index === 0 || index === 2
-
-              return (
-                <li key={item} className={useCheckIcon ? 'is-check' : 'is-dot'}>
-                  {useCheckIcon ? <i className="bi bi-check-circle about-bullet-icon" aria-hidden="true" /> : null}
-                  <span>{item}</span>
-                </li>
-              )
-            })}
+            {t.bullets.map((item) => (
+              <li key={item}>
+                <i className="bi bi-check-circle about-bullet-icon" aria-hidden="true" />
+                <span>{item}</span>
+              </li>
+            ))}
           </ul>
 
           <article className="about-combine-card">
