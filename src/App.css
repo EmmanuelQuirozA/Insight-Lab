@@ -1235,3 +1235,167 @@ h1 {
     align-items: stretch;
   }
 }
+
+.about-page {
+  padding-top: 48px;
+  padding-bottom: 80px;
+  display: grid;
+  gap: 28px;
+  max-width: 920px;
+}
+
+.about-hero-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--primary);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgb(17 40 86 / 10%);
+}
+
+.about-hero-card p {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-hero-card strong {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.about-intro {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.about-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.about-bullets li {
+  position: relative;
+  padding-left: 26px;
+}
+
+.about-bullets li::before {
+  content: '◉';
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+.about-combine-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.about-combine-card h3 {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+}
+
+.about-combine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.about-combine-item {
+  background: color-mix(in srgb, var(--bg) 70%, white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  min-height: 84px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.about-combine-item i {
+  color: var(--primary);
+}
+
+.about-combine-card p {
+  margin: 0;
+  text-align: center;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.about-philosophy {
+  text-align: center;
+  display: grid;
+  gap: 14px;
+}
+
+.about-philosophy h2,
+.about-philosophy p,
+.about-philosophy strong {
+  margin: 0;
+}
+
+.about-philosophy p {
+  color: var(--muted);
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.about-philosophy strong {
+  font-size: 1.15rem;
+  max-width: 790px;
+  margin-inline: auto;
+}
+
+.about-vision-card {
+  background: linear-gradient(145deg, #0e1733 0%, #050c22 100%);
+  border-radius: 16px;
+  color: #e9efff;
+  text-align: center;
+  padding: 34px 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.about-vision-card span {
+  color: #6d79ff;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.about-vision-card p {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+@media (max-width: 820px) {
+  .about-combine-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-vision-card p {
+    font-size: 1.1rem;
+  }
+}

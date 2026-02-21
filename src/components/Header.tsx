@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, type CSSProperties, type MouseEvent as Rea
 type HeaderNavItem = {
   key: string
   label: string
+  href: string
 }
 
 type HeaderProps = {
@@ -78,7 +79,7 @@ function Header({
 
         <nav className="nav" aria-label="Primary">
           {navItems.map((item) => (
-            <a key={item.key} href={`#${item.key}`} className="nav-link">
+            <a key={item.key} href={item.href} className="nav-link">
               {item.label}
             </a>
           ))}
