@@ -24,7 +24,8 @@ const copy = {
     },
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
-    pageTitle: 'Soluciones',
+    pageTitleTop: 'No vendemos servicios aislados.',
+    pageTitleAccent: 'Diseñamos sistemas de crecimiento.',
     pageLead: 'Diseñamos sistemas de crecimiento medibles y escalables para negocios de alto valor.',
     cards: [
       {
@@ -117,7 +118,8 @@ const copy = {
     },
     ctaHeader: 'Book your audit',
     themeToggle: 'Theme',
-    pageTitle: 'Solutions',
+    pageTitleTop: "We don't sell isolated services.",
+    pageTitleAccent: 'We design growth systems.',
     pageLead: 'We design measurable and scalable growth systems for high-value businesses.',
     cards: [
       {
@@ -296,7 +298,11 @@ function SolutionsPage() {
 
       <main className={`solutions-page ${pageVisible ? 'is-visible' : ''}`}>
         <section className="container solutions-hero">
-          <h1>{t.pageTitle}</h1>
+          <h1>
+            {t.pageTitleTop}
+            <br />
+            <span className="accent">{t.pageTitleAccent}</span>
+          </h1>
           <p>{t.pageLead}</p>
         </section>
 
