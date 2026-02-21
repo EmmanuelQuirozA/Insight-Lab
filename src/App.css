@@ -1279,16 +1279,22 @@ h1 {
 }
 
 .about-bullets li {
-  position: relative;
-  padding-left: 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-.about-bullets li::before {
+.about-bullets li.is-dot::before {
   content: '◉';
   color: var(--primary);
-  position: absolute;
-  left: 0;
-  top: 1px;
+  line-height: 1.4;
+}
+
+.about-bullet-icon {
+  color: var(--primary);
+  font-size: 1rem;
+  margin-top: 2px;
+  line-height: 1.2;
 }
 
 .about-combine-card {
@@ -1329,6 +1335,11 @@ h1 {
 
 .about-combine-item i {
   color: var(--primary);
+  font-size: 1.65rem;
+}
+
+.about-combine-icon-ai {
+  color: var(--secondary) !important;
 }
 
 .about-combine-card p {
