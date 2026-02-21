@@ -71,6 +71,8 @@ const copy = {
   },
 } as const
 
+const combineIconClasses = ['bi-bullseye', 'bi-lightbulb', 'bi-database', 'bi-gear', 'bi-cpu'] as const
+
 function AboutPage() {
   const [language, setLanguage] = useState<Language>('es')
   const [theme, setTheme] = useState<Theme>('light')
@@ -120,17 +122,27 @@ function AboutPage() {
           <p className="about-intro">{t.intro}</p>
 
           <ul className="about-bullets">
-            {t.bullets.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            {t.bullets.map((item, index) => {
+              const useCheckIcon = index === 0 || index === 2
+
+              return (
+                <li key={item} className={useCheckIcon ? 'is-check' : 'is-dot'}>
+                  {useCheckIcon ? <i className="bi bi-check-circle about-bullet-icon" aria-hidden="true" /> : null}
+                  <span>{item}</span>
+                </li>
+              )
+            })}
           </ul>
 
           <article className="about-combine-card">
             <h3>{t.combines}</h3>
             <div className="about-combine-grid">
-              {t.combineItems.map((item) => (
+              {t.combineItems.map((item, index) => (
                 <div key={item} className="about-combine-item">
-                  <i className="bi bi-stars" aria-hidden="true" />
+                  <i
+                    className={`bi ${combineIconClasses[index] ?? 'bi-stars'} ${index === 4 ? 'about-combine-icon-ai' : ''}`}
+                    aria-hidden="true"
+                  />
                   <span>{item}</span>
                 </div>
               ))}
