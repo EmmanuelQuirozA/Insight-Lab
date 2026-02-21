@@ -18,10 +18,7 @@ const copy = {
     primary: 'Solicita una Auditoría',
     secondary: 'Ver Cómo Funciona',
     nav: {
-      problem: 'El Problema',
-      infra: 'Infraestructura',
-      sectors: 'Sectores',
-      method: 'Método',
+      about: 'Nosotros',
     },
     ctaHeader: 'Agenda tu auditoría',
     totalRevenue: 'Pipeline Total de Revenue',
@@ -138,10 +135,7 @@ const copy = {
     primary: 'Request an Audit',
     secondary: 'See How It Works',
     nav: {
-      problem: 'The Problem',
-      infra: 'Infrastructure',
-      sectors: 'Sectors',
-      method: 'Method',
+      about: 'About Us',
     },
     ctaHeader: 'Request an Audit',
     totalRevenue: 'Total Revenue Pipeline',
@@ -421,12 +415,7 @@ function HomePage() {
   const t = copy[language]
 
   const navItems = useMemo(
-    () => [
-      { key: 'problem', label: t.nav.problem },
-      { key: 'infra', label: t.nav.infra },
-      { key: 'sectors', label: t.nav.sectors },
-      { key: 'method', label: t.nav.method },
-    ],
+    () => [{ key: 'about', label: t.nav.about, href: '/about' }],
     [t.nav],
   )
 
@@ -439,7 +428,7 @@ function HomePage() {
     <div className="app-shell">
       <Header
         logo={
-          <a href="#" className="brand" aria-label="Insight Lab home">
+          <a href="/" className="brand" aria-label="Insight Lab home">
             <img src="/brand/logo_minimal.png" alt="Insight Lab logo" className="brand-icon" />
             <span className="brand-text">
               Insight<span className="accent">Lab</span>
