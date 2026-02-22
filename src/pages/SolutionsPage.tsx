@@ -21,6 +21,7 @@ const copy = {
     nav: {
       about: 'Nosotros',
       solutions: 'Soluciones',
+      successStories: 'Casos de éxito',
     },
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
@@ -115,6 +116,7 @@ const copy = {
     nav: {
       about: 'About Us',
       solutions: 'Solutions',
+      successStories: 'Success Stories',
     },
     ctaHeader: 'Book your audit',
     themeToggle: 'Theme',
@@ -266,6 +268,7 @@ function SolutionsPage() {
     () => [
       { key: 'about', label: t.nav.about, href: '/about' },
       { key: 'solutions', label: t.nav.solutions, href: '/solutions' },
+      { key: 'success', label: t.nav.successStories, href: '/casos-de-exito' },
     ],
     [t.nav],
   )
