@@ -10,6 +10,7 @@ const copy = {
   es: {
     navAbout: 'Nosotros',
     navSolutions: 'Soluciones',
+    navSuccessStories: 'Casos de éxito',
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
     topTitleStart: 'No hablamos de likes.',
@@ -44,6 +45,7 @@ const copy = {
   en: {
     navAbout: 'About Us',
     navSolutions: 'Solutions',
+    navSuccessStories: 'Success Stories',
     ctaHeader: 'Book your audit',
     themeToggle: 'Theme',
     topTitleStart: 'We do not talk about likes.',
@@ -94,8 +96,9 @@ function AboutPage() {
     () => [
       { key: 'about', label: t.navAbout, href: '/about' },
       { key: 'solutions', label: t.navSolutions, href: '/solutions' },
+      { key: 'success', label: t.navSuccessStories, href: '/casos-de-exito' },
     ],
-    [t.navAbout, t.navSolutions],
+    [t.navAbout, t.navSolutions, t.navSuccessStories],
   )
 
   const toggleTheme = () => {

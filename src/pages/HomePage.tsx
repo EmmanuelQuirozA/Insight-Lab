@@ -20,6 +20,7 @@ const copy = {
     nav: {
       about: 'Nosotros',
       solutions: 'Soluciones',
+      successStories: 'Casos de éxito',
     },
     ctaHeader: 'Agenda tu auditoría',
     totalRevenue: 'Pipeline Total de Revenue',
@@ -138,6 +139,7 @@ const copy = {
     nav: {
       about: 'About Us',
       solutions: 'Solutions',
+      successStories: 'Success Stories',
     },
     ctaHeader: 'Request an Audit',
     totalRevenue: 'Total Revenue Pipeline',
@@ -420,6 +422,7 @@ function HomePage() {
     () => [
       { key: 'about', label: t.nav.about, href: '/about' },
       { key: 'solutions', label: t.nav.solutions, href: '/solutions' },
+      { key: 'success', label: t.nav.successStories, href: '/casos-de-exito' },
     ],
     [t.nav],
   )
