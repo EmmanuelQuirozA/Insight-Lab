@@ -32,13 +32,19 @@ function Header({
   const showMoon = theme === 'light'
   const toggleThemeClass = showMoon ? 'is-light' : 'is-dark'
   const [isLanguageOpen, setIsLanguageOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [themePulseOrigin, setThemePulseOrigin] = useState({ x: '50%', y: '50%' })
   const languageMenuRef = useRef<HTMLDivElement | null>(null)
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const handleDocumentClick = (event: MouseEvent) => {
       if (!languageMenuRef.current?.contains(event.target as Node)) {
         setIsLanguageOpen(false)
+      }
+
+      if (!mobileMenuRef.current?.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false)
       }
     }
 
@@ -52,6 +58,7 @@ function Header({
   const handleLanguageSelection = (nextLanguage: 'es' | 'en') => {
     onLanguageChange(nextLanguage)
     setIsLanguageOpen(false)
+    setIsMobileMenuOpen(false)
   }
 
   const handleThemeToggle = (event: ReactMouseEvent<HTMLButtonElement>) => {
@@ -86,6 +93,58 @@ function Header({
         </nav>
 
         <div className="header-actions">
+          <div className="mobile-menu" ref={mobileMenuRef}>
+            <button
+              className="ghost-btn mobile-menu-trigger"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+              type="button"
+              aria-label="Abrir menú"
+              aria-haspopup="menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              <i className="bi bi-list" aria-hidden="true" />
+            </button>
+
+            {isMobileMenuOpen && (
+              <div className="mobile-dropdown" role="menu" aria-label="Opciones de navegación">
+                <div className="mobile-links">
+                  {navItems.map((item) => (
+                    <a key={item.key} href={item.href} className="mobile-link" onClick={() => setIsMobileMenuOpen(false)}>
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+                <div className="mobile-controls">
+                  <button className={`ghost-btn theme-toggle ${toggleThemeClass}`} onClick={handleThemeToggle} type="button" aria-label={themeLabel}>
+                    <span
+                      key={`${theme}-${themeTransitionKey}-mobile`}
+                      className={`theme-toggle-radial ${showMoon ? 'is-moon' : 'is-sun'}`}
+                      style={radialStyle}
+                      aria-hidden="true"
+                    />
+                    <span className="theme-toggle-icon" aria-hidden="true">
+                      <i className={`bi ${showMoon ? 'bi-moon' : 'bi-sun'}`} />
+                    </span>
+                    <span className="sr-only">{themeLabel}</span>
+                  </button>
+
+                  <div className="mobile-language-options" role="group" aria-label="Seleccionar idioma">
+                    {(['es', 'en'] as const).map((option) => (
+                      <button
+                        key={`mobile-${option}`}
+                        className={`language-option ${language === option ? 'is-active' : ''}`}
+                        onClick={() => handleLanguageSelection(option)}
+                        type="button"
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
           <button
             className={`ghost-btn theme-toggle ${toggleThemeClass}`}
             onClick={handleThemeToggle}
