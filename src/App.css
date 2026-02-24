@@ -74,6 +74,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  flex-wrap: nowrap;
 }
 
 .brand {
@@ -106,6 +107,7 @@ body {
 .nav {
   display: flex;
   gap: 28px;
+  flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -117,6 +119,21 @@ body {
 .header-actions {
   display: flex;
   gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.header-inner.is-compact .nav,
+.header-inner.is-compact .header-actions > .theme-toggle,
+.header-inner.is-compact .header-actions > .language-menu,
+.header-inner.is-compact .logo-wrap .brand-text,
+.header-inner.is-compact .logo-wrap .brand-name > span,
+.header-inner.is-compact .logo-wrap .brand > span {
+  display: none;
+}
+
+.header-inner.is-compact .mobile-menu {
+  display: block;
+  order: 4;
 }
 
 .mobile-menu {
@@ -1255,7 +1272,6 @@ h1 {
 }
 
 @media (max-width: 1080px) {
-  .header-inner,
   .hero,
   .comparison-grid,
   .pillars-grid,
@@ -1278,11 +1294,6 @@ h1 {
   }
 
   .nav,
-  .header-actions {
-    flex-wrap: wrap;
-  }
-
-  .nav,
   .header-actions > .theme-toggle,
   .header-actions > .language-menu,
   .logo-wrap .brand-text,
@@ -1293,6 +1304,7 @@ h1 {
 
   .mobile-menu {
     display: block;
+    order: 4;
   }
 
   .header-actions {

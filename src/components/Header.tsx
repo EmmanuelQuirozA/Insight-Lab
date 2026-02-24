@@ -36,6 +36,8 @@ function Header({
   const [themePulseOrigin, setThemePulseOrigin] = useState({ x: '50%', y: '50%' })
   const languageMenuRef = useRef<HTMLDivElement | null>(null)
   const mobileMenuRef = useRef<HTMLDivElement | null>(null)
+  const headerInnerRef = useRef<HTMLDivElement | null>(null)
+  const [isCompact, setIsCompact] = useState(false)
 
   useEffect(() => {
     const handleDocumentClick = (event: MouseEvent) => {
@@ -54,6 +56,32 @@ function Header({
       document.removeEventListener('mousedown', handleDocumentClick)
     }
   }, [])
+
+  useEffect(() => {
+    const updateCompactMode = () => {
+      if (!headerInnerRef.current) {
+        return
+      }
+
+      const { scrollWidth, clientWidth } = headerInnerRef.current
+      setIsCompact(scrollWidth > clientWidth)
+    }
+
+    updateCompactMode()
+
+    const resizeObserver = new ResizeObserver(updateCompactMode)
+
+    if (headerInnerRef.current) {
+      resizeObserver.observe(headerInnerRef.current)
+    }
+
+    window.addEventListener('resize', updateCompactMode)
+
+    return () => {
+      resizeObserver.disconnect()
+      window.removeEventListener('resize', updateCompactMode)
+    }
+  }, [language, navItems, ctaLabel])
 
   const handleLanguageSelection = (nextLanguage: 'es' | 'en') => {
     onLanguageChange(nextLanguage)
@@ -81,7 +109,7 @@ function Header({
 
   return (
     <header className="site-header">
-      <div className="container header-inner">
+      <div className={`container header-inner ${isCompact ? 'is-compact' : ''}`} ref={headerInnerRef}>
         <div className="logo-wrap">{logo}</div>
 
         <nav className="nav" aria-label="Primary">
