@@ -104,7 +104,7 @@ function ContactPage() {
       />
 
       <main className="contact-page">
-        <section className="container contact-hero">
+        <section className="container solutions-hero contact-hero">
           <h1>{t.title}</h1>
           <h2>{t.highlight}</h2>
           <p>{t.description}</p>

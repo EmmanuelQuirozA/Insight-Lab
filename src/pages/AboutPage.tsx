@@ -129,7 +129,7 @@ function AboutPage() {
 
       <main>
         <section className="container about-page">
-          <header className="about-page-title" aria-label="about page heading">
+          <header className="about-page-title solutions-hero" aria-label="about page heading">
             <h1>{t.topTitleStart}</h1>
             <p>{t.topTitleAccent}</p>
           </header>

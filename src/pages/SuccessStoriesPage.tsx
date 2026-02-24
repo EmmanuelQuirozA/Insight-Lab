@@ -180,7 +180,7 @@ function SuccessStoriesPage() {
       />
 
       <main className="success-page">
-        <section className="container success-title">
+        <section className="container solutions-hero success-title">
           <h1>{t.titleTop}</h1>
           <p>{t.titleAccent}</p>
         </section>
