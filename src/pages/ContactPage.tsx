@@ -103,7 +103,7 @@ function ContactPage() {
         onLanguageChange={setLanguage}
       />
 
-      <main className="contact-page">
+      <main className="page-main page-main--padded">
         <section className="container solutions-hero contact-hero">
           <h1>{t.title}</h1>
           <h2>{t.highlight}</h2>

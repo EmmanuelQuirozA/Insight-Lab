@@ -127,7 +127,7 @@ function AboutPage() {
         onLanguageChange={setLanguage}
       />
 
-      <main>
+      <main className="page-main">
         <section className="container about-page">
           <header className="about-page-title solutions-hero" aria-label="about page heading">
             <h1>{t.topTitleStart}</h1>
