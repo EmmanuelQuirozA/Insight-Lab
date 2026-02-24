@@ -3,9 +3,9 @@ import type { CSSProperties } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../App.css'
+import useSystemTheme from '../hooks/useSystemTheme'
+import useDetectedLanguage from '../hooks/useDetectedLanguage'
 
-type Language = 'es' | 'en'
-type Theme = 'light' | 'dark'
 
 const copy = {
   es: {
@@ -251,8 +251,8 @@ const copy = {
 } as const
 
 function HomePage() {
-  const [language, setLanguage] = useState<Language>('es')
-  const [theme, setTheme] = useState<Theme>('light')
+  const [language, setLanguage] = useDetectedLanguage()
+  const { theme, setTheme } = useSystemTheme()
   const [themeTransitionKey, setThemeTransitionKey] = useState(0)
   const [pillarsVisible, setPillarsVisible] = useState(false)
   const [cardsLift, setCardsLift] = useState(false)
@@ -268,9 +268,6 @@ function HomePage() {
   const infraSectionRef = useRef<HTMLElement | null>(null)
   const finalCtaRef = useRef<HTMLElement | null>(null)
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
 
 
 

@@ -3,9 +3,9 @@ import type { CSSProperties } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../App.css'
+import useSystemTheme from '../hooks/useSystemTheme'
+import useDetectedLanguage from '../hooks/useDetectedLanguage'
 
-type Language = 'es' | 'en'
-type Theme = 'light' | 'dark'
 
 type SolutionCard = {
   id: string
@@ -212,17 +212,14 @@ const copy = {
 } as const
 
 function SolutionsPage() {
-  const [language, setLanguage] = useState<Language>('es')
-  const [theme, setTheme] = useState<Theme>('light')
+  const [language, setLanguage] = useDetectedLanguage()
+  const { theme, setTheme } = useSystemTheme()
   const [themeTransitionKey, setThemeTransitionKey] = useState(0)
   const [pageVisible, setPageVisible] = useState(false)
   const [cardsVisible, setCardsVisible] = useState(false)
   const [cardsLifted, setCardsLifted] = useState(false)
   const cardsRef = useRef<HTMLElement | null>(null)
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => setPageVisible(true))
