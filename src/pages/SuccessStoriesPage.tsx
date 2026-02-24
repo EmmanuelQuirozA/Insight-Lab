@@ -179,7 +179,7 @@ function SuccessStoriesPage() {
         onLanguageChange={setLanguage}
       />
 
-      <main className="success-page">
+      <main className="page-main page-main--section-spaced">
         <section className="container solutions-hero success-title">
           <h1>{t.titleTop}</h1>
           <p>{t.titleAccent}</p>

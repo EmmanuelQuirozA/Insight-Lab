@@ -48,6 +48,10 @@ body {
   color: var(--text);
 }
 
+.page-main {
+  width: 100%;
+}
+
 .container {
   max-width: 1180px;
   margin: 0 auto;
@@ -1621,14 +1625,14 @@ h1 {
 }
 
 /* Solutions page */
-.solutions-page {
+.page-main--hero {
   padding: 24px 0 54px;
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 520ms ease, transform 520ms ease;
 }
 
-.solutions-page.is-visible {
+.page-main--hero.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1776,7 +1780,7 @@ h1 {
   }
 }
 
-.success-page {
+.page-main--section-spaced {
   padding-bottom: 72px;
 }
 
@@ -1970,7 +1974,7 @@ h1 {
   }
 }
 
-.contact-page {
+.page-main--padded {
   padding: 48px 0 84px;
 }
 
