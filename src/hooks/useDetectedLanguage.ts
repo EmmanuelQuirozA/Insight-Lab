@@ -1,6 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export type Language = 'es' | 'en'
+
+const LANGUAGE_STORAGE_KEY = 'insight-lab-language'
+
+const isLanguage = (value: string | null): value is Language => value === 'es' || value === 'en'
+
+const getStoredLanguage = (): Language | null => {
+  if (typeof window === 'undefined') {
+    return null
+  }
+
+  const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY)
+  return isLanguage(storedLanguage) ? storedLanguage : null
+}
 
 const detectBrowserLanguage = (): Language => {
   if (typeof navigator === 'undefined') {
@@ -13,5 +26,13 @@ const detectBrowserLanguage = (): Language => {
 }
 
 export default function useDetectedLanguage() {
-  return useState<Language>(detectBrowserLanguage)
+  const [language, setLanguage] = useState<Language>(() => getStoredLanguage() ?? detectBrowserLanguage())
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language)
+    }
+  }, [language])
+
+  return [language, setLanguage] as const
 }
