@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../App.css'
+import useSystemTheme from '../hooks/useSystemTheme'
+import useDetectedLanguage from '../hooks/useDetectedLanguage'
 
-type Language = 'es' | 'en'
-type Theme = 'light' | 'dark'
 
 type MethodStep = {
   id: string
@@ -135,14 +135,11 @@ const copy = {
 } as const
 
 function SuccessStoriesPage() {
-  const [language, setLanguage] = useState<Language>('es')
-  const [theme, setTheme] = useState<Theme>('light')
+  const [language, setLanguage] = useDetectedLanguage()
+  const { theme, setTheme } = useSystemTheme()
   const [themeTransitionKey, setThemeTransitionKey] = useState(0)
   const [openStepId, setOpenStepId] = useState<string>('05')
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
 
   const t = copy[language]
 
