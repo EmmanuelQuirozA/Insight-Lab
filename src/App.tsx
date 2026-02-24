@@ -13,11 +13,11 @@ function App() {
     return <AboutPage />
   }
 
-  if (typeof window !== 'undefined' && window.location.pathname === '/casos-de-exito') {
+  if (typeof window !== 'undefined' && window.location.pathname === '/success-stories') {
     return <SuccessStoriesPage />
   }
 
-  if (typeof window !== 'undefined' && window.location.pathname === '/contacto') {
+  if (typeof window !== 'undefined' && window.location.pathname === '/contact') {
     return <ContactPage />
   }
 

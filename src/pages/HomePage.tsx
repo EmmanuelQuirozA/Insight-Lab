@@ -421,8 +421,8 @@ function HomePage() {
     () => [
       { key: 'about', label: t.nav.about, href: '/about' },
       { key: 'solutions', label: t.nav.solutions, href: '/solutions' },
-      { key: 'success', label: t.nav.successStories, href: '/casos-de-exito' },
-      { key: 'contact', label: t.nav.contact, href: '/contacto' },
+      { key: 'success', label: t.nav.successStories, href: '/success-stories' },
+      { key: 'contact', label: t.nav.contact, href: '/contact' },
     ],
     [t.nav],
   )
