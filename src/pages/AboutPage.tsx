@@ -95,8 +95,8 @@ function AboutPage() {
     () => [
       { key: 'about', label: t.navAbout, href: '/about' },
       { key: 'solutions', label: t.navSolutions, href: '/solutions' },
-      { key: 'success', label: t.navSuccessStories, href: '/casos-de-exito' },
-      { key: 'contact', label: t.navContact, href: '/contacto' },
+      { key: 'success', label: t.navSuccessStories, href: '/success-stories' },
+      { key: 'contact', label: t.navContact, href: '/contact' },
     ],
     [t.navAbout, t.navSolutions, t.navSuccessStories, t.navContact],
   )
