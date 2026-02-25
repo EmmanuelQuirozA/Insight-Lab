@@ -282,7 +282,7 @@ function SolutionsPage() {
     <div className="app-shell">
       <Header
         logo={
-          <a href="#" className="brand-name" aria-label="Insight Lab home">
+          <a href="/" className="brand-name" aria-label="Insight Lab home">
             <img src="/brand/logo_minimal.png" alt="Insight Lab logo" className="brand-icon" />
             <span>
               Insight<span className="accent">Lab</span>

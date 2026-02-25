@@ -21,7 +21,7 @@ function Footer({ brandName, brandAccent, links, socialLinks, copyright }: Foote
   return (
     <footer className="site-footer">
       <div className="container footer-inner">
-        <a href="#" className="brand-name" aria-label="RevenueOS home">
+        <a href="/" className="brand-name" aria-label="RevenueOS home">
           <img src="/brand/logo_minimal.png" alt="Insight Lab logo" className="footer-brand-icon" />
           <span>
             {brandName}
