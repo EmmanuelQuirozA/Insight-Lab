@@ -19,12 +19,14 @@ type UiCopy = {
   contactTitle: string
   contactSubtitle: string
   calculatingLabel: string
+  calculatingTitle: string
   sendAndReveal: string
   fullName: string
   email: string
   phone: string
   company: string
   role: string
+  trustNote: string
   required: string
   scoreLabel: string
   recommendations: string
@@ -52,14 +54,16 @@ const uiCopy: Record<Language, UiCopy> = {
     next: 'Siguiente',
     finish: 'Finalizar quiz',
     contactTitle: 'Completa tus datos para desbloquear tu reporte detallado',
-    contactSubtitle: 'Te enviaremos recomendaciones accionables para tu inmobiliaria.',
-    calculatingLabel: 'Estamos calculando tus resultados. Ingresa tus datos para desbloquear tu reporte.',
-    sendAndReveal: 'Enviar y ver resultados',
+    contactSubtitle: '¿A dónde enviamos tu reporte detallado y recomendaciones?',
+    calculatingLabel: 'Tu índice se está procesando en segundos.',
+    calculatingTitle: 'Estamos calculando tu Índice de Huella Digital...',
+    sendAndReveal: 'Ver mis resultados',
     fullName: 'Nombre completo',
     email: 'Correo electrónico',
     phone: 'Teléfono',
     company: 'Inmobiliaria / Empresa',
     role: 'Cargo',
+    trustNote: 'Tus datos están 100% seguros. No enviamos spam.',
     required: 'Campo obligatorio',
     scoreLabel: 'Puntaje total',
     recommendations: 'Recomendaciones',
@@ -89,14 +93,16 @@ const uiCopy: Record<Language, UiCopy> = {
     next: 'Next',
     finish: 'Finish quiz',
     contactTitle: 'Complete your details to unlock your detailed report',
-    contactSubtitle: 'We will send actionable recommendations for your real estate business.',
-    calculatingLabel: 'We are calculating your results. Enter your contact details to unlock your report.',
-    sendAndReveal: 'Submit and view results',
+    contactSubtitle: 'Where should we send your detailed report and recommendations?',
+    calculatingLabel: 'Your index is being processed in seconds.',
+    calculatingTitle: 'We are calculating your Digital Footprint Index...',
+    sendAndReveal: 'See my results',
     fullName: 'Full name',
     email: 'Email',
     phone: 'Phone',
     company: 'Real Estate / Company',
     role: 'Role',
+    trustNote: 'Your data is 100% secure. We do not send spam.',
     required: 'Required field',
     scoreLabel: 'Total score',
     recommendations: 'Recommendations',
@@ -254,8 +260,8 @@ function DigitalMaturityQuizPage() {
       <main className="page-main page-main--padded quiz-page">
         <div className="container quiz-shell">
           <section className="quiz-card">
-            <h1>{t.title}</h1>
-            <p>{t.subtitle}</p>
+            <h1 className="quiz-title">{t.title}</h1>
+            <p className="quiz-subtitle">{t.subtitle}</p>
 
             {!quizCompleted && (
               <>
@@ -268,20 +274,23 @@ function DigitalMaturityQuizPage() {
 
                 <article className="quiz-question-block">
                   <p className="quiz-category">{question.category[language]}</p>
-                  <h2>{question.question[language]}</h2>
+                  <h2 className="quiz-question-title">{question.question[language]}</h2>
 
-                  <div className="quiz-options">
+                  <div className="quiz-options row g-3">
                     {question.options.map((option) => (
-                      <label key={option.id} className={`quiz-option ${selectedOption === option.id ? 'is-selected' : ''}`}>
-                        <input
-                          type="radio"
-                          name={`question-${question.id}`}
-                          value={option.id}
-                          checked={selectedOption === option.id}
-                          onChange={() => handleOptionChange(option.id)}
-                        />
-                        <span>{option.label[language]}</span>
-                      </label>
+                      <div key={option.id} className="col-12">
+                        <label className={`quiz-option form-check d-flex align-items-center gap-3 mb-0 ${selectedOption === option.id ? 'is-selected' : ''}`}>
+                          <input
+                            className="form-check-input mt-0"
+                            type="radio"
+                            name={`question-${question.id}`}
+                            value={option.id}
+                            checked={selectedOption === option.id}
+                            onChange={() => handleOptionChange(option.id)}
+                          />
+                          <span className="quiz-option-text">{option.label[language]}</span>
+                        </label>
+                      </div>
                     ))}
                   </div>
                 </article>
@@ -299,10 +308,17 @@ function DigitalMaturityQuizPage() {
 
             {quizCompleted && (
               <div className="quiz-final-step">
-                {!submittedPayload && <p className="quiz-calculating-label">{t.calculatingLabel}</p>}
+                {!submittedPayload && (
+                  <>
+                    <div className="quiz-loader" aria-hidden="true">
+                      <div />
+                    </div>
+                    <p className="quiz-calculating-label">{t.calculatingLabel}</p>
+                  </>
+                )}
 
-                <h2>{t.contactTitle}</h2>
-                <p>{t.contactSubtitle}</p>
+                <h2 className="quiz-final-title">{t.calculatingTitle}</h2>
+                <p className="quiz-final-subtitle">{t.contactSubtitle}</p>
 
                 <form className="quiz-contact-form" onSubmit={handleContactSubmit}>
                   {(
@@ -329,6 +345,8 @@ function DigitalMaturityQuizPage() {
                     {t.sendAndReveal}
                   </button>
                 </form>
+
+                {!submittedPayload && <p className="quiz-trust-note">🔒 {t.trustNote}</p>}
 
                 {submittedPayload && result && (
                   <div className="quiz-results">
