@@ -475,7 +475,7 @@ function HomePage() {
               <button className="primary-btn" type="button">
                 {t.primary}
               </button>
-              <a className="outline-btn" href="/solutions">
+              <a className="outline-btn btn" href="/solutions">
                 {t.secondary}
               </a>
             </div>
@@ -657,7 +657,7 @@ function HomePage() {
               <button className="primary-btn" type="button">
                 {t.finalCtaPrimary}
               </button>
-              <a className="outline-btn" href="/success-stories">
+              <a className="outline-btn btn" href="/success-stories">
                 {t.finalCtaSecondary}
               </a>
             </div>

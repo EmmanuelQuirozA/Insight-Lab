@@ -320,31 +320,36 @@ function DigitalMaturityQuizPage() {
                 <h2 className="quiz-final-title">{t.calculatingTitle}</h2>
                 <p className="quiz-final-subtitle">{t.contactSubtitle}</p>
 
-                <form className="quiz-contact-form" onSubmit={handleContactSubmit}>
-                  {(
-                    [
-                      ['fullName', t.fullName],
-                      ['email', t.email],
-                      ['phone', t.phone],
-                      ['company', t.company],
-                      ['role', t.role],
-                    ] as const
-                  ).map(([field, label]) => (
-                    <label key={field} className="quiz-field">
-                      <span>{label}</span>
-                      <input
-                        type={field === 'email' ? 'email' : 'text'}
-                        value={contactForm[field]}
-                        onChange={(event) => setContactForm((prev) => ({ ...prev, [field]: event.target.value }))}
-                      />
-                      {showValidation && !contactForm[field].trim() && <small>{t.required}</small>}
-                    </label>
-                  ))}
+                <div className="card p-4 shadow border-0">
+                  <form className="contact-form" onSubmit={handleContactSubmit}>
+                    {(
+                      [
+                        ['fullName', t.fullName],
+                        ['email', t.email],
+                        ['phone', t.phone],
+                        ['company', t.company],
+                        ['role', t.role],
+                      ] as const
+                    ).map(([field, label]) => (
+                      <label key={field} className="">
+                        <span>{label}</span>
+                        <div data-mdb-input-init className="form-outline">
+                          <input
+                            className='form-control'
+                            type={field === 'email' ? 'email' : 'text'}
+                            value={contactForm[field]}
+                            onChange={(event) => setContactForm((prev) => ({ ...prev, [field]: event.target.value }))}
+                          />
+                          {showValidation && !contactForm[field].trim() && <small>{t.required}</small>}
+                        </div>
+                      </label>
+                    ))}
 
-                  <button className="primary-btn" type="submit">
-                    {t.sendAndReveal}
-                  </button>
-                </form>
+                    <button className="primary-btn" type="submit">
+                      {t.sendAndReveal}
+                    </button>
+                  </form>
+                </div>
 
                 {!submittedPayload && <p className="quiz-trust-note">🔒 {t.trustNote}</p>}
 

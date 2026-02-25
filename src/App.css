@@ -1332,14 +1332,6 @@ h1 {
   }
 }
 
-.about-page {
-  padding-top: 48px;
-  padding-bottom: 80px;
-  display: grid;
-  gap: 30px;
-  max-width: 920px;
-}
-
 .about-page > * {
   opacity: 0;
   transform: translateY(24px);
