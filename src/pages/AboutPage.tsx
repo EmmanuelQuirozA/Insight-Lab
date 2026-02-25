@@ -128,7 +128,7 @@ function AboutPage() {
       />
 
       <main className="page-main page-main--padded">
-        <section className="container page-hero">
+        <section className="container page-hero about-page">
           <h1>
             {t.pageTitleTop}
             <br />
