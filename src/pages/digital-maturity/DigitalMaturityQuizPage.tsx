@@ -37,6 +37,7 @@ type UiCopy = {
   immediateAction: string
   marketReality: string
   scoreInsight: string
+  scoreToSalesQuestion: string
   ctaResult: string
   startOver: string
   nav: {
@@ -80,6 +81,7 @@ const uiCopy: Record<Language, UiCopy> = {
     immediateAction: 'Acción inmediata',
     marketReality: 'REALIDAD DEL MERCADO',
     scoreInsight: 'Tu puntuación indica que puedes mejorar tus conversiones un',
+    scoreToSalesQuestion: '¿Quieres convertir este puntaje en ventas?',
     ctaResult: 'Agendar llamada de revisión (15 min)',
     startOver: 'Reiniciar quiz',
     nav: {
@@ -125,6 +127,7 @@ const uiCopy: Record<Language, UiCopy> = {
     immediateAction: 'Immediate action',
     marketReality: 'MARKET REALITY',
     scoreInsight: 'Your score shows you can improve your conversion rate by',
+    scoreToSalesQuestion: 'Do you want to turn this score into sales?',
     ctaResult: 'Schedule review call (15 min)',
     startOver: 'Restart quiz',
     nav: {
@@ -275,6 +278,18 @@ function DigitalMaturityQuizPage() {
 
   const question = QUESTIONS[step]
 
+  const getScoreColor = (s: number) => {
+    if (s <= 40) return 'text-red-600'
+    if (s <= 70) return 'text-yellow-600'
+    return 'text-green-600'
+  }
+
+  const getBgColor = (s: number) => {
+    if (s <= 40) return 'bg-red-50 border-red-100'
+    if (s <= 70) return 'bg-yellow-50 border-yellow-100'
+    return 'bg-green-50 border-green-100'
+  }
+
   return (
     <div className="app-shell">
       <Header
@@ -411,12 +426,12 @@ function DigitalMaturityQuizPage() {
                       <p>{`${t.diagnosisFor} ${contactForm.fullName || contactForm.company}`}</p>
                       <h3>{result.title[language]}</h3>
                       <div className="quiz-score-badge">
-                        <strong>{score}</strong>
+                        <strong className={getScoreColor(score)}>{score}</strong>
                         <span>/100</span>
                       </div>
                     </header>
 
-                    <section className="quiz-results-analysis">
+                    <section className={`quiz-results-analysis ${getBgColor(score)}`}>
                       <div className='d-flex gap-1 align-items-center'>
                         <i className="bi bi-activity"/>
                         <h4>{t.analysisLabel}</h4>
@@ -442,7 +457,7 @@ function DigitalMaturityQuizPage() {
                     </section>
 
                     <section className="quiz-results-cta">
-                      <h4>¿Quieres convertir este puntaje en ventas?</h4>
+                      <h4>{t.scoreToSalesQuestion}</h4>
                       <p>
                         {t.scoreInsight} <strong>20%</strong> ajustando tu experiencia digital.
                       </p>
