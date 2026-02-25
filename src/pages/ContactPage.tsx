@@ -103,8 +103,8 @@ function ContactPage() {
         onLanguageChange={setLanguage}
       />
 
-      <main className="page-main page-main--padded">
-        <section className="container page-hero">
+      <main className="page-main page-main--padded contact-page">
+        <section className="container page-hero contact-reveal-item">
           <h1>
             {t.pageTitleTop}
             <br />
@@ -113,7 +113,7 @@ function ContactPage() {
           <p>{t.pageLead}</p>
         </section>
 
-        <section className="container contact-form-wrap">
+        <section className="container contact-form-wrap contact-reveal-item">
           <h3>{t.formTitle}</h3>
           <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
             <label>

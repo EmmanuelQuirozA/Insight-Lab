@@ -179,8 +179,8 @@ function SuccessStoriesPage() {
         onLanguageChange={setLanguage}
       />
 
-      <main className="page-main page-main--padded">
-        <section className="container page-hero">
+      <main className="page-main page-main--padded success-page">
+        <section className="container page-hero success-page-hero">
           <h1>
             {t.pageTitleTop}
             <br />
@@ -189,7 +189,7 @@ function SuccessStoriesPage() {
           {/* <p>{t.pageLead}</p> */}
         </section>
 
-        <section className="container success-industries-card">
+        <section className="container success-industries-card success-reveal-item">
           <p>{t.industriesLead}</p>
           <div className="success-industries-grid">
             {t.industries.map((item) => (
@@ -203,7 +203,7 @@ function SuccessStoriesPage() {
           </article>
         </section>
 
-        <section className="container success-methodology">
+        <section className="container success-methodology success-reveal-item">
           <h2>{t.methodologyTitle}</h2>
           <div className="success-methodology-list">
             {t.methodology.map((step) => {
