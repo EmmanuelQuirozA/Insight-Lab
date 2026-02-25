@@ -417,18 +417,27 @@ function DigitalMaturityQuizPage() {
                     </header>
 
                     <section className="quiz-results-analysis">
-                      <h4>{t.analysisLabel}</h4>
+                      <div className='d-flex gap-1 align-items-center'>
+                        <i className="bi bi-activity"/>
+                        <h4>{t.analysisLabel}</h4>
+                      </div>
                       <p>{result.description[language]}</p>
                     </section>
 
-                    <p className="quiz-results-section-title">{t.priorityRecommendation}</p>
+                    <p className="quiz-results-section-title px-4">{t.priorityRecommendation}</p>
                     <section className="quiz-results-block">
-                      <h4>{t.immediateAction}</h4>
+                      <div className='d-flex gap-1 align-items-center'>
+                        <i className="bi bi-exclamation-circle"/>
+                        <h4>{t.immediateAction}</h4>
+                      </div>
                       <p>{result.advice[language]}</p>
                     </section>
 
                     <section className="quiz-results-block quiz-results-market">
-                      <h4>{t.marketReality}</h4>
+                      <div className='d-flex gap-1 align-items-center'>
+                        <i className="bi bi-lightbulb"/>
+                        <h4>{t.marketReality}</h4>
+                      </div>
                       <p>{result.industryInsight[language]}</p>
                     </section>
 
@@ -447,7 +456,7 @@ function DigitalMaturityQuizPage() {
                   </div>
                 )}
 
-                <button className="ghost-btn" type="button" onClick={resetQuiz}>
+                <button className="ghost-btn mt-4" type="button" onClick={resetQuiz}>
                   {t.startOver}
                 </button>
               </div>
