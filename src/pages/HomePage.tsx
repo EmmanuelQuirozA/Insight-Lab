@@ -16,7 +16,7 @@ const copy = {
     description:
       'Las agencias tradicionales te venden tráfico. Nosotros implementamos infraestructura de Lead Scoring, CRM y Automatización para transformar curiosos en revenue real.',
     primary: 'Solicita una Auditoría',
-    secondary: 'Ver Cómo Funciona',
+    secondary: 'Ver Soluciones',
     nav: {
       about: 'Nosotros',
       solutions: 'Soluciones',
@@ -136,7 +136,7 @@ const copy = {
     description:
       'Traditional agencies sell traffic. We implement Lead Scoring, CRM and Automation infrastructure to turn curious visitors into real revenue.',
     primary: 'Request an Audit',
-    secondary: 'See How It Works',
+    secondary: 'View Solutions',
     nav: {
       about: 'About Us',
       solutions: 'Solutions',
@@ -436,7 +436,7 @@ function HomePage() {
     <div className="app-shell">
       <Header
         logo={
-          <a href="#" className="brand-name" aria-label="Insight Lab home">
+          <a href="/" className="brand-name" aria-label="Insight Lab home">
             <img src="/brand/logo_minimal.png" alt="Insight Lab logo" className="brand-icon" />
             <span>
               Insight<span className="accent">Lab</span>
@@ -475,9 +475,9 @@ function HomePage() {
               <button className="primary-btn" type="button">
                 {t.primary}
               </button>
-              <button className="outline-btn" type="button">
+              <a className="outline-btn" href="/solutions">
                 {t.secondary}
-              </button>
+              </a>
             </div>
           </div>
 
@@ -657,9 +657,9 @@ function HomePage() {
               <button className="primary-btn" type="button">
                 {t.finalCtaPrimary}
               </button>
-              <button className="outline-btn" type="button">
+              <a className="outline-btn" href="/success-stories">
                 {t.finalCtaSecondary}
-              </button>
+              </a>
             </div>
 
             <small>{t.finalCtaFootnote}</small>
