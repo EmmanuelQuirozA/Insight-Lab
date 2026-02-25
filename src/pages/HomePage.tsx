@@ -77,18 +77,26 @@ const copy = {
       },
     ],
     specialtiesTitle: 'Especialistas en ciclos de venta complejos',
+    specialtiesSeoSupport:
+      'Implementamos marketing digital para real estate, desarrollos inmobiliarios, turismo médico y clínicas internacionales con enfoque en SEO, confianza y conversión.',
     specialties: [
       {
         title: 'Turismo Médico & Clínicas',
         description:
           'Pacientes internacionales, tratamientos de alto valor. Entendemos la necesidad de confianza, educación y seguimiento empático.',
         icon: 'activity',
+        backgroundImage: '/images/placeholders/medical-tourism-placeholder.svg',
+        imageAlt:
+          'Placeholder visual para campañas de turismo médico y captación de pacientes internacionales',
       },
       {
         title: 'Real Estate & Desarrollos',
         description:
           'Venta de propiedades y preventas. Gestionamos el ciclo largo desde el lead digital hasta la visita al showroom y la firma.',
         icon: 'building',
+        backgroundImage: '/images/placeholders/real-estate-placeholder.svg',
+        imageAlt:
+          'Placeholder visual para campañas de real estate y desarrollos inmobiliarios de alto valor',
       },
     ],
     infraTitle: 'Más que una agencia, un socio de infraestructura',
@@ -197,18 +205,26 @@ const copy = {
       },
     ],
     specialtiesTitle: 'Specialists in complex sales cycles',
+    specialtiesSeoSupport:
+      'We build digital marketing systems for real estate, property developments, medical tourism and international clinics with SEO, trust and conversion in mind.',
     specialties: [
       {
         title: 'Medical Tourism & Clinics',
         description:
           'International patients and high-value treatments. We understand the need for trust, education and empathetic follow-up.',
         icon: 'activity',
+        backgroundImage: '/images/placeholders/medical-tourism-placeholder.svg',
+        imageAlt:
+          'Visual placeholder for medical tourism campaigns and international patient acquisition',
       },
       {
         title: 'Real Estate & Developments',
         description:
           'Property sales and pre-sales. We manage the long cycle from digital lead to showroom visit and final signature.',
         icon: 'building',
+        backgroundImage: '/images/placeholders/real-estate-placeholder.svg',
+        imageAlt:
+          'Visual placeholder for real estate campaigns and high-ticket property developments',
       },
     ],
     infraTitle: 'More than an agency, an infrastructure partner',
@@ -416,6 +432,23 @@ function HomePage() {
   }, [finalCtaVisible])
 
   const t = copy[language]
+  const seoSchema = useMemo(
+    () => ({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name:
+        language === 'es'
+          ? 'Insight Lab | Marketing para Real Estate y Turismo Médico'
+          : 'Insight Lab | Marketing for Real Estate and Medical Tourism',
+      description: t.specialtiesSeoSupport,
+      about: [
+        language === 'es' ? 'Marketing Inmobiliario' : 'Real Estate Marketing',
+        language === 'es' ? 'Turismo Médico' : 'Medical Tourism Marketing',
+        language === 'es' ? 'Captación de Leads de Alto Valor' : 'High-Ticket Lead Generation',
+      ],
+    }),
+    [language, t.specialtiesSeoSupport],
+  )
 
   const navItems = useMemo(
     () => [
@@ -454,6 +487,7 @@ function HomePage() {
       />
 
       <main className="page-main page-main--padded">
+        <script type="application/ld+json">{JSON.stringify(seoSchema)}</script>
         <section className="container hero" ref={heroSectionRef}>
           <div className={`hero-left ${heroVisible ? 'is-visible' : ''}`}>
             <div className="pill">
@@ -588,13 +622,20 @@ function HomePage() {
             <h2 className={`specialties-title ${specialtiesVisible ? 'is-visible' : ''}`}>
               {t.specialtiesTitle}
             </h2>
+            <p className="specialties-seo-copy">{t.specialtiesSeoSupport}</p>
 
             <div className="specialties-grid">
               {t.specialties.map((item, index) => (
                 <article
                   key={item.title}
                   className={`specialty-card ${specialtiesVisible ? 'is-visible' : ''}`}
-                  style={{ '--specialty-delay': `${index * 220}ms` } as CSSProperties}
+                  style={
+                    {
+                      '--specialty-delay': `${index * 220}ms`,
+                      '--specialty-bg-image': `url('${item.backgroundImage}')`,
+                    } as CSSProperties
+                  }
+                  aria-label={item.imageAlt}
                 >
                   <div className="specialty-overlay" aria-hidden="true" />
                   <div className="specialty-content">
