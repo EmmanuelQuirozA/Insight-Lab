@@ -873,6 +873,15 @@ h1 {
   transform: translateY(0);
 }
 
+.specialties-seo-copy {
+  margin: 0 auto 30px;
+  max-width: 920px;
+  text-align: center;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+  line-height: 1.65;
+}
+
 .specialties-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -889,9 +898,13 @@ h1 {
   transform: translateY(26px) scale(0.99);
   transition: opacity 0.7s ease, transform 0.7s ease;
   transition-delay: var(--specialty-delay);
-  background:
+  background-image:
+    var(--specialty-bg-image),
     radial-gradient(circle at 18% 20%, rgba(106, 77, 255, 0.24) 0%, rgba(106, 77, 255, 0) 45%),
     linear-gradient(140deg, #0b1c2d 0%, #17355c 55%, #6a4dff 100%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .specialty-card::after {
@@ -1937,6 +1950,10 @@ h1 {
 .success-step-title {
   font-size: clamp(1.02rem, 1.8vw, 1.75rem);
   font-weight: 600;
+}
+
+:root[data-theme='dark'] .success-step-title {
+  color: var(--bs-heading-color);
 }
 
 .success-step-chevron {

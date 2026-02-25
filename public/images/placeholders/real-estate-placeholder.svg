@@ -1,0 +1,18 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Real estate placeholder background</title>
+  <desc id="desc">Abstract city silhouette card that reserves visual space for a future real estate campaign image.</desc>
+  <defs>
+    <linearGradient id="bg" x1="90" y1="50" x2="1490" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A2E5B"/>
+      <stop offset="0.6" stop-color="#244C89"/>
+      <stop offset="1" stop-color="#5A6EFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1300" cy="180" r="210" fill="white" fill-opacity="0.1"/>
+  <circle cx="320" cy="160" r="150" fill="white" fill-opacity="0.07"/>
+  <path d="M220 690H320V500H430V690H520V420H610V690H700V540H820V690H940V460H1030V690H1120V360H1230V690H1370V760H220V690Z" fill="white" fill-opacity="0.2"/>
+  <path d="M250 760H1350" stroke="white" stroke-opacity="0.4" stroke-width="6"/>
+  <text x="800" y="680" text-anchor="middle" fill="#ECF1FF" font-family="Arial, sans-serif" font-size="52" font-weight="700">IMAGE PLACEHOLDER</text>
+  <text x="800" y="738" text-anchor="middle" fill="#D7E0FF" font-family="Arial, sans-serif" font-size="30">Real Estate &amp; Developments</text>
+</svg>

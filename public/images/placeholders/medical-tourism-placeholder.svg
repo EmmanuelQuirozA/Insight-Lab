@@ -1,0 +1,17 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Medical tourism placeholder background</title>
+  <desc id="desc">Abstract gradient card that reserves visual space for a future medical tourism campaign image.</desc>
+  <defs>
+    <linearGradient id="bg" x1="180" y1="40" x2="1400" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E3A6F"/>
+      <stop offset="0.55" stop-color="#0A5A84"/>
+      <stop offset="1" stop-color="#2A9BB7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1240" cy="180" r="240" fill="white" fill-opacity="0.09"/>
+  <circle cx="270" cy="740" r="320" fill="white" fill-opacity="0.06"/>
+  <path d="M755 270C755 246 774 227 798 227H860C884 227 903 246 903 270V332H965C989 332 1008 351 1008 375V437C1008 461 989 480 965 480H903V542C903 566 884 585 860 585H798C774 585 755 566 755 542V480H693C669 480 650 461 650 437V375C650 351 669 332 693 332H755V270Z" fill="white" fill-opacity="0.83"/>
+  <text x="800" y="690" text-anchor="middle" fill="#EAF9FF" font-family="Arial, sans-serif" font-size="52" font-weight="700">IMAGE PLACEHOLDER</text>
+  <text x="800" y="748" text-anchor="middle" fill="#D2EFFF" font-family="Arial, sans-serif" font-size="30">Medical Tourism &amp; Clinics</text>
+</svg>
