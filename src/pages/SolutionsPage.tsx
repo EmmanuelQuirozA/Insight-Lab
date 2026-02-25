@@ -215,17 +215,10 @@ function SolutionsPage() {
   const [language, setLanguage] = useDetectedLanguage()
   const { theme, setTheme } = useSystemTheme()
   const [themeTransitionKey, setThemeTransitionKey] = useState(0)
-  const [pageVisible, setPageVisible] = useState(false)
   const [cardsVisible, setCardsVisible] = useState(false)
   const [cardsLifted, setCardsLifted] = useState(false)
   const cardsRef = useRef<HTMLElement | null>(null)
 
-
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => setPageVisible(true))
-
-    return () => window.cancelAnimationFrame(frame)
-  }, [])
 
   useEffect(() => {
     const node = cardsRef.current

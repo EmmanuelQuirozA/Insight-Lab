@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage'
 import SolutionsPage from './pages/SolutionsPage'
 import SuccessStoriesPage from './pages/SuccessStoriesPage'
 import ContactPage from './pages/ContactPage'
+import DigitalMaturityQuizPage from './pages/digital-maturity/DigitalMaturityQuizPage'
 
 function App() {
   if (typeof window !== 'undefined' && window.location.pathname === '/solutions') {
@@ -19,6 +20,10 @@ function App() {
 
   if (typeof window !== 'undefined' && window.location.pathname === '/contact') {
     return <ContactPage />
+  }
+
+  if (typeof window !== 'undefined' && window.location.pathname === '/quiz-madurez-digital') {
+    return <DigitalMaturityQuizPage />
   }
 
   return <HomePage />
