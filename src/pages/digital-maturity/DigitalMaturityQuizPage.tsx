@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
@@ -20,6 +20,7 @@ type UiCopy = {
   contactSubtitle: string
   calculatingLabel: string
   calculatingTitle: string
+  loadingReport: string
   sendAndReveal: string
   fullName: string
   email: string
@@ -30,8 +31,13 @@ type UiCopy = {
   required: string
   scoreLabel: string
   recommendations: string
-  payloadTitle: string
-  payloadCaption: string
+  diagnosisFor: string
+  analysisLabel: string
+  priorityRecommendation: string
+  immediateAction: string
+  marketReality: string
+  scoreInsight: string
+  ctaResult: string
   startOver: string
   nav: {
     about: string
@@ -57,6 +63,7 @@ const uiCopy: Record<Language, UiCopy> = {
     contactSubtitle: '¿A dónde enviamos tu reporte detallado y recomendaciones?',
     calculatingLabel: 'Tu índice se está procesando en segundos.',
     calculatingTitle: 'Estamos calculando tu Índice de Huella Digital...',
+    loadingReport: 'Cargando reporte',
     sendAndReveal: 'Ver mis resultados',
     fullName: 'Nombre completo',
     email: 'Correo electrónico',
@@ -67,8 +74,13 @@ const uiCopy: Record<Language, UiCopy> = {
     required: 'Campo obligatorio',
     scoreLabel: 'Puntaje total',
     recommendations: 'Recomendaciones',
-    payloadTitle: 'JSON preparado para endpoint',
-    payloadCaption: 'Este payload ya incluye respuestas + datos de contacto y puede enviarse directamente a un endpoint.',
+    diagnosisFor: 'RESULTADO DEL DIAGNÓSTICO PARA',
+    analysisLabel: 'Análisis',
+    priorityRecommendation: 'RECOMENDACIÓN PRIORITARIA',
+    immediateAction: 'Acción inmediata',
+    marketReality: 'REALIDAD DEL MERCADO',
+    scoreInsight: 'Tu puntuación indica que puedes mejorar tus conversiones un',
+    ctaResult: 'Agendar llamada de revisión (15 min)',
     startOver: 'Reiniciar quiz',
     nav: {
       about: 'Nosotros',
@@ -96,6 +108,7 @@ const uiCopy: Record<Language, UiCopy> = {
     contactSubtitle: 'Where should we send your detailed report and recommendations?',
     calculatingLabel: 'Your index is being processed in seconds.',
     calculatingTitle: 'We are calculating your Digital Footprint Index...',
+    loadingReport: 'Loading report',
     sendAndReveal: 'See my results',
     fullName: 'Full name',
     email: 'Email',
@@ -106,8 +119,13 @@ const uiCopy: Record<Language, UiCopy> = {
     required: 'Required field',
     scoreLabel: 'Total score',
     recommendations: 'Recommendations',
-    payloadTitle: 'Endpoint-ready JSON',
-    payloadCaption: 'This payload already includes answers + contact details and can be sent directly to an endpoint.',
+    diagnosisFor: 'DIAGNOSTIC RESULT FOR',
+    analysisLabel: 'Analysis',
+    priorityRecommendation: 'PRIORITY RECOMMENDATION',
+    immediateAction: 'Immediate action',
+    marketReality: 'MARKET REALITY',
+    scoreInsight: 'Your score shows you can improve your conversion rate by',
+    ctaResult: 'Schedule review call (15 min)',
     startOver: 'Restart quiz',
     nav: {
       about: 'About Us',
@@ -146,6 +164,8 @@ function DigitalMaturityQuizPage() {
   const [contactForm, setContactForm] = useState<ContactFormData>(emptyContactForm)
   const [showValidation, setShowValidation] = useState(false)
   const [submittedPayload, setSubmittedPayload] = useState<string>('')
+  const [isSubmittingReport, setIsSubmittingReport] = useState(false)
+  const submitTimeoutRef = useRef<number | null>(null)
 
   const navItems = useMemo(
     () => [
@@ -222,7 +242,11 @@ function DigitalMaturityQuizPage() {
       }),
     }
 
-    setSubmittedPayload(JSON.stringify(payload, null, 2))
+    setIsSubmittingReport(true)
+    submitTimeoutRef.current = window.setTimeout(() => {
+      setSubmittedPayload(JSON.stringify(payload, null, 2))
+      setIsSubmittingReport(false)
+    }, 1400)
   }
 
   const resetQuiz = () => {
@@ -232,7 +256,22 @@ function DigitalMaturityQuizPage() {
     setContactForm(emptyContactForm)
     setShowValidation(false)
     setSubmittedPayload('')
+    setIsSubmittingReport(false)
+
+    if (submitTimeoutRef.current) {
+      window.clearTimeout(submitTimeoutRef.current)
+      submitTimeoutRef.current = null
+    }
   }
+
+  useEffect(
+    () => () => {
+      if (submitTimeoutRef.current) {
+        window.clearTimeout(submitTimeoutRef.current)
+      }
+    },
+    [],
+  )
 
   const question = QUESTIONS[step]
 
@@ -308,7 +347,7 @@ function DigitalMaturityQuizPage() {
 
             {quizCompleted && (
               <div className="quiz-final-step">
-                {!submittedPayload && (
+                {!submittedPayload && !isSubmittingReport && (
                   <>
                     <div className="quiz-loader" aria-hidden="true">
                       <div />
@@ -317,58 +356,93 @@ function DigitalMaturityQuizPage() {
                   </>
                 )}
 
-                <h2 className="quiz-final-title">{t.calculatingTitle}</h2>
-                <p className="quiz-final-subtitle">{t.contactSubtitle}</p>
+                {!submittedPayload && !isSubmittingReport && (
+                  <>
+                    <h2 className="quiz-final-title">{t.calculatingTitle}</h2>
+                    <p className="quiz-final-subtitle">{t.contactSubtitle}</p>
+                  </>
+                )}
 
-                <div className="card p-4 shadow border-0">
-                  <form className="contact-form" onSubmit={handleContactSubmit}>
-                    {(
-                      [
-                        ['fullName', t.fullName],
-                        ['email', t.email],
-                        ['phone', t.phone],
-                        ['company', t.company],
-                        ['role', t.role],
-                      ] as const
-                    ).map(([field, label]) => (
-                      <label key={field} className="">
-                        <span>{label}</span>
-                        <div data-mdb-input-init className="form-outline">
+                {!submittedPayload && !isSubmittingReport && (
+                  <div className="card p-4 shadow border-0">
+                    <form className="quiz-contact-form" onSubmit={handleContactSubmit}>
+                      {(
+                        [
+                          ['fullName', t.fullName],
+                          ['email', t.email],
+                          ['phone', t.phone],
+                          ['company', t.company],
+                          ['role', t.role],
+                        ] as const
+                      ).map(([field, label]) => (
+                        <label key={field} className="quiz-field">
+                          <span>{label}</span>
                           <input
-                            className='form-control'
+                            className="form-control"
                             type={field === 'email' ? 'email' : 'text'}
                             value={contactForm[field]}
                             onChange={(event) => setContactForm((prev) => ({ ...prev, [field]: event.target.value }))}
                           />
                           {showValidation && !contactForm[field].trim() && <small>{t.required}</small>}
-                        </div>
-                      </label>
-                    ))}
+                        </label>
+                      ))}
 
-                    <button className="primary-btn" type="submit">
-                      {t.sendAndReveal}
-                    </button>
-                  </form>
-                </div>
+                      <button className="primary-btn" type="submit">
+                        {t.sendAndReveal}
+                      </button>
+                    </form>
+                  </div>
+                )}
 
-                {!submittedPayload && <p className="quiz-trust-note">🔒 {t.trustNote}</p>}
+                {isSubmittingReport && (
+                  <div className="quiz-report-loading" role="status" aria-live="polite">
+                    <div className="quiz-loader" aria-hidden="true">
+                      <div />
+                    </div>
+                    <p>{t.loadingReport}</p>
+                  </div>
+                )}
+
+                {!submittedPayload && !isSubmittingReport && <p className="quiz-trust-note">🔒 {t.trustNote}</p>}
 
                 {submittedPayload && result && (
-                  <div className="quiz-results">
-                    <h3>{result.title[language]}</h3>
-                    <p>
-                      <strong>{t.scoreLabel}:</strong> {score}/100
-                    </p>
-                    <p>{result.description[language]}</p>
-                    <p>
-                      <strong>{t.recommendations}:</strong> {result.advice[language]}
-                    </p>
-                    <p>{result.industryInsight[language]}</p>
+                  <div className="quiz-results" aria-live="polite">
+                    <header className="quiz-results-hero">
+                      <p>{`${t.diagnosisFor} ${contactForm.fullName || contactForm.company}`}</p>
+                      <h3>{result.title[language]}</h3>
+                      <div className="quiz-score-badge">
+                        <strong>{score}</strong>
+                        <span>/100</span>
+                      </div>
+                    </header>
 
-                    <div className="quiz-json-panel">
-                      <h4>{t.payloadTitle}</h4>
-                      <p>{t.payloadCaption}</p>
-                      <pre>{submittedPayload}</pre>
+                    <section className="quiz-results-analysis">
+                      <h4>{t.analysisLabel}</h4>
+                      <p>{result.description[language]}</p>
+                    </section>
+
+                    <p className="quiz-results-section-title">{t.priorityRecommendation}</p>
+                    <section className="quiz-results-block">
+                      <h4>{t.immediateAction}</h4>
+                      <p>{result.advice[language]}</p>
+                    </section>
+
+                    <section className="quiz-results-block quiz-results-market">
+                      <h4>{t.marketReality}</h4>
+                      <p>{result.industryInsight[language]}</p>
+                    </section>
+
+                    <section className="quiz-results-cta">
+                      <h4>¿Quieres convertir este puntaje en ventas?</h4>
+                      <p>
+                        {t.scoreInsight} <strong>20%</strong> ajustando tu experiencia digital.
+                      </p>
+                      <a className="primary-btn" href="/contact">
+                        {t.ctaResult}
+                      </a>
+                    </section>
+                    <div className="visually-hidden" aria-hidden="true">
+                      {submittedPayload}
                     </div>
                   </div>
                 )}
