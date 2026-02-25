@@ -16,9 +16,9 @@ const copy = {
     },
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
-    title: 'Toda marca tiene una pieza faltante.',
-    highlight: 'La pregunta es: ¿ya sabes cuál es la tuya?',
-    description: 'Agenda una sesión estratégica y descubre qué variable está frenando tu crecimiento digital.',
+    pageTitleTop: 'Toda marca tiene una pieza faltante.',
+    pageTitleAccent: 'La pregunta es: ¿ya sabes cuál es la tuya?',
+    pageLead: 'Agenda una sesión estratégica y descubre qué variable está frenando tu crecimiento digital.',
     formTitle: 'Formulario de contacto',
     nameLabel: 'Nombre completo',
     emailLabel: 'Correo electrónico',
@@ -41,9 +41,9 @@ const copy = {
     },
     ctaHeader: 'Book your audit',
     themeToggle: 'Theme',
-    title: 'Every brand has a missing piece.',
-    highlight: 'The question is: do you already know yours?',
-    description: 'Book a strategy session and discover which variable is slowing your digital growth.',
+    pageTitleTop: 'Every brand has a missing piece.',
+    pageTitleAccent: 'The question is: do you already know yours?',
+    pageLead: 'Book a strategy session and discover which variable is slowing your digital growth.',
     formTitle: 'Contact form',
     nameLabel: 'Full name',
     emailLabel: 'Email',
@@ -104,10 +104,13 @@ function ContactPage() {
       />
 
       <main className="page-main page-main--padded">
-        <section className="container solutions-hero contact-hero">
-          <h1>{t.title}</h1>
-          <h2>{t.highlight}</h2>
-          <p>{t.description}</p>
+        <section className="container page-hero">
+          <h1>
+            {t.pageTitleTop}
+            <br />
+            <span className="accent">{t.pageTitleAccent}</span>
+          </h1>
+          <p>{t.pageLead}</p>
         </section>
 
         <section className="container contact-form-wrap">

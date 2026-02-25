@@ -22,8 +22,8 @@ const copy = {
     },
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
-    titleTop: 'No hablamos de likes.',
-    titleAccent: 'Hablamos de crecimiento real.',
+    pageTitleTop: 'No hablamos de likes.',
+    pageTitleAccent: 'Hablamos de crecimiento real.',
     industriesLead: 'Hemos trabajado con marcas en industrias como:',
     industries: [
       'Restaurantes',
@@ -86,8 +86,8 @@ const copy = {
     },
     ctaHeader: 'Book your audit',
     themeToggle: 'Theme',
-    titleTop: "We don't talk about likes.",
-    titleAccent: 'We talk about real growth.',
+    pageTitleTop: "We don't talk about likes.",
+    pageTitleAccent: 'We talk about real growth.',
     industriesLead: 'We have worked with brands in industries such as:',
     industries: ['Restaurants', 'Dental clinics', 'Nutritionists', 'Barbershops', 'Psychologists', 'Entrepreneurs', 'Photographers', 'Tattoo artists'],
     industriesHighlight: 'Each industry has its own language. We translate it into conversion.',
@@ -179,10 +179,14 @@ function SuccessStoriesPage() {
         onLanguageChange={setLanguage}
       />
 
-      <main className="page-main page-main--section-spaced">
-        <section className="container solutions-hero success-title">
-          <h1>{t.titleTop}</h1>
-          <p>{t.titleAccent}</p>
+      <main className="page-main page-main--padded">
+        <section className="container page-hero">
+          <h1>
+            {t.pageTitleTop}
+            <br />
+            <span className="accent">{t.pageTitleAccent}</span>
+          </h1>
+          {/* <p>{t.pageLead}</p> */}
         </section>
 
         <section className="container success-industries-card">

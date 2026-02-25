@@ -453,7 +453,7 @@ function HomePage() {
         onLanguageChange={setLanguage}
       />
 
-      <main className="page-main">
+      <main className="page-main page-main--padded">
         <section className="container hero" ref={heroSectionRef}>
           <div className={`hero-left ${heroVisible ? 'is-visible' : ''}`}>
             <div className="pill">

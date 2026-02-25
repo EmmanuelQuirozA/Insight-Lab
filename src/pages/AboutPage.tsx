@@ -14,8 +14,8 @@ const copy = {
     navContact: 'Contacto',
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
-    topTitleStart: 'No hablamos de likes.',
-    topTitleAccent: 'Hablamos de crecimiento real.',
+    pageTitleTop: 'No somos solo una agencia.',
+    pageTitleAccent: 'Somos un laboratorio de crecimiento digital.',
     heroLead: 'En Insight Lab creemos que el marketing no es improvisación.',
     heroAccent: 'Es arquitectura. Es ingeniería. Es precisión.',
     intro:
@@ -50,8 +50,8 @@ const copy = {
     navContact: 'Contact',
     ctaHeader: 'Book your audit',
     themeToggle: 'Theme',
-    topTitleStart: 'We do not talk about likes.',
-    topTitleAccent: 'We talk about real growth.',
+    pageTitleTop: 'We do not talk about likes.',
+    pageTitleAccent: 'We talk about real growth.',
     heroLead: 'At Insight Lab, we believe marketing is not improvisation.',
     heroAccent: 'It is architecture. It is engineering. It is precision.',
     intro:
@@ -127,12 +127,13 @@ function AboutPage() {
         onLanguageChange={setLanguage}
       />
 
-      <main className="page-main">
-        <section className="container about-page">
-          <header className="about-page-title solutions-hero" aria-label="about page heading">
-            <h1>{t.topTitleStart}</h1>
-            <p>{t.topTitleAccent}</p>
-          </header>
+      <main className="page-main page-main--padded">
+        <section className="container page-hero">
+          <h1>
+            {t.pageTitleTop}
+            <br />
+            <span className="accent">{t.pageTitleAccent}</span>
+          </h1>
 
           <article className="about-hero-card">
             <p>{t.heroLead}</p>

@@ -299,8 +299,8 @@ function SolutionsPage() {
         onLanguageChange={setLanguage}
       />
 
-      <main className={`page-main page-main--hero ${pageVisible ? 'is-visible' : ''}`}>
-        <section className="container solutions-hero">
+      <main className="page-main page-main--padded">
+        <section className="container page-hero">
           <h1>
             {t.pageTitleTop}
             <br />
