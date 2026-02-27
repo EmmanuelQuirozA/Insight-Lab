@@ -63,8 +63,25 @@ function Header({
         return
       }
 
+      if (window.matchMedia('(max-width: 1080px)').matches) {
+        setIsCompact(false)
+        return
+      }
+
+      const hadCompactClass = headerInnerRef.current.classList.contains('is-compact')
+
+      if (hadCompactClass) {
+        headerInnerRef.current.classList.remove('is-compact')
+      }
+
       const { scrollWidth, clientWidth } = headerInnerRef.current
-      setIsCompact(scrollWidth > clientWidth)
+      const shouldCompact = scrollWidth > clientWidth
+
+      if (hadCompactClass) {
+        headerInnerRef.current.classList.add('is-compact')
+      }
+
+      setIsCompact((prev) => (prev === shouldCompact ? prev : shouldCompact))
     }
 
     updateCompactMode()
