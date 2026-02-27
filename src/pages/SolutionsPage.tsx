@@ -227,6 +227,20 @@ function SolutionsPage() {
       return
     }
 
+    const rect = node.getBoundingClientRect()
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight
+    const isAlreadyInViewport = rect.top <= viewportHeight * 0.95 && rect.bottom >= 0
+
+    if (isAlreadyInViewport) {
+      const frame = window.requestAnimationFrame(() => {
+        setCardsVisible(true)
+      })
+
+      return () => window.cancelAnimationFrame(frame)
+    }
+
+    const isMobileViewport = window.matchMedia('(max-width: 768px)').matches
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -234,7 +248,10 @@ function SolutionsPage() {
           observer.disconnect()
         }
       },
-      { threshold: 0.22 },
+      {
+        threshold: isMobileViewport ? 0.08 : 0.22,
+        rootMargin: isMobileViewport ? '0px 0px -8% 0px' : '0px',
+      },
     )
 
     observer.observe(node)
