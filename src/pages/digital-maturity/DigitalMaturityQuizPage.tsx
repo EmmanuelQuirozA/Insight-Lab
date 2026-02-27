@@ -423,7 +423,7 @@ function DigitalMaturityQuizPage() {
                 {submittedPayload && result && (
                   <div className="quiz-results" aria-live="polite">
                     <header className="quiz-results-hero">
-                      <p>{`${t.diagnosisFor} ${contactForm.fullName || contactForm.company}`}</p>
+                      <p style={{color:"#8da1bb"}}>{`${t.diagnosisFor} ${contactForm.fullName || contactForm.company}`}</p>
                       <h3>{result.title[language]}</h3>
                       <div className="quiz-score-badge">
                         <strong className={getScoreColor(score)}>{score}</strong>

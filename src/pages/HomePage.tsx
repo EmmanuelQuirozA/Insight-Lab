@@ -85,7 +85,7 @@ const copy = {
         description:
           'Pacientes internacionales, tratamientos de alto valor. Entendemos la necesidad de confianza, educación y seguimiento empático.',
         icon: 'activity',
-        backgroundImage: '/images/placeholders/medical-tourism-placeholder.svg',
+        backgroundImage: '/images/medical_tourism_clinics_marketing.png',
         imageAlt:
           'Placeholder visual para campañas de turismo médico y captación de pacientes internacionales',
       },
@@ -94,7 +94,7 @@ const copy = {
         description:
           'Venta de propiedades y preventas. Gestionamos el ciclo largo desde el lead digital hasta la visita al showroom y la firma.',
         icon: 'building',
-        backgroundImage: '/images/placeholders/real-estate-placeholder.svg',
+        backgroundImage: '/images/real_state_development_marketing.png',
         imageAlt:
           'Placeholder visual para campañas de real estate y desarrollos inmobiliarios de alto valor',
       },
@@ -213,7 +213,7 @@ const copy = {
         description:
           'International patients and high-value treatments. We understand the need for trust, education and empathetic follow-up.',
         icon: 'activity',
-        backgroundImage: '/images/placeholders/medical-tourism-placeholder.svg',
+        backgroundImage: '/images/medical_tourism_clinics_marketing.png',
         imageAlt:
           'Visual placeholder for medical tourism campaigns and international patient acquisition',
       },
@@ -222,7 +222,7 @@ const copy = {
         description:
           'Property sales and pre-sales. We manage the long cycle from digital lead to showroom visit and final signature.',
         icon: 'building',
-        backgroundImage: '/images/placeholders/real-estate-placeholder.svg',
+        backgroundImage: '/images/real_state_development_marketing.png',
         imageAlt:
           'Visual placeholder for real estate campaigns and high-ticket property developments',
       },
