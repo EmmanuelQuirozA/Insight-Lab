@@ -506,9 +506,9 @@ function HomePage() {
             <p>{t.description}</p>
 
             <div className="cta-group">
-              <button className="primary-btn" type="button">
+              <a className="primary-btn btn" href="/contact">
                 {t.primary}
-              </button>
+              </a>
               <a className="outline-btn btn" href="/solutions">
                 {t.secondary}
               </a>
@@ -695,9 +695,9 @@ function HomePage() {
             <p>{t.finalCtaDescription}</p>
 
             <div className="final-cta-actions">
-              <button className="primary-btn" type="button">
+              <a className="primary-btn btn" href="/contact">
                 {t.finalCtaPrimary}
-              </button>
+              </a>
               <a className="outline-btn btn" href="/success-stories">
                 {t.finalCtaSecondary}
               </a>
