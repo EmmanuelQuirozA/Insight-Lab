@@ -238,9 +238,9 @@ function Header({
               </div>
             )}
           </div>
-          <button className="primary-btn" type="button">
+          <a className="primary-btn btn" href="/contact">
             {ctaLabel}
-          </button>
+          </a>
         </div>
       </div>
     </header>
