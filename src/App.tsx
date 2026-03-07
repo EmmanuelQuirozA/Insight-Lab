@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import AboutPage from './pages/AboutPage'
 import HomePage from './pages/HomePage'
 import SolutionsPage from './pages/SolutionsPage'
