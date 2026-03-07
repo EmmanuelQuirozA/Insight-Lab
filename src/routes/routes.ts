@@ -30,14 +30,3 @@ export const matchDiagnosisRoute = (pathname: string): DiagnosisRouteMatch => {
 
   return { type: 'none' }
 }
-
-export const replaceLanguageInPath = (pathname: string, nextLanguage: SupportedLanguage) => {
-  const segments = pathname.split('/').filter(Boolean)
-
-  if (segments[0] === 'es' || segments[0] === 'en') {
-    segments[0] = nextLanguage
-    return `/${segments.join('/')}`
-  }
-
-  return `/${nextLanguage}/${segments.join('/')}`.replace(/\/$/, '')
-}
