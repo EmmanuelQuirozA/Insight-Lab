@@ -113,29 +113,53 @@ function ContactPage() {
           <p>{t.pageLead}</p>
         </section>
 
-        <section className="container contact-form-wrap contact-reveal-item">
-          <h3>{t.formTitle}</h3>
-          <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
-            <label>
-              {t.nameLabel}
-              <input type="text" name="name" placeholder={t.nameLabel} required />
-            </label>
-            <label>
-              {t.emailLabel}
-              <input type="email" name="email" placeholder={t.emailLabel} required />
-            </label>
-            <label>
-              {t.companyLabel}
-              <input type="text" name="company" placeholder={t.companyLabel} />
-            </label>
-            <label>
-              {t.messageLabel}
-              <textarea name="message" placeholder={t.messageLabel} rows={5} required />
-            </label>
-            <button className="primary-btn" type="submit">
-              {t.submitLabel}
-            </button>
-          </form>
+        <section className="container contact-form-wrap contact-reveal-item bg-white">
+          <h3 className='text-black'>{t.formTitle}</h3>
+          {language === 'es' ? (
+            <div className="contact-iframe-placeholder contact-iframe-placeholder--es" role="status" aria-live="polite">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/aOupcgB0Jj9XPJl2tRpm"
+                style={{width:"100%",height:"860px"}}
+                id="inline-aOupcgB0Jj9XPJl2tRpm" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Strategic_Contact_Form_es"
+                data-height="871"
+                data-layout-iframe-id="inline-aOupcgB0Jj9XPJl2tRpm"
+                data-form-id="aOupcgB0Jj9XPJl2tRpm"
+                title="Strategic_Contact_Form_es"
+              >
+              </iframe>
+              <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+            </div>
+          ) : (
+            <div className="contact-iframe-placeholder contact-iframe-placeholder--en" role="status" aria-live="polite">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/JwUVX1H2uuHcqt3Pwd6I"
+                style={{width:"100%",height:"860px"}}
+                id="inline-JwUVX1H2uuHcqt3Pwd6I" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Strategic_Contact_Form_en"
+                data-height="718"
+                data-layout-iframe-id="inline-JwUVX1H2uuHcqt3Pwd6I"
+                data-form-id="JwUVX1H2uuHcqt3Pwd6I"
+                title="Strategic_Contact_Form_en"
+                    >
+            </iframe>
+            <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+            </div>
+          )}
         </section>
       </main>
 
