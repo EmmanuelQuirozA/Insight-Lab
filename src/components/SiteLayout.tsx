@@ -1,6 +1,7 @@
 import { useMemo, useState, type ReactNode } from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import FloatingWhatsAppButton from './FloatingWhatsAppButton'
 import useSystemTheme from '../hooks/useSystemTheme'
 import useDetectedLanguage from '../hooks/useDetectedLanguage'
 
@@ -94,6 +95,8 @@ function SiteLayout({ children, mainClassName, language: controlledLanguage, onL
       />
 
       <main className={classes}>{children({ language })}</main>
+
+      <FloatingWhatsAppButton />
 
       <Footer
         brandName="Insight"
