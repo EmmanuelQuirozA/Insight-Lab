@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import SiteLayout from '../../components/SiteLayout'
 import useDetectedLanguage from '../../hooks/useDetectedLanguage'
-import useSystemTheme from '../../hooks/useSystemTheme'
 import '../../App.css'
 import './quiz.css'
 import { QUESTIONS, RESULTS } from './data'
@@ -156,9 +154,7 @@ const emptyContactForm: ContactFormData = {
 }
 
 function DigitalMaturityQuizPage() {
-  const [language, setLanguage] = useDetectedLanguage()
-  const { theme, setTheme } = useSystemTheme()
-  const [themeTransitionKey, setThemeTransitionKey] = useState(0)
+  const [language] = useDetectedLanguage()
   const t = uiCopy[language]
 
   const [step, setStep] = useState(0)
@@ -170,20 +166,6 @@ function DigitalMaturityQuizPage() {
   const [isSubmittingReport, setIsSubmittingReport] = useState(false)
   const submitTimeoutRef = useRef<number | null>(null)
 
-  const navItems = useMemo(
-    () => [
-      { key: 'about', label: t.nav.about, href: '/about' },
-      { key: 'solutions', label: t.nav.solutions, href: '/solutions' },
-      { key: 'success', label: t.nav.successStories, href: '/success-stories' },
-      { key: 'contact', label: t.nav.contact, href: '/contact' },
-    ],
-    [t.nav],
-  )
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
-    setThemeTransitionKey((prev) => prev + 1)
-  }
 
   const selectedOption = answers[QUESTIONS[step]?.id]
 
@@ -291,27 +273,9 @@ function DigitalMaturityQuizPage() {
   }
 
   return (
-    <div className="app-shell">
-      <Header
-        logo={
-          <a href="/" className="brand-name" aria-label="Insight Lab home">
-            <img src="/brand/logo_minimal.png" alt="Insight Lab logo" className="brand-icon" />
-            <span>
-              Insight<span className="accent">Lab</span>
-            </span>
-          </a>
-        }
-        navItems={navItems}
-        ctaLabel={t.ctaHeader}
-        themeLabel={t.themeToggle}
-        theme={theme}
-        themeTransitionKey={themeTransitionKey}
-        language={language}
-        onThemeToggle={toggleTheme}
-        onLanguageChange={setLanguage}
-      />
-
-      <main className="page-main page-main--padded quiz-page">
+    <SiteLayout mainClassName="quiz-page" language={language}>
+      {() => (
+        <>
         <div className="container quiz-shell">
           <section className="quiz-card">
             <h1 className="quiz-title">{t.title}</h1>
@@ -478,21 +442,9 @@ function DigitalMaturityQuizPage() {
             )}
           </section>
         </div>
-      </main>
-
-      <Footer
-        brandName="Insight"
-        brandAccent="Lab"
-        links={t.footerLinks}
-        socialLinks={[
-          { label: 'Facebook', href: '#', icon: 'facebook' },
-          { label: 'Instagram', href: '#', icon: 'instagram' },
-          { label: 'LinkedIn', href: '#', icon: 'linkedin' },
-          { label: 'YouTube', href: '#', icon: 'youtube' },
-        ]}
-        copyright={t.footerCopyright}
-      />
-    </div>
+        </>
+      )}
+    </SiteLayout>
   )
 }
 
