@@ -24,9 +24,8 @@ const layoutCopy = {
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
     footerLinks: [
-      { label: 'Términos', href: '#' },
-      { label: 'Privacidad', href: '#' },
-      { label: 'LinkedIn', href: '#' },
+      { label: 'Términos', href: '/terms-of-service' },
+      { label: 'Privacidad', href: '/privacy' },
     ],
     footerCopyright: '© 2026 Insight Lab Agency. All rights reserved.',
   },
@@ -40,9 +39,8 @@ const layoutCopy = {
     ctaHeader: 'Request an Audit',
     themeToggle: 'Theme',
     footerLinks: [
-      { label: 'Terms', href: '#' },
-      { label: 'Privacy', href: '#' },
-      { label: 'LinkedIn', href: '#' },
+      { label: 'Terms', href: '/terms-of-service' },
+      { label: 'Privacy', href: '/privacy' },
     ],
     footerCopyright: '© 2026 Insight Lab Agency. All rights reserved.',
   },
@@ -102,10 +100,10 @@ function SiteLayout({ children, mainClassName, language: controlledLanguage, onL
         brandAccent="Lab"
         links={t.footerLinks}
         socialLinks={[
-          { label: 'Facebook', href: '#', icon: 'facebook' },
-          { label: 'Instagram', href: '#', icon: 'instagram' },
-          { label: 'LinkedIn', href: '#', icon: 'linkedin' },
-          { label: 'YouTube', href: '#', icon: 'youtube' },
+          { label: 'Facebook', href: 'https://www.facebook.com/share/1G5GZg2MiH/?mibextid=wwXIfr', icon: 'facebook' },
+          { label: 'Instagram', href: 'https://www.instagram.com/insightlabmx?igsh=MWw4MHFwa2Y1ODdsNw==', icon: 'instagram' },
+          { label: 'LinkedIn', href: 'https://www.linkedin.com/company/insghtlab/', icon: 'linkedin' },
+          // { label: 'YouTube', href: '#', icon: 'youtube' },
         ]}
         copyright={t.footerCopyright}
       />

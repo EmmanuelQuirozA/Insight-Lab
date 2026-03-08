@@ -4,6 +4,7 @@ import SolutionsPage from './pages/SolutionsPage'
 import SuccessStoriesPage from './pages/SuccessStoriesPage'
 import ContactPage from './pages/ContactPage'
 import DigitalMaturityQuizPage from './pages/digital-maturity/DigitalMaturityQuizPage'
+import RealStateDigitalMaturityQuizPage from './pages/digital-maturity/RealStateDigitalMaturityQuizPage'
 
 function App() {
   if (typeof window !== 'undefined' && window.location.pathname === '/solutions') {
@@ -24,6 +25,10 @@ function App() {
 
   if (typeof window !== 'undefined' && window.location.pathname === '/quiz-madurez-digital') {
     return <DigitalMaturityQuizPage />
+  }
+
+  if (typeof window !== 'undefined' && window.location.pathname === '/real-state-maturity-quiz') {
+    return <RealStateDigitalMaturityQuizPage />
   }
 
   return <HomePage />
