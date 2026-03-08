@@ -1,9 +1,5 @@
-import { useMemo, useState } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import SiteLayout from '../components/SiteLayout'
 import '../App.css'
-import useSystemTheme from '../hooks/useSystemTheme'
-import useDetectedLanguage from '../hooks/useDetectedLanguage'
 
 
 const copy = {
@@ -84,51 +80,14 @@ const copy = {
 const combineIconClasses = ['bi-bullseye', 'bi-lightbulb', 'bi-database', 'bi-gear', 'bi-cpu'] as const
 
 function AboutPage() {
-  const [language, setLanguage] = useDetectedLanguage()
-  const { theme, setTheme } = useSystemTheme()
-  const [themeTransitionKey, setThemeTransitionKey] = useState(0)
-
-
-  const t = copy[language]
-
-  const navItems = useMemo(
-    () => [
-      { key: 'about', label: t.navAbout, href: '/about' },
-      { key: 'solutions', label: t.navSolutions, href: '/solutions' },
-      { key: 'success', label: t.navSuccessStories, href: '/success-stories' },
-      { key: 'contact', label: t.navContact, href: '/contact' },
-    ],
-    [t.navAbout, t.navSolutions, t.navSuccessStories, t.navContact],
-  )
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
-    setThemeTransitionKey((prev) => prev + 1)
-  }
-
   return (
-    <div className="app-shell">
-      <Header
-        logo={
-          <a href="/" className="brand-name" aria-label="Insight Lab home">
-            <img src="/brand/logo_minimal.png" alt="Insight Lab logo" className="brand-icon" />
-            <span>
-              Insight<span className="accent">Lab</span>
-            </span>
-          </a>
-        }
-        navItems={navItems}
-        ctaLabel={t.ctaHeader}
-        themeLabel={t.themeToggle}
-        theme={theme}
-        themeTransitionKey={themeTransitionKey}
-        language={language}
-        onThemeToggle={toggleTheme}
-        onLanguageChange={setLanguage}
-      />
+    <SiteLayout>
+      {({ language }) => {
+        const t = copy[language]
 
-      <main className="page-main page-main--padded">
-        <section className="container page-hero about-page">
+        return (
+          <>
+            <section className="container page-hero about-page">
           <h1>
             {t.pageTitleTop}
             <br />
@@ -178,21 +137,10 @@ function AboutPage() {
             <p>{t.vision}</p>
           </article>
         </section>
-      </main>
-
-      <Footer
-        brandName="Insight"
-        brandAccent="Lab"
-        links={t.footerLinks}
-        socialLinks={[
-          { label: 'Facebook', href: '#', icon: 'facebook' },
-          { label: 'Instagram', href: '#', icon: 'instagram' },
-          { label: 'LinkedIn', href: '#', icon: 'linkedin' },
-          { label: 'YouTube', href: '#', icon: 'youtube' },
-        ]}
-        copyright={t.footerCopyright}
-      />
-    </div>
+          </>
+        )
+      }}
+    </SiteLayout>
   )
 }
 

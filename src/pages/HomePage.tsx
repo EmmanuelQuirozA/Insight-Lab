@@ -1,11 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import SiteLayout from '../components/SiteLayout'
 import '../App.css'
-import useSystemTheme from '../hooks/useSystemTheme'
-import useDetectedLanguage from '../hooks/useDetectedLanguage'
-
 
 const copy = {
   es: {
@@ -267,9 +263,6 @@ const copy = {
 } as const
 
 function HomePage() {
-  const [language, setLanguage] = useDetectedLanguage()
-  const { theme, setTheme } = useSystemTheme()
-  const [themeTransitionKey, setThemeTransitionKey] = useState(0)
   const [pillarsVisible, setPillarsVisible] = useState(false)
   const [cardsLift, setCardsLift] = useState(false)
   const [specialtiesVisible, setSpecialtiesVisible] = useState(false)
@@ -431,62 +424,29 @@ function HomePage() {
     return () => observer.disconnect()
   }, [finalCtaVisible])
 
-  const t = copy[language]
-  const seoSchema = useMemo(
-    () => ({
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name:
-        language === 'es'
-          ? 'Insight Lab | Marketing para Real Estate y Turismo Médico'
-          : 'Insight Lab | Marketing for Real Estate and Medical Tourism',
-      description: t.specialtiesSeoSupport,
-      about: [
-        language === 'es' ? 'Marketing Inmobiliario' : 'Real Estate Marketing',
-        language === 'es' ? 'Turismo Médico' : 'Medical Tourism Marketing',
-        language === 'es' ? 'Captación de Leads de Alto Valor' : 'High-Ticket Lead Generation',
-      ],
-    }),
-    [language, t.specialtiesSeoSupport],
-  )
-
-  const navItems = useMemo(
-    () => [
-      { key: 'about', label: t.nav.about, href: '/about' },
-      { key: 'solutions', label: t.nav.solutions, href: '/solutions' },
-      { key: 'success', label: t.nav.successStories, href: '/success-stories' },
-      { key: 'contact', label: t.nav.contact, href: '/contact' },
-    ],
-    [t.nav],
-  )
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
-    setThemeTransitionKey((prev) => prev + 1)
-  }
 
   return (
-    <div className="app-shell">
-      <Header
-        logo={
-          <a href="/" className="brand-name" aria-label="Insight Lab home">
-            <img src="/brand/logo_minimal.png" alt="Insight Lab logo" className="brand-icon" />
-            <span>
-              Insight<span className="accent">Lab</span>
-            </span>
-          </a>
-        }
-        navItems={navItems}
-        ctaLabel={t.ctaHeader}
-        themeLabel={t.themeToggle}
-        theme={theme}
-        themeTransitionKey={themeTransitionKey}
-        language={language}
-        onThemeToggle={toggleTheme}
-        onLanguageChange={setLanguage}
-      />
+    <SiteLayout>
+      {({ language }) => {
+        const t = copy[language]
 
-      <main className="page-main page-main--padded">
+        const seoSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name:
+            language === 'es'
+              ? 'Insight Lab | Marketing para Real Estate y Turismo Médico'
+              : 'Insight Lab | Marketing for Real Estate and Medical Tourism',
+          description: t.specialtiesSeoSupport,
+          about: [
+            language === 'es' ? 'Marketing Inmobiliario' : 'Real Estate Marketing',
+            language === 'es' ? 'Turismo Médico' : 'Medical Tourism Marketing',
+            language === 'es' ? 'Captación de Leads de Alto Valor' : 'High-Ticket Lead Generation',
+          ],
+        }
+
+        return (
+          <>
         <script type="application/ld+json">{JSON.stringify(seoSchema)}</script>
         <section className="container hero" ref={heroSectionRef}>
           <div className={`hero-left ${heroVisible ? 'is-visible' : ''}`}>
@@ -707,22 +667,10 @@ function HomePage() {
           </div>
         </section>
 
-      </main>
-
-      <Footer
-        brandName="Insight"
-        brandAccent="Lab"
-        links={t.footerLinks}
-        socialLinks={[
-          { label: 'Facebook', href: '#', icon: 'facebook' },
-          { label: 'Instagram', href: '#', icon: 'instagram' },
-          { label: 'LinkedIn', href: '#', icon: 'linkedin' },
-          { label: 'YouTube', href: '#', icon: 'youtube' },
-        ]}
-        copyright={t.footerCopyright}
-      />
-
-    </div>
+          </>
+        )
+      }}
+    </SiteLayout>
   )
 }
 
