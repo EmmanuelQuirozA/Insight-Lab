@@ -2179,3 +2179,47 @@ h1 {
     width: 100%;
   }
 }
+
+.floating-whatsapp {
+  position: fixed;
+  z-index: 70;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, #25d366 40%, #0c9d53);
+  background: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgb(11 28 45 / 0.24);
+  touch-action: none;
+  user-select: none;
+}
+
+.floating-whatsapp--right {
+  right: 16px;
+  left: auto;
+}
+
+.floating-whatsapp--left {
+  left: 16px;
+  right: auto;
+}
+
+.floating-whatsapp:hover {
+  background: #1fb65a;
+}
+
+.floating-whatsapp__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.floating-whatsapp__label {
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+}
