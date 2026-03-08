@@ -2185,10 +2185,8 @@ h1 {
   z-index: 70;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
+  padding: 10px 10px;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, #25d366 40%, #0c9d53);
   background: #25d366;
   color: #ffffff;
   text-decoration: none;

@@ -6,7 +6,7 @@ type DragState = {
   offsetY: number
 }
 
-const WHATSAPP_NUMBER_PLACEHOLDER = 'AQUI_TU_NUMERO'
+const WHATSAPP_NUMBER_PLACEHOLDER = '3328113840'
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max)
@@ -89,7 +89,7 @@ function FloatingWhatsAppButton() {
       onClick={handleClick}
     >
       <i className="floating-whatsapp__icon bi bi-whatsapp" aria-hidden="true" />
-      <span className="floating-whatsapp__label">WhatsApp</span>
+      <span className="floating-whatsapp__label"></span>
     </a>
   )
 }
