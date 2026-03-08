@@ -28,7 +28,8 @@ export type ResultType = {
 }
 
 export type ContactFormData = {
-  fullName: string
+  firstName: string
+  lastName: string
   email: string
   phone: string
   company: string

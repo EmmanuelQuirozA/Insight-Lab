@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import SiteLayout from '../../components/SiteLayout'
 import useDetectedLanguage from '../../hooks/useDetectedLanguage'
@@ -6,6 +6,7 @@ import '../../App.css'
 import './quiz.css'
 import { QUESTIONS, RESULTS } from './data'
 import type { ContactFormData, Language } from './types'
+import { API_BASE_URL } from '../../config'
 
 type UiCopy = {
   title: string
@@ -20,7 +21,8 @@ type UiCopy = {
   calculatingTitle: string
   loadingReport: string
   sendAndReveal: string
-  fullName: string
+  firstName: string
+  lastName: string
   email: string
   phone: string
   company: string
@@ -64,7 +66,8 @@ const uiCopy: Record<Language, UiCopy> = {
     calculatingTitle: 'Estamos calculando tu Índice de Huella Digital...',
     loadingReport: 'Cargando reporte',
     sendAndReveal: 'Ver mis resultados',
-    fullName: 'Nombre completo',
+    firstName: 'Nombre',
+    lastName: 'Apellidos',
     email: 'Correo electrónico',
     phone: 'Teléfono',
     company: 'Inmobiliaria / Empresa',
@@ -110,7 +113,8 @@ const uiCopy: Record<Language, UiCopy> = {
     calculatingTitle: 'We are calculating your Digital Footprint Index...',
     loadingReport: 'Loading report',
     sendAndReveal: 'See my results',
-    fullName: 'Full name',
+    firstName: 'First name',
+    lastName: 'Last name',
     email: 'Email',
     phone: 'Phone',
     company: 'Real Estate / Company',
@@ -146,7 +150,8 @@ const uiCopy: Record<Language, UiCopy> = {
 }
 
 const emptyContactForm: ContactFormData = {
-  fullName: '',
+  firstName: '',
+  lastName: '',
   email: '',
   phone: '',
   company: '',
@@ -164,8 +169,6 @@ function DigitalMaturityQuizPage() {
   const [showValidation, setShowValidation] = useState(false)
   const [submittedPayload, setSubmittedPayload] = useState<string>('')
   const [isSubmittingReport, setIsSubmittingReport] = useState(false)
-  const submitTimeoutRef = useRef<number | null>(null)
-
 
   const selectedOption = answers[QUESTIONS[step]?.id]
 
@@ -176,7 +179,7 @@ function DigitalMaturityQuizPage() {
 
   const result = useMemo(() => RESULTS.find((item) => score >= item.minScore && score <= item.maxScore), [score])
 
-  const isContactValid = Object.values(contactForm).every((value) => value.trim().length > 0)
+  const isContactValid = [contactForm.firstName, contactForm.lastName, contactForm.email, contactForm.phone].every((value) => value.trim().length > 0)
 
   const handleOptionChange = (optionId: 'A' | 'B' | 'C') => {
     const questionId = QUESTIONS[step].id
@@ -201,37 +204,52 @@ function DigitalMaturityQuizPage() {
     }
 
     const payload = {
-      quizType: 'digital-maturity-real-estate',
-      submittedAt: new Date().toISOString(),
+      firstName: contactForm.firstName.trim(),
+      lastName: contactForm.lastName.trim(),
+      email: contactForm.email.trim(),
+      phone: contactForm.phone.trim(),
+      companyName: contactForm.company.trim() || undefined,
       language,
+      role: contactForm.role.trim() || undefined,
+      quizType: 'real-estate-diagnosis',
       score,
-      result: {
-        title: result.title[language],
-        description: result.description[language],
-        advice: result.advice[language],
-        industryInsight: result.industryInsight[language],
-      },
-      contact: contactForm,
+      tier: score > 70 ? 'high' : score > 40 ? 'medium' : 'low',
       answers: QUESTIONS.map((question) => {
         const selectedId = answers[question.id]
         const selected = question.options.find((option) => option.id === selectedId)
 
         return {
           questionId: question.id,
-          category: question.category[language],
           question: question.question[language],
-          selectedOptionId: selected?.id ?? null,
-          selectedOptionLabel: selected?.label[language] ?? null,
+          answer: selected?.label[language] ?? '',
           points: selected?.points ?? 0,
         }
       }),
     }
 
     setIsSubmittingReport(true)
-    submitTimeoutRef.current = window.setTimeout(() => {
-      setSubmittedPayload(JSON.stringify(payload, null, 2))
-      setIsSubmittingReport(false)
-    }, 1400)
+
+    void (async () => {
+      try {
+        const response = await fetch(`${API_BASE_URL}/diagnosis/submit`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        })
+
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`)
+        }
+
+        setSubmittedPayload(JSON.stringify(payload, null, 2))
+      } catch (error) {
+        console.error('Error submitting diagnosis:', error)
+      } finally {
+        setIsSubmittingReport(false)
+      }
+    })()
   }
 
   const resetQuiz = () => {
@@ -243,20 +261,8 @@ function DigitalMaturityQuizPage() {
     setSubmittedPayload('')
     setIsSubmittingReport(false)
 
-    if (submitTimeoutRef.current) {
-      window.clearTimeout(submitTimeoutRef.current)
-      submitTimeoutRef.current = null
-    }
   }
 
-  useEffect(
-    () => () => {
-      if (submitTimeoutRef.current) {
-        window.clearTimeout(submitTimeoutRef.current)
-      }
-    },
-    [],
-  )
 
   const question = QUESTIONS[step]
 
@@ -347,7 +353,8 @@ function DigitalMaturityQuizPage() {
                     <form className="quiz-contact-form" onSubmit={handleContactSubmit}>
                       {(
                         [
-                          ['fullName', t.fullName],
+                          ['firstName', t.firstName],
+                          ['lastName', t.lastName],
                           ['email', t.email],
                           ['phone', t.phone],
                           ['company', t.company],
@@ -362,7 +369,7 @@ function DigitalMaturityQuizPage() {
                             value={contactForm[field]}
                             onChange={(event) => setContactForm((prev) => ({ ...prev, [field]: event.target.value }))}
                           />
-                          {showValidation && !contactForm[field].trim() && <small>{t.required}</small>}
+                          {showValidation && ['firstName', 'lastName', 'email', 'phone'].includes(field) && !contactForm[field].trim() && <small>{t.required}</small>}
                         </label>
                       ))}
 
@@ -387,7 +394,7 @@ function DigitalMaturityQuizPage() {
                 {submittedPayload && result && (
                   <div className="quiz-results" aria-live="polite">
                     <header className="quiz-results-hero">
-                      <p style={{color:"#8da1bb"}}>{`${t.diagnosisFor} ${contactForm.fullName || contactForm.company}`}</p>
+                      <p style={{color:"#8da1bb"}}>{`${t.diagnosisFor} ${contactForm.firstName} ${contactForm.lastName}`.trim()}</p>
                       <h3>{result.title[language]}</h3>
                       <div className="quiz-score-badge">
                         <strong className={getScoreColor(score)}>{score}</strong>
