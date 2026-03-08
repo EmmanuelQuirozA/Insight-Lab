@@ -154,7 +154,7 @@ const emptyContactForm: ContactFormData = {
 }
 
 function DigitalMaturityQuizPage() {
-  const [language] = useDetectedLanguage()
+  const [language, setLanguage] = useDetectedLanguage()
   const t = uiCopy[language]
 
   const [step, setStep] = useState(0)
@@ -273,7 +273,7 @@ function DigitalMaturityQuizPage() {
   }
 
   return (
-    <SiteLayout mainClassName="quiz-page" language={language}>
+    <SiteLayout mainClassName="quiz-page" language={language} onLanguageChange={setLanguage}>
       {() => (
         <>
         <div className="container quiz-shell">
