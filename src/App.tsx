@@ -23,7 +23,7 @@ function App() {
     return <ContactPage />
   }
 
-  if (typeof window !== 'undefined' && window.location.pathname === '/quiz-madurez-digital') {
+  if (typeof window !== 'undefined' && window.location.pathname === '/real-estate-diagnosis') {
     return <DigitalMaturityQuizPage />
   }
 
