@@ -2087,45 +2087,25 @@ h1 {
   font-size: clamp(1.3rem, 2.2vw, 1.9rem);
 }
 
-.contact-form {
-  display: grid;
-  gap: 14px;
-}
-
-.contact-form label {
-  display: grid;
-  gap: 8px;
-  color: var(--text);
+.contact-iframe-placeholder {
+  border-radius: 14px;
+  border: 1px dashed var(--line);
+  background: color-mix(in srgb, var(--surface) 86%, #edf3ff);
+  color: var(--muted);
   font-weight: 500;
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
-.contact-form input,
-.contact-form textarea {
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--surface) 82%, #edf3ff);
-  color: var(--text);
-  font: inherit;
-  padding: 12px 14px;
-  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+.contact-iframe-placeholder--es {
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--line));
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: color-mix(in srgb, var(--primary) 55%, var(--line));
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 18%, transparent);
-  transform: translateY(-1px);
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-form button {
-  justify-self: start;
-  padding: 12px 20px;
+.contact-iframe-placeholder--en {
+  border-color: color-mix(in srgb, #6a8db8 30%, var(--line));
 }
 
 @keyframes section-fade-up {
@@ -2154,17 +2134,14 @@ h1 {
   .success-step-card,
   .success-value-pills span,
   .contact-form-wrap,
-  .contact-form input,
-  .contact-form textarea {
+  .contact-iframe-placeholder {
     transition: none;
   }
 
   .success-industries-card:hover,
   .success-industry-pill:hover,
   .success-value-pills span:hover,
-  .contact-form-wrap:hover,
-  .contact-form input:focus,
-  .contact-form textarea:focus {
+  .contact-form-wrap:hover {
     transform: none;
     box-shadow: none;
   }
@@ -2175,7 +2152,4 @@ h1 {
     padding: 22px;
   }
 
-  .contact-form button {
-    width: 100%;
-  }
 }

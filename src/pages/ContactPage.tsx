@@ -20,11 +20,7 @@ const copy = {
     pageTitleAccent: 'La pregunta es: ¿ya sabes cuál es la tuya?',
     pageLead: 'Agenda una sesión estratégica y descubre qué variable está frenando tu crecimiento digital.',
     formTitle: 'Formulario de contacto',
-    nameLabel: 'Nombre completo',
-    emailLabel: 'Correo electrónico',
-    companyLabel: 'Empresa',
-    messageLabel: 'Cuéntanos tu objetivo',
-    submitLabel: 'Agendar sesión estratégica',
+    formPlaceholderEs: 'Placeholder iframe (ES): pega aquí el iframe del formulario en español.',
     footerLinks: [
       { label: 'Términos', href: '#' },
       { label: 'Privacidad', href: '#' },
@@ -45,11 +41,7 @@ const copy = {
     pageTitleAccent: 'The question is: do you already know yours?',
     pageLead: 'Book a strategy session and discover which variable is slowing your digital growth.',
     formTitle: 'Contact form',
-    nameLabel: 'Full name',
-    emailLabel: 'Email',
-    companyLabel: 'Company',
-    messageLabel: 'Tell us your objective',
-    submitLabel: 'Agendar sesión estratégica',
+    formPlaceholderEn: 'Iframe placeholder (EN): paste the English contact form iframe here.',
     footerLinks: [
       { label: 'Terms', href: '#' },
       { label: 'Privacy', href: '#' },
@@ -115,27 +107,15 @@ function ContactPage() {
 
         <section className="container contact-form-wrap contact-reveal-item">
           <h3>{t.formTitle}</h3>
-          <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
-            <label>
-              {t.nameLabel}
-              <input type="text" name="name" placeholder={t.nameLabel} required />
-            </label>
-            <label>
-              {t.emailLabel}
-              <input type="email" name="email" placeholder={t.emailLabel} required />
-            </label>
-            <label>
-              {t.companyLabel}
-              <input type="text" name="company" placeholder={t.companyLabel} />
-            </label>
-            <label>
-              {t.messageLabel}
-              <textarea name="message" placeholder={t.messageLabel} rows={5} required />
-            </label>
-            <button className="primary-btn" type="submit">
-              {t.submitLabel}
-            </button>
-          </form>
+          {language === 'es' ? (
+            <div className="contact-iframe-placeholder contact-iframe-placeholder--es" role="status" aria-live="polite">
+              {copy.es.formPlaceholderEs}
+            </div>
+          ) : (
+            <div className="contact-iframe-placeholder contact-iframe-placeholder--en" role="status" aria-live="polite">
+              {copy.en.formPlaceholderEn}
+            </div>
+          )}
         </section>
       </main>
 
