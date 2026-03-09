@@ -213,7 +213,7 @@ function DigitalMaturityQuizPage() {
       role: contactForm.role.trim() || undefined,
       quizType: 'real-estate-diagnosis',
       score,
-      tier: score > 70 ? 'high' : score > 40 ? 'medium' : 'low',
+      tier: score > 70 ? 'high' : score > 40 ? 'mid' : 'low',
       answers: QUESTIONS.map((question) => {
         const selectedId = answers[question.id]
         const selected = question.options.find((option) => option.id === selectedId)
@@ -349,7 +349,7 @@ function DigitalMaturityQuizPage() {
                 )}
 
                 {!submittedPayload && !isSubmittingReport && (
-                  <div className="card p-4 shadow border-0">
+                  <div className="container contact-form-wrap contact-reveal-item bg-white">
                     <form className="quiz-contact-form" onSubmit={handleContactSubmit}>
                       {(
                         [
