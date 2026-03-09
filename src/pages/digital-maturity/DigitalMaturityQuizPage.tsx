@@ -349,7 +349,7 @@ function DigitalMaturityQuizPage() {
                 )}
 
                 {!submittedPayload && !isSubmittingReport && (
-                  <div className="container contact-form-wrap contact-reveal-item bg-white">
+                  <div className="container contact-form-wrap contact-reveal-item bg-white text-black">
                     <form className="quiz-contact-form" onSubmit={handleContactSubmit}>
                       {(
                         [
