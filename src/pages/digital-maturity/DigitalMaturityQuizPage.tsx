@@ -227,6 +227,7 @@ function DigitalMaturityQuizPage() {
       }),
     }
 
+    setSubmittedPayload(JSON.stringify(payload, null, 2))
     setIsSubmittingReport(true)
 
     void (async () => {
@@ -243,7 +244,6 @@ function DigitalMaturityQuizPage() {
           throw new Error(`Request failed with status ${response.status}`)
         }
 
-        setSubmittedPayload(JSON.stringify(payload, null, 2))
       } catch (error) {
         console.error('Error submitting diagnosis:', error)
       } finally {
