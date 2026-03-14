@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import SiteLayout from '../components/SiteLayout'
-import CustomerLogosCarousel from '../components/CustomerLogosCarousel'
+import TrustedBrandsCarousel from '../components/TrustedBrandsCarousel'
 import '../App.css'
 
 const copy = {
@@ -652,7 +652,7 @@ function HomePage() {
           </div>
         </section>
 
-        <CustomerLogosCarousel title={t.customerLogosTitle} />
+        <TrustedBrandsCarousel title={t.customerLogosTitle} />
 
         <section className="final-cta-section" ref={finalCtaRef}>
           <div className={`container final-cta ${finalCtaVisible ? 'is-visible' : ''}`}>
