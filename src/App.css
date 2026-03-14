@@ -2239,6 +2239,8 @@ h1 {
   border-radius: 20px;
   background: color-mix(in srgb, var(--surface) 88%, #dce7ff);
   padding: 18px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
 }
 
 .carousel-track {
@@ -2249,8 +2251,6 @@ h1 {
   gap: 16px;
   padding-inline: 12px;
   animation: customer-logos-scroll 24s linear infinite;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
 }
 
 .carousel-item {
