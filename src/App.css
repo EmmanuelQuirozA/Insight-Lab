@@ -2232,39 +2232,170 @@ h1 {
   font-size: clamp(1.6rem, 3.2vw, 2.2rem);
 }
 
-.customer-logos-carousel {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: color-mix(in srgb, var(--surface) 88%, #dce7ff);
-  padding: 18px 0;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
+.customer-logos-section .py-10 {
+  padding-block: 2.5rem;
 }
 
-.carousel-track {
+.customer-logos-section .relative {
+  position: relative;
+}
+
+.customer-logos-section .overflow-hidden {
+  overflow: hidden;
+}
+
+.customer-logos-section .w-full {
+  width: 100%;
+}
+
+.customer-logos-section .rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.customer-logos-section .border {
+  border: 1px solid;
+}
+
+.customer-logos-section .bg-white {
+  background: #fff;
+}
+
+.customer-logos-section .border-slate-200 {
+  border-color: #e2e8f0;
+}
+
+.customer-logos-section .shadow-sm {
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.08);
+}
+
+[data-theme='dark'] .customer-logos-section .bg-\[\#0B1C2D\]\/80 {
+  background: rgb(11 28 45 / 0.8);
+}
+
+[data-theme='dark'] .customer-logos-section .border-\[\#1F6FFF\]\/20 {
+  border-color: rgb(31 111 255 / 0.2);
+}
+
+.customer-logos-section .absolute {
+  position: absolute;
+}
+
+.customer-logos-section .left-0 {
+  left: 0;
+}
+
+.customer-logos-section .right-0 {
+  right: 0;
+}
+
+.customer-logos-section .top-0 {
+  top: 0;
+}
+
+.customer-logos-section .bottom-0 {
+  bottom: 0;
+}
+
+.customer-logos-section .w-24 {
+  width: 6rem;
+}
+
+.customer-logos-section .z-10 {
+  z-index: 10;
+}
+
+.customer-logos-section .bg-gradient-to-r {
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.customer-logos-section .bg-gradient-to-l {
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+[data-theme='dark'] .customer-logos-section .from-\[\#0B1C2D\].bg-gradient-to-r {
+  background: linear-gradient(to right, #0b1c2d, transparent);
+}
+
+[data-theme='dark'] .customer-logos-section .from-\[\#0B1C2D\].bg-gradient-to-l {
+  background: linear-gradient(to left, #0b1c2d, transparent);
+}
+
+.customer-logos-section .flex {
   display: flex;
-  align-items: center;
+}
+
+.logo-track {
+  position: relative;
+}
+
+.customer-logos-section .animate-scroll {
   width: max-content;
-  min-height: 120px;
-  gap: 16px;
-  padding-inline: 12px;
+  min-height: 112px;
   animation: customer-logos-scroll 24s linear infinite;
 }
 
-.carousel-item {
-  flex: 0 0 clamp(130px, 16vw, 200px);
-  min-height: 100px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: color-mix(in srgb, var(--surface) 92%, #f4f7ff);
+.customer-logos-section .gap-16 {
+  gap: 4rem;
 }
 
-.carousel-item img {
-  width: min(150px, 75%);
-  height: auto;
+.customer-logos-section .items-center {
+  align-items: center;
+}
+
+.customer-logos-section .px-8 {
+  padding-inline: 2rem;
+}
+
+.customer-logos-section .flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.customer-logos-section .h-16 {
+  height: 4rem;
+}
+
+.customer-logos-section .w-32 {
+  width: 8rem;
+}
+
+.customer-logos-section .justify-center {
+  justify-content: center;
+}
+
+.customer-logos-section .grayscale {
+  filter: grayscale(100%);
+}
+
+.customer-logos-section .transition-all {
+  transition-property: all;
+}
+
+.customer-logos-section .duration-300 {
+  transition-duration: 300ms;
+}
+
+.customer-logos-section .opacity-50 {
+  opacity: 0.5;
+}
+
+.customer-logos-section .hover\:grayscale-0:hover {
+  filter: grayscale(0%);
+}
+
+.customer-logos-section .hover\:opacity-100:hover {
+  opacity: 1;
+}
+
+.customer-logos-section .max-w-full {
+  max-width: 100%;
+}
+
+.customer-logos-section .max-h-full {
+  max-height: 100%;
+}
+
+.customer-logos-section .object-contain {
+  object-fit: contain;
 }
 
 @keyframes customer-logos-scroll {
@@ -2272,18 +2403,12 @@ h1 {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-50% - 8px));
+    transform: translateX(calc(-50% - 2rem));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .carousel-track {
+  .customer-logos-section .animate-scroll {
     animation: none;
-  }
-}
-
-@media (max-width: 720px) {
-  .carousel-track {
-    min-height: 100px;
   }
 }

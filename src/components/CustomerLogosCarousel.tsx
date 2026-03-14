@@ -1,54 +1,74 @@
 import { useMemo } from 'react'
+import useSystemTheme from '../hooks/useSystemTheme'
 
 type CustomerLogosCarouselProps = {
   title: string
 }
 
-const logoPaths = [
-  '/images/customers/10.svg',
-  '/images/customers/3.svg',
-  '/images/customers/1.svg',
-  '/images/customers/6.svg',
-  '/images/customers/2.svg',
-  '/images/customers/8.svg',
-  '/images/customers/4.svg',
-  '/images/customers/5.svg',
-  '/images/customers/7.svg',
-  '/images/customers/9.svg',
-]
-
-const logoBasePath = import.meta.env.BASE_URL.endsWith('/')
-  ? import.meta.env.BASE_URL
-  : `${import.meta.env.BASE_URL}/`
-
-const getLogoSrc = (path: string) => `${logoBasePath}${path.replace(/^\//, '')}`
-
-const getNumericValue = (path: string) => {
-  const fileName = path.split('/').pop() ?? ''
-  const match = fileName.match(/\d+/)
-  return match ? Number(match[0]) : Number.POSITIVE_INFINITY
-}
+const logos = ['10.svg', '3.svg', '1.svg', '6.svg', '2.svg', '8.svg', '4.svg', '5.svg', '7.svg', '9.svg']
 
 function CustomerLogosCarousel({ title }: CustomerLogosCarouselProps) {
+  const { theme } = useSystemTheme()
+  const isDark = theme === 'dark'
+
   const sortedLogos = useMemo(
-    () => [...logoPaths].sort((a, b) => getNumericValue(a) - getNumericValue(b)),
+    () => [...logos].sort((a, b) => Number(a.replace(/\D/g, '')) - Number(b.replace(/\D/g, ''))),
     [],
   )
 
-  const trackLogos = useMemo(() => [...sortedLogos, ...sortedLogos], [sortedLogos])
+  const displayLogos = useMemo(() => [...sortedLogos, ...sortedLogos], [sortedLogos])
 
   return (
     <section className="customer-logos-section" aria-label={title}>
       <div className="container">
         <h2 className="customer-logos-title">{title}</h2>
 
-        <div className="customer-logos-carousel" role="list" aria-label="Logos de clientes">
-          <div className="carousel-track">
-            {trackLogos.map((logo, index) => (
-              <div className="carousel-item" key={`${logo}-${index}`} role="listitem">
-                <img src={getLogoSrc(logo)} alt={`Logo de cliente ${getNumericValue(logo)}`} loading="lazy" />
-              </div>
-            ))}
+        <div
+          className={`py-10 relative overflow-hidden w-full rounded-3xl border ${
+            isDark ? 'bg-[#0B1C2D]/80 border-[#1F6FFF]/20' : 'bg-white border-slate-200 shadow-sm'
+          }`}
+        >
+          {/* Gradientes laterales para difuminar los bordes (Efecto fade) */}
+          <div
+            className={`absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r ${
+              isDark ? 'from-[#0B1C2D] to-transparent' : 'from-white to-transparent'
+            }`}
+          ></div>
+          <div
+            className={`absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l ${
+              isDark ? 'from-[#0B1C2D] to-transparent' : 'from-white to-transparent'
+            }`}
+          ></div>
+
+          <div className="logo-track flex overflow-hidden" role="list" aria-label="Logos de clientes">
+            <div className="animate-scroll flex gap-16 items-center px-8">
+              {displayLogos.map((logo, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-32 h-16 relative flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100"
+                  role="listitem"
+                >
+                  <img
+                    src={`/images/customers/${logo}`}
+                    alt="Customer logo"
+                    className="max-w-full max-h-full object-contain"
+                    loading="lazy"
+                    onError={(e) => {
+                      // Fallback visual de ayuda en caso de que la imagen no exista aún
+                      const image = e.currentTarget
+                      image.style.display = 'none'
+                      const numMatch = logo.match(/\d+/)
+                      const num = numMatch ? numMatch[0] : ''
+                      const fallbackColor = isDark ? '#475569' : '#cbd5e1'
+
+                      if (image.parentElement) {
+                        image.parentElement.innerHTML = `<span style="font-size: 12px; font-weight: 700; color: ${fallbackColor};">LOGO ${num}</span>`
+                      }
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
