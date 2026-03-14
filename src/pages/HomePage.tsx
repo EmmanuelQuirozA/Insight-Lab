@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import SiteLayout from '../components/SiteLayout'
+import CustomerLogosCarousel from '../components/CustomerLogosCarousel'
 import '../App.css'
 
 const copy = {
@@ -119,6 +120,7 @@ const copy = {
     techStackDescription:
       'Nos integramos con las herramientas líderes del mercado para centralizar tu data.',
     techStackItems: ['Salesforce / HubSpot', 'Zapier / Make', 'Google Ads / Meta', 'Looker Studio'],
+    customerLogosTitle: 'Marcas que confían en Insight Lab',
     finalCtaTitle: '¿Listo para escalar tus ventas, no solo tus leads?',
     finalCtaDescription:
       'Agenda una sesión estratégica de 30 minutos. Analizaremos tu proceso actual y te mostraremos dónde estás perdiendo dinero.',
@@ -247,6 +249,7 @@ const copy = {
     techStackDescription:
       'We integrate with market-leading tools to centralize your data.',
     techStackItems: ['Salesforce / HubSpot', 'Zapier / Make', 'Google Ads / Meta', 'Looker Studio'],
+    customerLogosTitle: 'Brands that trust Insight Lab',
     finalCtaTitle: 'Ready to scale your sales, not just your leads?',
     finalCtaDescription:
       'Book a 30-minute strategy session. We will analyze your current process and show you where money is being lost.',
@@ -648,6 +651,8 @@ function HomePage() {
             </article>
           </div>
         </section>
+
+        <CustomerLogosCarousel title={t.customerLogosTitle} />
 
         <section className="final-cta-section" ref={finalCtaRef}>
           <div className={`container final-cta ${finalCtaVisible ? 'is-visible' : ''}`}>
