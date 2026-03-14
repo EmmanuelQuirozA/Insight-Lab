@@ -17,6 +17,12 @@ const logoPaths = [
   '/images/customers/9.svg',
 ]
 
+const logoBasePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`
+
+const getLogoSrc = (path: string) => `${logoBasePath}${path.replace(/^\//, '')}`
+
 const getNumericValue = (path: string) => {
   const fileName = path.split('/').pop() ?? ''
   const match = fileName.match(/\d+/)
@@ -40,7 +46,7 @@ function CustomerLogosCarousel({ title }: CustomerLogosCarouselProps) {
           <div className="carousel-track">
             {trackLogos.map((logo, index) => (
               <div className="carousel-item" key={`${logo}-${index}`} role="listitem">
-                <img src={logo} alt={`Logo de cliente ${getNumericValue(logo)}`} loading="lazy" />
+                <img src={getLogoSrc(logo)} alt={`Logo de cliente ${getNumericValue(logo)}`} loading="lazy" />
               </div>
             ))}
           </div>
