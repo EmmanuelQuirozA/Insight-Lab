@@ -2233,62 +2233,57 @@ h1 {
 }
 
 .customer-logos-carousel {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 12px;
-  align-items: center;
-}
-
-.carousel-control {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--text);
-  cursor: pointer;
-  font-size: 1.4rem;
-}
-
-.carousel-track {
   position: relative;
-  min-height: 180px;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 20px;
   background: color-mix(in srgb, var(--surface) 88%, #dce7ff);
-  overflow: hidden;
+  padding: 18px 0;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  min-height: 120px;
+  gap: 16px;
+  padding-inline: 12px;
+  animation: customer-logos-scroll 24s linear infinite;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
 }
 
 .carousel-item {
-  position: absolute;
-  inset: 0;
+  flex: 0 0 clamp(130px, 16vw, 200px);
+  min-height: 100px;
   display: grid;
   place-items: center;
-  opacity: 0;
-  transform: scale(0.96);
-  transition: opacity 280ms ease, transform 280ms ease;
-}
-
-.carousel-item.is-active {
-  opacity: 1;
-  transform: scale(1);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 92%, #f4f7ff);
 }
 
 .carousel-item img {
-  width: min(320px, 85%);
+  width: min(150px, 75%);
   height: auto;
 }
 
-@media (max-width: 720px) {
-  .customer-logos-carousel {
-    grid-template-columns: 1fr;
+@keyframes customer-logos-scroll {
+  from {
+    transform: translateX(0);
   }
-
-  .carousel-control {
-    justify-self: center;
+  to {
+    transform: translateX(calc(-50% - 8px));
   }
+}
 
+@media (prefers-reduced-motion: reduce) {
   .carousel-track {
-    min-height: 160px;
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .carousel-track {
+    min-height: 100px;
   }
 }
