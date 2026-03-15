@@ -1754,8 +1754,16 @@ h1 {
   text-align: center;
 }
 
+:root[data-theme='dark'] .solutions-card footer {
+  color: #dbe7ff;
+}
+
 .solutions-card.is-highlighted footer {
   color: #6a2bd0;
+}
+
+:root[data-theme='dark'] .solutions-card.is-highlighted footer {
+  color: #c8b6ff;
 }
 
 @keyframes solutions-card-reveal {
@@ -1950,7 +1958,7 @@ h1 {
 }
 
 :root[data-theme='dark'] .success-step-title {
-  color: var(--bs-heading-color);
+  color: var(--text);
 }
 
 .success-step-chevron {
