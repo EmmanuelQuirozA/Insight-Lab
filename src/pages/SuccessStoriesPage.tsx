@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import SiteLayout from '../components/SiteLayout'
 import '../App.css'
+import { buildBreadcrumbStructuredData } from '../seo/structuredData'
 
 type MethodStep = {
   id: string
@@ -135,7 +136,16 @@ function SuccessStoriesPage() {
 
 
   return (
-    <SiteLayout mainClassName="success-page">
+    <SiteLayout
+      mainClassName="success-page"
+      seoPath="/success-stories"
+      seoStructuredData={(language) =>
+        buildBreadcrumbStructuredData([
+          { name: language === 'es' ? 'Inicio' : 'Home', path: '/' },
+          { name: language === 'es' ? 'Casos de éxito' : 'Success Stories', path: '/success-stories' },
+        ])
+      }
+    >
       {({ language }) => {
         const t = copy[language]
 

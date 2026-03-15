@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import SiteLayout from '../components/SiteLayout'
 import '../App.css'
+import { buildBreadcrumbStructuredData, serviceStructuredData } from '../seo/structuredData'
 
 type SolutionCard = {
   id: string
@@ -265,7 +266,16 @@ function SolutionsPage() {
   }, [cardsVisible])
 
   return (
-    <SiteLayout>
+    <SiteLayout
+      seoPath="/solutions"
+      seoStructuredData={(language) => [
+        buildBreadcrumbStructuredData([
+          { name: language === 'es' ? 'Inicio' : 'Home', path: '/' },
+          { name: language === 'es' ? 'Soluciones' : 'Solutions', path: '/solutions' },
+        ]),
+        serviceStructuredData,
+      ]}
+    >
       {({ language }) => {
         const t = copy[language]
 

@@ -1,5 +1,6 @@
 import SiteLayout from '../components/SiteLayout'
 import '../App.css'
+import { buildBreadcrumbStructuredData } from '../seo/structuredData'
 
 
 const copy = {
@@ -81,7 +82,15 @@ const combineIconClasses = ['bi-bullseye', 'bi-lightbulb', 'bi-database', 'bi-ge
 
 function AboutPage() {
   return (
-    <SiteLayout>
+    <SiteLayout
+      seoPath="/about"
+      seoStructuredData={(language) =>
+        buildBreadcrumbStructuredData([
+          { name: language === 'es' ? 'Inicio' : 'Home', path: '/' },
+          { name: language === 'es' ? 'Nosotros' : 'About', path: '/about' },
+        ])
+      }
+    >
       {({ language }) => {
         const t = copy[language]
 

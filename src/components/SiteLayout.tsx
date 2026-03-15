@@ -4,6 +4,7 @@ import Footer from './Footer'
 import FloatingWhatsAppButton from './FloatingWhatsAppButton'
 import useSystemTheme from '../hooks/useSystemTheme'
 import useDetectedLanguage from '../hooks/useDetectedLanguage'
+import SeoHead from '../seo/SeoHead'
 
 type Language = 'es' | 'en'
 
@@ -12,6 +13,8 @@ type SiteLayoutProps = {
   mainClassName?: string
   language?: Language
   onLanguageChange?: (language: Language) => void
+  seoPath?: string
+  seoStructuredData?: (language: Language) => Record<string, unknown> | Array<Record<string, unknown>>
 }
 
 const layoutCopy = {
@@ -47,7 +50,14 @@ const layoutCopy = {
   },
 } as const
 
-function SiteLayout({ children, mainClassName, language: controlledLanguage, onLanguageChange }: SiteLayoutProps) {
+function SiteLayout({
+  children,
+  mainClassName,
+  language: controlledLanguage,
+  onLanguageChange,
+  seoPath,
+  seoStructuredData,
+}: SiteLayoutProps) {
   const [detectedLanguage, setDetectedLanguage] = useDetectedLanguage()
   const language = controlledLanguage ?? detectedLanguage
   const setLanguage = onLanguageChange ?? setDetectedLanguage
@@ -75,6 +85,12 @@ function SiteLayout({ children, mainClassName, language: controlledLanguage, onL
 
   return (
     <div className="app-shell">
+      <SeoHead
+        path={seoPath ?? (typeof window !== 'undefined' ? window.location.pathname : '/')}
+        language={language}
+        structuredData={seoStructuredData?.(language)}
+      />
+
       <Header
         logo={
           <a href="/" className="brand-name" aria-label="Insight Lab home">
