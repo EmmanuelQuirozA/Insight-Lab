@@ -83,7 +83,6 @@ const combineIconClasses = ['bi-bullseye', 'bi-lightbulb', 'bi-database', 'bi-ge
 function AboutPage() {
   return (
     <SiteLayout
-      seoPath="/about"
       seoStructuredData={(language) =>
         buildBreadcrumbStructuredData([
           { name: language === 'es' ? 'Inicio' : 'Home', path: '/' },

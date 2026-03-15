@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { PUBLIC_ROUTE_SEO, SITE_URL } from './seoConfig'
+import { getAlternateUrls, getRouteSeo, SITE_URL } from './seoConfig'
 
 type SeoHeadProps = {
   path: string
@@ -33,11 +33,24 @@ const ensureCanonicalTag = () => {
   return element
 }
 
+const ensureAlternateLinkTag = (hreflang: string) => {
+  let element = document.head.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`) as HTMLLinkElement | null
+
+  if (!element) {
+    element = document.createElement('link')
+    element.setAttribute('rel', 'alternate')
+    element.setAttribute('hreflang', hreflang)
+    document.head.appendChild(element)
+  }
+
+  return element
+}
+
 function SeoHead({ path, language, structuredData }: SeoHeadProps) {
   useEffect(() => {
-    const normalizedPath = path === '' ? '/' : path
-    const seo = PUBLIC_ROUTE_SEO[normalizedPath] ?? PUBLIC_ROUTE_SEO['/']
-    const canonicalUrl = `${SITE_URL}${seo.path}`
+    const normalizedPath = path === '' ? '/en' : path
+    const seo = getRouteSeo(normalizedPath, language)
+    const alternateUrls = getAlternateUrls(normalizedPath, language)
 
     document.title = seo.title
     document.documentElement.lang = language
@@ -46,11 +59,18 @@ function SeoHead({ path, language, structuredData }: SeoHeadProps) {
     ensureMetaTag('property', 'og:title').setAttribute('content', seo.title)
     ensureMetaTag('property', 'og:description').setAttribute('content', seo.description)
     ensureMetaTag('property', 'og:type').setAttribute('content', seo.ogType ?? 'website')
-    ensureMetaTag('property', 'og:url').setAttribute('content', canonicalUrl)
+    ensureMetaTag('property', 'og:url').setAttribute('content', alternateUrls.canonical)
     ensureMetaTag('property', 'og:image').setAttribute('content', DEFAULT_OG_IMAGE)
     ensureMetaTag('name', 'twitter:card').setAttribute('content', 'summary_large_image')
 
-    ensureCanonicalTag().setAttribute('href', canonicalUrl)
+    ensureCanonicalTag().setAttribute('href', alternateUrls.canonical)
+    ensureAlternateLinkTag(alternateUrls.currentLanguage).setAttribute('href', alternateUrls.canonical)
+
+    if (alternateUrls.alternate) {
+      ensureAlternateLinkTag(alternateUrls.alternateLanguage).setAttribute('href', alternateUrls.alternate)
+    }
+
+    ensureAlternateLinkTag('x-default').setAttribute('href', alternateUrls.xDefault)
 
     const oldStructuredData = document.getElementById('route-structured-data')
     if (oldStructuredData) {

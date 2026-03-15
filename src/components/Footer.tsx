@@ -12,16 +12,17 @@ type SocialLink = {
 type FooterProps = {
   brandName: string
   brandAccent: string
+  homeHref: string
   links: readonly FooterLink[]
   socialLinks: readonly SocialLink[]
   copyright: string
 }
 
-function Footer({ brandName, brandAccent, links, socialLinks, copyright }: FooterProps) {
+function Footer({ brandName, brandAccent, homeHref, links, socialLinks, copyright }: FooterProps) {
   return (
     <footer className="site-footer">
       <div className="container footer-inner">
-        <a href="/" className="brand-name" aria-label="RevenueOS home">
+        <a href={homeHref} className="brand-name" aria-label="RevenueOS home">
           <img src="/brand/logo_minimal.png" alt="Insight Lab logo" className="footer-brand-icon" />
           <span>
             {brandName}
