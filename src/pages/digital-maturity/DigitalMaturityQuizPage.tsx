@@ -7,6 +7,7 @@ import './quiz.css'
 import { QUESTIONS, RESULTS } from './data'
 import type { ContactFormData, Language } from './types'
 import { API_BASE_URL } from '../../config'
+import { buildBreadcrumbStructuredData } from '../../seo/structuredData'
 
 type UiCopy = {
   title: string
@@ -279,7 +280,18 @@ function DigitalMaturityQuizPage() {
   }
 
   return (
-    <SiteLayout mainClassName="quiz-page" language={language} onLanguageChange={setLanguage}>
+    <SiteLayout
+      mainClassName="quiz-page"
+      language={language}
+      onLanguageChange={setLanguage}
+      seoPath="/real-estate-diagnosis"
+      seoStructuredData={(activeLanguage) =>
+        buildBreadcrumbStructuredData([
+          { name: activeLanguage === 'es' ? 'Inicio' : 'Home', path: '/' },
+          { name: activeLanguage === 'es' ? 'Diagnóstico Real Estate' : 'Real Estate Diagnosis', path: '/real-estate-diagnosis' },
+        ])
+      }
+    >
       {() => (
         <>
         <div className="container quiz-shell">

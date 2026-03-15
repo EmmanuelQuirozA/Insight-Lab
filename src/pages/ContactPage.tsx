@@ -1,5 +1,6 @@
 import SiteLayout from '../components/SiteLayout'
 import '../App.css'
+import { buildBreadcrumbStructuredData } from '../seo/structuredData'
 
 const copy = {
   es: {
@@ -56,7 +57,16 @@ const copy = {
 
 function ContactPage() {
   return (
-    <SiteLayout mainClassName="contact-page">
+    <SiteLayout
+      mainClassName="contact-page"
+      seoPath="/contact"
+      seoStructuredData={(language) =>
+        buildBreadcrumbStructuredData([
+          { name: language === 'es' ? 'Inicio' : 'Home', path: '/' },
+          { name: language === 'es' ? 'Contacto' : 'Contact', path: '/contact' },
+        ])
+      }
+    >
       {({ language }) => {
         const t = copy[language]
 
@@ -72,7 +82,7 @@ function ContactPage() {
         </section>
 
         <section className="container contact-form-wrap contact-reveal-item bg-white">
-          <h3 className='text-black'>{t.formTitle}</h3>
+          <h2 className='text-black'>{t.formTitle}</h2>
           {language === 'es' ? (
             <div className="contact-iframe-placeholder contact-iframe-placeholder--es" role="status" aria-live="polite">
               <iframe

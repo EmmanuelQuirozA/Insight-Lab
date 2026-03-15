@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react'
 import SiteLayout from '../components/SiteLayout'
 import TrustedBrandsCarousel from '../components/TrustedBrandsCarousel'
 import '../App.css'
+import { buildHomeStructuredData } from '../seo/structuredData'
 
 const copy = {
   es: {
@@ -429,28 +430,43 @@ function HomePage() {
 
 
   return (
-    <SiteLayout>
+    <SiteLayout
+      seoPath="/"
+      seoStructuredData={(language) =>
+        buildHomeStructuredData(
+          language === 'es'
+            ? [
+                {
+                  question: '¿Qué hace Insight Lab diferente a una agencia tradicional?',
+                  answer:
+                    'Construimos sistemas de Revenue Operations con CRM, lead scoring y automatización para mejorar calidad de pipeline y cierres.',
+                },
+                {
+                  question: '¿Trabajan con real estate y turismo médico?',
+                  answer:
+                    'Sí. Especializamos estrategias de marketing y RevOps para ciclos largos de venta en desarrollos inmobiliarios y clínicas internacionales.',
+                },
+              ]
+            : [
+                {
+                  question: 'How is Insight Lab different from a traditional agency?',
+                  answer:
+                    'We build Revenue Operations systems with CRM, lead scoring, and automation to improve pipeline quality and close rates.',
+                },
+                {
+                  question: 'Do you work with real estate and medical tourism brands?',
+                  answer:
+                    'Yes. We specialize in marketing and RevOps strategies for long sales cycles in property developments and international clinics.',
+                },
+              ],
+        )
+      }
+    >
       {({ language }) => {
         const t = copy[language]
 
-        const seoSchema = {
-          '@context': 'https://schema.org',
-          '@type': 'WebPage',
-          name:
-            language === 'es'
-              ? 'Insight Lab | Marketing para Real Estate y Turismo Médico'
-              : 'Insight Lab | Marketing for Real Estate and Medical Tourism',
-          description: t.specialtiesSeoSupport,
-          about: [
-            language === 'es' ? 'Marketing Inmobiliario' : 'Real Estate Marketing',
-            language === 'es' ? 'Turismo Médico' : 'Medical Tourism Marketing',
-            language === 'es' ? 'Captación de Leads de Alto Valor' : 'High-Ticket Lead Generation',
-          ],
-        }
-
         return (
           <>
-        <script type="application/ld+json">{JSON.stringify(seoSchema)}</script>
         <section className="container hero" ref={heroSectionRef}>
           <div className={`hero-left ${heroVisible ? 'is-visible' : ''}`}>
             <div className="pill">
@@ -653,6 +669,57 @@ function HomePage() {
         </section>
 
         <TrustedBrandsCarousel title={t.customerLogosTitle} />
+
+        <section className="container" aria-labelledby="seo-navigation-title">
+          <h2 id="seo-navigation-title">{language === 'es' ? 'Explora nuestras páginas clave' : 'Explore our key pages'}</h2>
+          <p>
+            {language === 'es'
+              ? 'Conecta servicios, industrias, diagnóstico y contacto para avanzar más rápido en tu estrategia de Revenue Operations.'
+              : 'Connect services, industries, diagnosis, and contact resources to move faster with your Revenue Operations strategy.'}
+          </p>
+          <ul>
+            <li>
+              <a href="/solutions">
+                {language === 'es' ? 'Servicios de Revenue Operations y automatización' : 'Revenue Operations and automation services'}
+              </a>
+            </li>
+            <li>
+              <a href="/success-stories">
+                {language === 'es' ? 'Casos de éxito en marketing y RevOps' : 'Marketing and RevOps success stories'}
+              </a>
+            </li>
+            <li>
+              <a href="/real-estate-diagnosis">
+                {language === 'es' ? 'Diagnóstico digital para Real Estate' : 'Digital maturity diagnosis for real estate'}
+              </a>
+            </li>
+            <li>
+              <a href="/contact">
+                {language === 'es' ? 'Contacto para auditoría de crecimiento' : 'Contact us for a growth audit'}
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section className="container" aria-labelledby="faq-title">
+          <h2 id="faq-title">{language === 'es' ? 'Preguntas frecuentes' : 'Frequently asked questions'}</h2>
+          <article>
+            <h3>{language === 'es' ? '¿Qué incluye una auditoría inicial?' : 'What is included in the initial audit?'}</h3>
+            <p>
+              {language === 'es'
+                ? 'Revisamos embudo, calidad de leads, CRM, automatizaciones y puntos de fuga para priorizar acciones con impacto en revenue.'
+                : 'We review funnel performance, lead quality, CRM setup, automations, and conversion leaks to prioritize revenue-impact actions.'}
+            </p>
+          </article>
+          <article>
+            <h3>{language === 'es' ? '¿Qué tipo de empresas obtienen mejores resultados?' : 'Which businesses get the best results?'}</h3>
+            <p>
+              {language === 'es'
+                ? 'Empresas con tickets altos y ciclos complejos, como desarrollos inmobiliarios, clínicas internacionales y servicios B2B especializados.'
+                : 'High-ticket businesses with complex sales cycles, including property developments, international clinics, and specialized B2B services.'}
+            </p>
+          </article>
+        </section>
 
         <section className="final-cta-section" ref={finalCtaRef}>
           <div className={`container final-cta ${finalCtaVisible ? 'is-visible' : ''}`}>
