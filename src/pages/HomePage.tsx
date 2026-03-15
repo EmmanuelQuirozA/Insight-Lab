@@ -670,7 +670,7 @@ function HomePage() {
 
         <TrustedBrandsCarousel title={t.customerLogosTitle} />
 
-        <section className="container" aria-labelledby="seo-navigation-title">
+        {/* <section className="container" aria-labelledby="seo-navigation-title">
           <h2 id="seo-navigation-title">{language === 'es' ? 'Explora nuestras páginas clave' : 'Explore our key pages'}</h2>
           <p>
             {language === 'es'
@@ -719,7 +719,7 @@ function HomePage() {
                 : 'High-ticket businesses with complex sales cycles, including property developments, international clinics, and specialized B2B services.'}
             </p>
           </article>
-        </section>
+        </section> */}
 
         <section className="final-cta-section" ref={finalCtaRef}>
           <div className={`container final-cta ${finalCtaVisible ? 'is-visible' : ''}`}>
@@ -735,7 +735,7 @@ function HomePage() {
               </a>
             </div>
 
-            <small>{t.finalCtaFootnote}</small>
+            {/* <small>{t.finalCtaFootnote}</small> */}
           </div>
         </section>
 
