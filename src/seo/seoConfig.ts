@@ -4,110 +4,114 @@ import {
   getPathLanguage,
   getRouteKeyFromPath,
   type Language,
-  type RouteKey,
 } from '../routing/publicRoutes'
 
 export const SITE_URL = 'https://www.insightlab.com.mx'
 
-type SeoRoute = {
+export type SeoLang = 'en' | 'es'
+
+export interface SeoRoute {
   title: string
   description: string
   path: string
   ogType?: 'website' | 'article'
 }
 
-export const PUBLIC_ROUTE_SEO: Record<RouteKey, Record<Language, SeoRoute>> = {
-  home: {
-    en: {
-      title: 'Revenue Operations & Marketing Services for High-Ticket Growth | Insight Lab',
+export const PUBLIC_ROUTE_SEO: Record<SeoLang, Record<string, SeoRoute>> = {
+  en: {
+    home: {
+      title: 'Revenue Operations & Marketing Systems for Real Estate and Medical Tourism | Insight Lab',
       description:
-        'Insight Lab builds Revenue Operations and digital marketing systems for high-ticket services, real estate and medical tourism brands.',
-      path: LOCALIZED_ROUTE_MAP.home.en,
+        'Insight Lab builds Revenue Operations systems, CRM infrastructure and marketing automation for real estate developers and medical tourism clinics to increase qualified leads and revenue.',
+      path: '/en',
       ogType: 'website',
     },
-    es: {
-      title: 'Servicios de Revenue Operations y Marketing para crecimiento High-Ticket | Insight Lab',
+
+    solutions: {
+      title: 'Revenue Operations Consulting, CRM & Automation for High-Ticket Businesses',
       description:
-        'Insight Lab diseña sistemas de Revenue Operations y marketing digital para servicios high-ticket, real estate y turismo médico.',
-      path: LOCALIZED_ROUTE_MAP.home.es,
+        'Discover Insight Lab solutions: CRM implementation, lead scoring, pipeline automation and conversion systems for real estate and medical tourism companies.',
+      path: '/en/solutions',
+    },
+
+    successStories: {
+      title: 'Real Estate & Medical Marketing Case Studies | Revenue Growth Results',
+      description:
+        'See how Insight Lab improves qualified pipeline, conversion rates and revenue growth for real estate developers and medical tourism clinics.',
+      path: '/en/success-stories',
+    },
+
+    about: {
+      title: 'Insight Lab | Revenue Operations & Growth Engineering Team',
+      description:
+        'Insight Lab is a Revenue Operations consulting team helping high-ticket businesses build scalable marketing and sales systems.',
+      path: '/en/about',
+    },
+
+    contact: {
+      title: 'Book a Revenue Growth Audit | Insight Lab',
+      description:
+        'Request a strategy session to identify funnel leaks, improve pipeline quality and implement Revenue Operations systems.',
+      path: '/en/contact',
+    },
+
+    realEstateDiagnosis: {
+      title: 'Real Estate Marketing & Sales Funnel Audit | Digital Maturity Quiz',
+      description:
+        'Evaluate your real estate marketing funnel, CRM implementation and lead generation strategy with this digital maturity assessment.',
+      path: '/en/real-estate-diagnosis',
+    },
+  },
+
+  es: {
+    home: {
+      title: 'Revenue Operations y Marketing para Desarrolladoras Inmobiliarias y Clínicas | Insight Lab',
+      description:
+        'Insight Lab implementa sistemas de Revenue Operations, CRM y automatización para desarrolladoras inmobiliarias y clínicas de turismo médico que buscan generar más revenue.',
+      path: '/es',
       ogType: 'website',
     },
-  },
-  solutions: {
-    en: {
-      title: 'Revenue Operations Solutions: CRM, Lead Scoring & Automation | Insight Lab',
+
+    solutions: {
+      title: 'Consultoría en Revenue Operations, CRM y Automatización de Ventas',
       description:
-        'Explore Insight Lab solutions: CRM implementation, lead scoring, conversion architecture, automation, and performance growth systems.',
-      path: LOCALIZED_ROUTE_MAP.solutions.en,
+        'Implementamos sistemas de CRM, lead scoring, automatización y arquitectura de conversión para negocios high-ticket.',
+      path: '/es/soluciones',
     },
-    es: {
-      title: 'Soluciones de Revenue Operations: CRM, Lead Scoring y Automatización | Insight Lab',
+
+    successStories: {
+      title: 'Casos de Éxito en Marketing y Revenue Operations | Insight Lab',
       description:
-        'Conoce las soluciones de Insight Lab: implementación de CRM, lead scoring, arquitectura de conversión y automatización para crecer.',
-      path: LOCALIZED_ROUTE_MAP.solutions.es,
+        'Descubre cómo Insight Lab ayuda a empresas inmobiliarias y clínicas a mejorar su pipeline de ventas y aumentar conversiones.',
+      path: '/es/casos-de-exito',
     },
-  },
-  successStories: {
-    en: {
-      title: 'Marketing & RevOps Success Stories | Insight Lab',
+
+    about: {
+      title: 'Sobre Insight Lab | Especialistas en Revenue Operations',
       description:
-        'See how Insight Lab helps high-ticket businesses improve qualified pipeline, close rates, and measurable revenue growth.',
-      path: LOCALIZED_ROUTE_MAP.successStories.en,
+        'Insight Lab es un equipo de growth engineering enfocado en diseñar sistemas de marketing y ventas para negocios high-ticket.',
+      path: '/es/nosotros',
     },
-    es: {
-      title: 'Casos de éxito en Marketing y RevOps | Insight Lab',
+
+    contact: {
+      title: 'Solicita una Auditoría de Revenue | Insight Lab',
       description:
-        'Descubre cómo Insight Lab ayuda a empresas high-ticket a mejorar pipeline calificado, cierre comercial y crecimiento en ingresos.',
-      path: LOCALIZED_ROUTE_MAP.successStories.es,
+        'Agenda una sesión estratégica para analizar tu funnel de marketing, detectar fugas de conversión y escalar revenue.',
+      path: '/es/contacto',
     },
-  },
-  about: {
-    en: {
-      title: 'About Insight Lab | Revenue Operations & Growth Engineering Team',
+
+    realEstateDiagnosis: {
+      title: 'Diagnóstico de Marketing Inmobiliario | Evaluación de Madurez Digital',
       description:
-        'Meet Insight Lab, a growth engineering team combining strategic marketing, data, and automation to drive predictable revenue.',
-      path: LOCALIZED_ROUTE_MAP.about.en,
-    },
-    es: {
-      title: 'Nosotros en Insight Lab | Equipo de Revenue Operations y Growth Engineering',
-      description:
-        'Conoce a Insight Lab, un equipo de growth engineering que combina marketing estratégico, datos y automatización para ingresos predecibles.',
-      path: LOCALIZED_ROUTE_MAP.about.es,
-    },
-  },
-  contact: {
-    en: {
-      title: 'Contact Insight Lab | Request a Revenue Growth Audit',
-      description:
-        'Book a strategy session with Insight Lab to identify conversion leaks, improve pipeline quality, and scale revenue operations.',
-      path: LOCALIZED_ROUTE_MAP.contact.en,
-    },
-    es: {
-      title: 'Contacto Insight Lab | Solicita una auditoría de crecimiento',
-      description:
-        'Agenda una sesión estratégica con Insight Lab para detectar fugas de conversión, mejorar tu pipeline y escalar revenue operations.',
-      path: LOCALIZED_ROUTE_MAP.contact.es,
-    },
-  },
-  realEstateDiagnosis: {
-    en: {
-      title: 'Real Estate Digital Maturity Quiz | Insight Lab',
-      description:
-        'Take the digital maturity quiz for real estate developers and identify key RevOps and marketing gaps affecting your sales cycle.',
-      path: LOCALIZED_ROUTE_MAP.realEstateDiagnosis.en,
-    },
-    es: {
-      title: 'Diagnóstico de Madurez Digital Inmobiliaria | Insight Lab',
-      description:
-        'Completa el diagnóstico de madurez digital para desarrollos inmobiliarios e identifica brechas de RevOps y marketing en tu ciclo comercial.',
-      path: LOCALIZED_ROUTE_MAP.realEstateDiagnosis.es,
+        'Evalúa el nivel de madurez digital de tu desarrolladora inmobiliaria y detecta oportunidades para mejorar tu funnel de ventas.',
+      path: '/es/diagnostico-inmobiliario',
     },
   },
 }
 
 export const getRouteSeo = (pathname: string, language: Language): SeoRoute => {
   const routeKey = getRouteKeyFromPath(pathname) ?? 'home'
-  return PUBLIC_ROUTE_SEO[routeKey][language]
+  return PUBLIC_ROUTE_SEO[language][routeKey] ?? PUBLIC_ROUTE_SEO[language].home
 }
 
 export const getAlternateUrls = (pathname: string, language: Language) => {
