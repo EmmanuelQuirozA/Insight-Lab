@@ -10,6 +10,7 @@ type HeaderProps = {
   logo: ReactNode
   navItems: HeaderNavItem[]
   ctaLabel: string
+  ctaHref: string
   themeLabel: string
   theme: 'light' | 'dark'
   themeTransitionKey: number
@@ -22,6 +23,7 @@ function Header({
   logo,
   navItems,
   ctaLabel,
+  ctaHref,
   themeLabel,
   theme,
   themeTransitionKey,
@@ -238,7 +240,7 @@ function Header({
               </div>
             )}
           </div>
-          <a className="primary-btn btn" href="/contact">
+          <a className="primary-btn btn" href={ctaHref}>
             {ctaLabel}
           </a>
         </div>

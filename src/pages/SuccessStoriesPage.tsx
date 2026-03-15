@@ -138,7 +138,6 @@ function SuccessStoriesPage() {
   return (
     <SiteLayout
       mainClassName="success-page"
-      seoPath="/success-stories"
       seoStructuredData={(language) =>
         buildBreadcrumbStructuredData([
           { name: language === 'es' ? 'Inicio' : 'Home', path: '/' },

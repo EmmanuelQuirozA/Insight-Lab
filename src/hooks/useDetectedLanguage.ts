@@ -6,7 +6,7 @@ const LANGUAGE_STORAGE_KEY = 'insight-lab-language'
 
 const isLanguage = (value: string | null): value is Language => value === 'es' || value === 'en'
 
-const getStoredLanguage = (): Language | null => {
+export const getStoredLanguage = (): Language | null => {
   if (typeof window === 'undefined') {
     return null
   }
@@ -15,7 +15,7 @@ const getStoredLanguage = (): Language | null => {
   return isLanguage(storedLanguage) ? storedLanguage : null
 }
 
-const detectBrowserLanguage = (): Language => {
+export const detectBrowserLanguage = (): Language => {
   if (typeof navigator === 'undefined') {
     return 'en'
   }
@@ -25,8 +25,10 @@ const detectBrowserLanguage = (): Language => {
   return preferredLanguage.toLowerCase().startsWith('es') ? 'es' : 'en'
 }
 
+export const getPreferredLanguage = (): Language => getStoredLanguage() ?? detectBrowserLanguage()
+
 export default function useDetectedLanguage() {
-  const [language, setLanguage] = useState<Language>(() => getStoredLanguage() ?? detectBrowserLanguage())
+  const [language, setLanguage] = useState<Language>(() => getPreferredLanguage())
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

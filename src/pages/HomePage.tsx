@@ -4,6 +4,7 @@ import SiteLayout from '../components/SiteLayout'
 import TrustedBrandsCarousel from '../components/TrustedBrandsCarousel'
 import '../App.css'
 import { buildHomeStructuredData } from '../seo/structuredData'
+import { getLocalizedPath } from '../routing/publicRoutes'
 
 const copy = {
   es: {
@@ -431,7 +432,6 @@ function HomePage() {
 
   return (
     <SiteLayout
-      seoPath="/"
       seoStructuredData={(language) =>
         buildHomeStructuredData(
           language === 'es'
@@ -485,10 +485,10 @@ function HomePage() {
             <p>{t.description}</p>
 
             <div className="cta-group">
-              <a className="primary-btn btn" href="/contact">
+              <a className="primary-btn btn" href={getLocalizedPath('contact', language)}>
                 {t.primary}
               </a>
-              <a className="outline-btn btn" href="/solutions">
+              <a className="outline-btn btn" href={getLocalizedPath('solutions', language)}>
                 {t.secondary}
               </a>
             </div>
@@ -679,22 +679,22 @@ function HomePage() {
           </p>
           <ul>
             <li>
-              <a href="/solutions">
+              <a href={getLocalizedPath('solutions', language)}>
                 {language === 'es' ? 'Servicios de Revenue Operations y automatización' : 'Revenue Operations and automation services'}
               </a>
             </li>
             <li>
-              <a href="/success-stories">
+              <a href={getLocalizedPath('successStories', language)}>
                 {language === 'es' ? 'Casos de éxito en marketing y RevOps' : 'Marketing and RevOps success stories'}
               </a>
             </li>
             <li>
-              <a href="/real-estate-diagnosis">
+              <a href={getLocalizedPath('realEstateDiagnosis', language)}>
                 {language === 'es' ? 'Diagnóstico digital para Real Estate' : 'Digital maturity diagnosis for real estate'}
               </a>
             </li>
             <li>
-              <a href="/contact">
+              <a href={getLocalizedPath('contact', language)}>
                 {language === 'es' ? 'Contacto para auditoría de crecimiento' : 'Contact us for a growth audit'}
               </a>
             </li>
@@ -727,10 +727,10 @@ function HomePage() {
             <p>{t.finalCtaDescription}</p>
 
             <div className="final-cta-actions">
-              <a className="primary-btn btn" href="/contact">
+              <a className="primary-btn btn" href={getLocalizedPath('contact', language)}>
                 {t.finalCtaPrimary}
               </a>
-              <a className="outline-btn btn" href="/success-stories">
+              <a className="outline-btn btn" href={getLocalizedPath('successStories', language)}>
                 {t.finalCtaSecondary}
               </a>
             </div>

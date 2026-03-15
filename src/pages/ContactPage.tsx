@@ -59,7 +59,6 @@ function ContactPage() {
   return (
     <SiteLayout
       mainClassName="contact-page"
-      seoPath="/contact"
       seoStructuredData={(language) =>
         buildBreadcrumbStructuredData([
           { name: language === 'es' ? 'Inicio' : 'Home', path: '/' },

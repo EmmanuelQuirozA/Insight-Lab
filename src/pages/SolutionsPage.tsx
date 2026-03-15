@@ -267,7 +267,6 @@ function SolutionsPage() {
 
   return (
     <SiteLayout
-      seoPath="/solutions"
       seoStructuredData={(language) => [
         buildBreadcrumbStructuredData([
           { name: language === 'es' ? 'Inicio' : 'Home', path: '/' },

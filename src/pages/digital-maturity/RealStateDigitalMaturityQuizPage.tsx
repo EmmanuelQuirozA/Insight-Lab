@@ -59,7 +59,6 @@ function ContactPage() {
   return (
     <SiteLayout
       mainClassName="contact-page"
-      seoPath="/real-state-maturity-quiz"
       seoStructuredData={(language) =>
         buildBreadcrumbStructuredData([
           { name: language === 'es' ? 'Inicio' : 'Home', path: '/' },
