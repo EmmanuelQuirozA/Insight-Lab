@@ -5,7 +5,18 @@ type CustomerLogosCarouselProps = {
   title: string
 }
 
-const logos = ['10.svg', '3.svg', '1.svg', '6.svg', '2.svg', '8.svg', '4.svg', '5.svg', '7.svg', '9.svg']
+const logos = [
+  '10.png', 
+  '20.png', 
+  '30.png', 
+  '40.png', 
+  '50.png', 
+  '60.png', 
+  '70.png', 
+  '80.png', 
+  '90.png', 
+  '100.png'
+]
 
 function CustomerLogosCarousel({ title }: CustomerLogosCarouselProps) {
   const { theme } = useSystemTheme()
