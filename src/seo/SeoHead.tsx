@@ -1,10 +1,18 @@
 import { useEffect } from 'react'
 import { getAlternateUrls, getRouteSeo, SITE_URL } from './seoConfig'
 
+type SeoOverride = {
+  title: string
+  description: string
+  ogType?: 'website' | 'article'
+  ogImage?: string
+}
+
 type SeoHeadProps = {
   path: string
   language: 'es' | 'en'
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>
+  override?: SeoOverride
 }
 
 const DEFAULT_OG_IMAGE = `${SITE_URL}/brand/logo.png`
@@ -46,10 +54,10 @@ const ensureAlternateLinkTag = (hreflang: string) => {
   return element
 }
 
-function SeoHead({ path, language, structuredData }: SeoHeadProps) {
+function SeoHead({ path, language, structuredData, override }: SeoHeadProps) {
   useEffect(() => {
     const normalizedPath = path === '' ? '/en' : path
-    const seo = getRouteSeo(normalizedPath, language)
+    const seo = override ?? getRouteSeo(normalizedPath, language)
     const alternateUrls = getAlternateUrls(normalizedPath, language)
 
     document.title = seo.title
@@ -60,7 +68,7 @@ function SeoHead({ path, language, structuredData }: SeoHeadProps) {
     ensureMetaTag('property', 'og:description').setAttribute('content', seo.description)
     ensureMetaTag('property', 'og:type').setAttribute('content', seo.ogType ?? 'website')
     ensureMetaTag('property', 'og:url').setAttribute('content', alternateUrls.canonical)
-    ensureMetaTag('property', 'og:image').setAttribute('content', DEFAULT_OG_IMAGE)
+    ensureMetaTag('property', 'og:image').setAttribute('content', override?.ogImage ?? DEFAULT_OG_IMAGE)
     ensureMetaTag('name', 'twitter:card').setAttribute('content', 'summary_large_image')
 
     ensureCanonicalTag().setAttribute('href', alternateUrls.canonical)
@@ -84,7 +92,7 @@ function SeoHead({ path, language, structuredData }: SeoHeadProps) {
       script.text = JSON.stringify(structuredData)
       document.head.appendChild(script)
     }
-  }, [path, language, structuredData])
+  }, [path, language, structuredData, override])
 
   return null
 }

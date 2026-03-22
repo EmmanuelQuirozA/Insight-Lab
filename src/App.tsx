@@ -7,6 +7,9 @@ import ContactPage from './pages/ContactPage'
 import DigitalMaturityQuizPage from './pages/digital-maturity/DigitalMaturityQuizPage'
 import { getPreferredLanguage } from './hooks/useDetectedLanguage'
 import { getLegacyRedirectPath, getPathLanguage, LOCALIZED_ROUTE_MAP, type Language } from './routing/publicRoutes'
+import BlogLandingPage from './pages/blog/BlogLandingPage'
+import BlogPostPage from './pages/blog/BlogPostPage'
+import { getBlogSlugFromPath, isBlogIndexPath, isBlogPostPath } from './blog/utils/routes'
 
 const normalizePath = (pathname: string) => {
   if (pathname.length > 1 && pathname.endsWith('/')) {
@@ -64,6 +67,18 @@ function App() {
 
   if (pathname === LOCALIZED_ROUTE_MAP.realEstateDiagnosis.en || pathname === LOCALIZED_ROUTE_MAP.realEstateDiagnosis.es) {
     return <DigitalMaturityQuizPage />
+  }
+
+  if (isBlogIndexPath(pathname)) {
+    return <BlogLandingPage />
+  }
+
+  if (isBlogPostPath(pathname)) {
+    const slug = getBlogSlugFromPath(pathname)
+
+    if (slug) {
+      return <BlogPostPage slug={slug} />
+    }
   }
 
   redirectTo(LOCALIZED_ROUTE_MAP.home[pathLanguage])

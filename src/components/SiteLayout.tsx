@@ -20,6 +20,7 @@ type SiteLayoutProps = {
   onLanguageChange?: (language: Language) => void
   seoPath?: string
   seoStructuredData?: (language: Language) => Record<string, unknown> | Array<Record<string, unknown>>
+  seoOverride?: (language: Language) => { title: string; description: string; ogType?: 'website' | 'article'; ogImage?: string } | undefined
 }
 
 const layoutCopy = {
@@ -29,6 +30,7 @@ const layoutCopy = {
       solutions: 'Soluciones',
       successStories: 'Casos de éxito',
       contact: 'Contacto',
+      blog: 'Blog',
     },
     ctaHeader: 'Agenda tu auditoría',
     themeToggle: 'Tema',
@@ -44,6 +46,7 @@ const layoutCopy = {
       solutions: 'Solutions',
       successStories: 'Success Stories',
       contact: 'Contact',
+      blog: 'Blog',
     },
     ctaHeader: 'Request an Audit',
     themeToggle: 'Theme',
@@ -55,7 +58,7 @@ const layoutCopy = {
   },
 } as const
 
-function SiteLayout({ children, mainClassName, language: controlledLanguage, onLanguageChange, seoPath, seoStructuredData }: SiteLayoutProps) {
+function SiteLayout({ children, mainClassName, language: controlledLanguage, onLanguageChange, seoPath, seoStructuredData, seoOverride }: SiteLayoutProps) {
   const pathname = typeof window === 'undefined' ? '/en' : window.location.pathname
   const [detectedLanguage, setDetectedLanguage] = useDetectedLanguage()
   const pathLanguage = getPathLanguage(pathname)
@@ -72,8 +75,9 @@ function SiteLayout({ children, mainClassName, language: controlledLanguage, onL
       { key: 'solutions', label: t.nav.solutions, href: getLocalizedPath('solutions', language) },
       { key: 'success', label: t.nav.successStories, href: getLocalizedPath('successStories', language) },
       { key: 'contact', label: t.nav.contact, href: getLocalizedPath('contact', language) },
+      { key: 'blog', label: t.nav.blog, href: getLocalizedPath('blog', language) },
     ],
-    [language, t.nav.about, t.nav.solutions, t.nav.successStories, t.nav.contact],
+    [language, t.nav.about, t.nav.solutions, t.nav.successStories, t.nav.contact, t.nav.blog],
   )
 
   const toggleTheme = () => {
@@ -102,6 +106,11 @@ function SiteLayout({ children, mainClassName, language: controlledLanguage, onL
       return
     }
 
+    if (pathname.startsWith('/en/') || pathname.startsWith('/es/')) {
+      window.location.assign(pathname.replace(/^\/(en|es)/, `/${nextLanguage}`))
+      return
+    }
+
     window.location.assign(getLocalizedPath('home', nextLanguage))
   }
 
@@ -109,7 +118,7 @@ function SiteLayout({ children, mainClassName, language: controlledLanguage, onL
 
   return (
     <div className="app-shell">
-      <SeoHead path={seoPath ?? pathname} language={language} structuredData={seoStructuredData?.(language)} />
+      <SeoHead path={seoPath ?? pathname} language={language} structuredData={seoStructuredData?.(language)} override={seoOverride?.(language)} />
 
       <Header
         logo={
