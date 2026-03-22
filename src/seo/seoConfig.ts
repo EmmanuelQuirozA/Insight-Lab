@@ -61,6 +61,13 @@ export const PUBLIC_ROUTE_SEO: Record<SeoLang, Record<string, SeoRoute>> = {
         'Evaluate your real estate marketing funnel, CRM implementation and lead generation strategy with this digital maturity assessment.',
       path: '/en/real-estate-diagnosis',
     },
+
+    blog: {
+      title: 'Insight Lab Blog | Revenue Operations, CRM & Growth Insights',
+      description:
+        'Explore Revenue Operations, automation, CRM and demand generation insights for high-ticket and B2B growth teams.',
+      path: '/en/blog',
+    },
   },
 
   es: {
@@ -106,6 +113,13 @@ export const PUBLIC_ROUTE_SEO: Record<SeoLang, Record<string, SeoRoute>> = {
         'Evalúa el nivel de madurez digital de tu desarrolladora inmobiliaria y detecta oportunidades para mejorar tu funnel de ventas.',
       path: '/es/diagnostico-inmobiliario',
     },
+
+    blog: {
+      title: 'Blog de Insight Lab | Revenue Operations, CRM y Conversión',
+      description:
+        'Contenido sobre Revenue Operations, automatización, CRM y estrategia digital para negocios high-ticket y B2B.',
+      path: '/es/blog',
+    },
   },
 }
 
@@ -118,10 +132,11 @@ export const getAlternateUrls = (pathname: string, language: Language) => {
   const current = getRouteSeo(pathname, language)
   const routeLanguage = getPathLanguage(pathname) ?? language
   const alternateLanguage: Language = routeLanguage === 'en' ? 'es' : 'en'
-  const alternatePath = getAlternateLanguagePath(pathname, alternateLanguage)
+  const alternatePath = getAlternateLanguagePath(pathname, alternateLanguage) ?? pathname.replace(/^\/(en|es)/, `/${alternateLanguage}`)
+  const canonicalPath = pathname.startsWith('/en') || pathname.startsWith('/es') ? pathname : current.path
 
   return {
-    canonical: `${SITE_URL}${current.path}`,
+    canonical: `${SITE_URL}${canonicalPath}`,
     currentLanguage: routeLanguage,
     alternateLanguage,
     alternate: alternatePath ? `${SITE_URL}${alternatePath}` : null,
@@ -139,4 +154,5 @@ export const RECOMMENDED_URL_MIGRATIONS: Array<{ current: string; recommended: s
   { current: '/contact', recommended: LOCALIZED_ROUTE_MAP.contact.en },
   { current: '/real-estate-diagnosis', recommended: LOCALIZED_ROUTE_MAP.realEstateDiagnosis.en },
   { current: '/real-state-maturity-quiz', recommended: LOCALIZED_ROUTE_MAP.realEstateDiagnosis.en },
+  { current: '/blog', recommended: LOCALIZED_ROUTE_MAP.blog.en },
 ]
