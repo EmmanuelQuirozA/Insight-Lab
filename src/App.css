@@ -2461,7 +2461,6 @@ h1 {
 
 .blog-card__meta,
 .blog-post__eyebrow,
-.blog-post__author,
 .blog-card__footer {
   display: flex;
   flex-wrap: wrap;
@@ -2469,6 +2468,46 @@ h1 {
   align-items: center;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.blog-post__author-section {
+  display: grid;
+  gap: 8px;
+}
+
+.blog-post__author-heading {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.blog-post__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.blog-post__author-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.blog-post__author-info {
+  display: grid;
+  gap: 3px;
+}
+
+.blog-post__author-info strong {
+  color: var(--text);
 }
 
 .blog-card h3 {

@@ -13,8 +13,9 @@ export const blogPosts: BlogPost[] = [
     category: 'revops',
     tags: ['Revenue Operations', 'CRM', 'Pipeline', 'B2B'],
     author: {
-      name: 'Equipo Insight Lab',
-      role: 'Revenue Growth Strategists',
+      name: 'Valentina Torres',
+      role: 'Revenue Growth Strategist',
+      avatar: '/images/team/valentina-torres.svg',
     },
     createdAt: '2026-03-12',
     readingTime: '7 min',
@@ -68,8 +69,9 @@ export const blogPosts: BlogPost[] = [
     category: 'automation',
     tags: ['Automatización', 'Lead Nurturing', 'High-Ticket', 'Ventas'],
     author: {
-      name: 'Equipo Insight Lab',
+      name: 'Diego Ramírez',
       role: 'Automation & CRM Architects',
+      avatar: '/images/team/diego-ramirez.svg',
     },
     createdAt: '2026-03-18',
     readingTime: '6 min',
@@ -119,8 +121,9 @@ export const blogPosts: BlogPost[] = [
     category: 'growth',
     tags: ['Demand Generation', 'B2B', 'Conversión', 'Contenido'],
     author: {
-      name: 'Equipo Insight Lab',
+      name: 'Camila Ortega',
       role: 'Demand Generation Strategists',
+      avatar: '/images/team/camila-ortega.svg',
     },
     createdAt: '2026-03-21',
     readingTime: '8 min',
