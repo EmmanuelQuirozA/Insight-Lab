@@ -2,161 +2,220 @@ import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
   {
-    id: 'revops-pipeline-clarity',
+    id: 'inversion-tulum-baby-boomers-vs-florida-es',
     locale: 'es',
-    title: 'Revenue Operations para dejar de perseguir leads y empezar a construir pipeline real',
-    slug: 'revenue-operations-pipeline-real',
+    title: 'Por qué los Baby Boomers están dejando de comprar en Florida para invertir en Tulum',
+    slug: 'inversion-tulum-baby-boomers-vs-florida',
     excerpt:
-      'Cómo diseñar una operación comercial donde marketing, ventas y CRM comparten una misma definición de oportunidad y una sola fuente de verdad.',
+      'La inversión en Tulum para Baby Boomers deja de ser tendencia y se consolida como una decisión financiera basada en ROI, bienestar y estrategia de Revenue Operations.',
     coverImage: '/images/real_state_development_marketing.png',
-    coverImageAlt: 'Equipo analizando pipeline de ventas, CRM y revenue operations.',
+    coverImageAlt: 'Inversionistas analizando oportunidades inmobiliarias de lujo en Tulum frente a Florida.',
     category: 'revops',
-    tags: ['Revenue Operations', 'CRM', 'Pipeline', 'B2B'],
+    tags: ['Inversión en Tulum', 'Baby Boomers', 'Real Estate', 'RevOps', 'Medical Tourism'],
     author: {
-      name: 'Valentina Torres',
-      role: 'Revenue Growth Strategist',
-      avatar: '/images/team/valentina-torres.svg',
+      name: 'Emmanuel Quiroz Andrade',
+      role: 'CTO de Insight Lab',
     },
-    createdAt: '2026-03-12',
-    readingTime: '7 min',
-    seoTitle: 'Revenue Operations para construir pipeline real | Insight Lab',
+    createdAt: '2026-03-28',
+    readingTime: '9 min',
+    seoTitle: 'Inversión en Tulum para Baby Boomers: El fin de la era Florida',
     seoDescription:
-      'Aprende cómo alinear marketing, ventas y CRM para generar pipeline predecible en negocios high-ticket y B2B.',
+      'Descubre por qué los Baby Boomers eligen la inversión en Tulum sobre Florida. Analizamos el ROI inmobiliario, medical tourism y la estrategia RevOps ganadora.',
     featured: true,
     content: [
       {
         type: 'paragraph',
         content:
-          'Muchas empresas invierten en campañas, contenido y seguimiento comercial sin una definición compartida de qué significa un lead calificado. El resultado es ruido operativo, reportes contradictorios y decisiones lentas.',
-      },
-      {
-        type: 'heading',
-        content: 'Qué corrige Revenue Operations en una operación de crecimiento',
+          'El mercado inmobiliario de lujo está viviendo un desplazamiento sin precedentes. Mientras Florida ha sido históricamente el refugio predilecto para el retiro, hoy el capital está cruzando la frontera. La inversión en Tulum para Baby Boomers no es una moda pasajera; es una decisión financiera y de estilo de vida basada en datos.',
       },
       {
         type: 'paragraph',
         content:
-          'Revenue Operations no es un dashboard bonito. Es la disciplina que conecta adquisición, calificación, seguimiento y cierre bajo procesos comunes. Cuando la data vive en un sistema unificado, el equipo deja de optimizar métricas aisladas y empieza a optimizar revenue.',
+          'El inversionista estadounidense actual ya no busca solo un departamento frente al mar. Busca un ecosistema que integre calidad de vida y servicios de salud de primer nivel a una fracción del costo. En este escenario, México se posiciona como destino ganador, pero solo para aquellas desarrolladoras que saben gestionar esta demanda.',
+      },
+      {
+        type: 'heading',
+        content: 'El declive de Florida frente al auge de la Riviera Maya',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Florida enfrenta retos que están erosionando su atractivo: costos impositivos en aumento, saturación del mercado y un costo de vida que se ha disparado en la última década. En contraste, Tulum ofrece un ROI inmobiliario que, según proyecciones del sector, supera consistentemente los márgenes de los mercados tradicionales en Estados Unidos.',
       },
       {
         type: 'list',
         items: [
-          'Define criterios de MQL, SQL y oportunidad con impacto comercial real.',
-          'Conecta campañas con etapas del pipeline y no solo con formularios enviados.',
-          'Reduce fricción entre marketing, SDRs y ventas consultivas.',
+          'Costos de mantenimiento: el property tax y los seguros en zonas costeras de EE. UU. son significativamente más altos que en Quintana Roo.',
+          'Poder adquisitivo: el dólar mantiene una posición competitiva que permite acceder a propiedades de ultra-lujo en México con el mismo capital de un departamento promedio en Miami.',
+          'Infraestructura de salud: la cercanía con centros de medical tourism de clase mundial en la zona es un factor decisivo para el perfil de 60+ años.',
         ],
+      },
+      {
+        type: 'heading',
+        content: 'La conexión crítica entre Real Estate y Medical Tourism',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Para el Baby Boomer, la inversión es inseparable del bienestar. Un desarrollo inmobiliario en Tulum que no esté conectado, digital o físicamente, con servicios de salud premium, está perdiendo competitividad. Aquí es donde la infraestructura tecnológica juega un papel vital.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'En Insight Lab, hemos identificado que las desarrolladoras que integran automatización y una estrategia de Revenue Operations (RevOps) logran cerrar tratos un 40% más rápido. El inversionista extranjero no espera; demanda transparencia y una respuesta inmediata basada en datos, no en promesas.',
+      },
+      {
+        type: 'heading',
+        content: 'El error que cometen las desarrolladoras al captar este perfil',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Muchos directores cometen el error de tratar al inversionista extranjero como a un comprador local. El Baby Boomer de EE. UU. requiere un sistema de nutrición de prospectos (Lead Nurturing) altamente sofisticado. No basta con un anuncio en Facebook; se requiere una estructura de CRM que gestione la confianza.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Marketing Automation: configurar flujos de contenido que eduquen sobre la seguridad jurídica en México.',
+          'Alineación de ventas: asegurar que el equipo comercial hable el lenguaje de inversión del norteamericano (cap rates, escrow accounts).',
+          'Trazabilidad de datos: utilizar sistemas que permitan medir exactamente qué canal está trayendo al inversionista con mayor capital.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'Por qué la tecnología es el diferencial de cierre',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'La inversión en Tulum para Baby Boomers es una carrera de confianza. Si tu proceso de ventas es manual y lento, la desconfianza crece. La implementación de una infraestructura de CRM sólida permite que cada interacción con el prospecto sea personalizada y profesional, elevando la percepción de marca de la desarrolladora.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'En Insight Lab, ayudamos a las firmas de Real Estate a dejar de ser simples vendedores de casas para convertirse en socios de inversión. La tecnología permite que tu inventario sea visible para el perfil correcto en el momento exacto, optimizando cada dólar invertido en marketing.',
+      },
+      {
+        type: 'heading',
+        content: '¿Tu infraestructura de ventas está lista para el mercado extranjero?',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'El flujo de capital hacia el Caribe mexicano es masivo, pero la ventana de oportunidad se cierra para quienes no profesionalizan su operación. En Insight Lab, diagnosticamos y optimizamos tu ecosistema de Revenue Operations para conectar con este mercado de alto valor.',
       },
       {
         type: 'quote',
-        content: 'Si marketing genera volumen pero ventas no encuentra intención, no hay crecimiento: hay desperdicio.',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Para Insight Lab, una base sólida empieza por trazabilidad. Cada lead debe poder rastrearse desde la fuente original hasta la conversación comercial y el revenue atribuido. Esa visibilidad permite decidir con claridad dónde invertir, qué automatizar y qué proceso rediseñar.',
+        content: 'Solicita una sesión de diagnóstico de RevOps con nuestro equipo experto aquí.',
       },
     ],
   },
   {
-    id: 'automation-nurturing-high-ticket',
-    locale: 'es',
-    title: 'Automatización para negocios high-ticket: menos seguimiento manual, más avance comercial',
-    slug: 'automatizacion-negocios-high-ticket',
+    id: 'tulum-investment-baby-boomers-vs-florida-en',
+    locale: 'en',
+    title: 'Why Baby Boomers Are Stopping Purchases in Florida to Invest in Tulum',
+    slug: 'tulum-investment-baby-boomers-vs-florida',
     excerpt:
-      'Una arquitectura de automatización bien diseñada acelera el ciclo comercial sin sacrificar personalización ni confianza en ventas consultivas.',
-    coverImage: '/images/medical_tourism_clinics_marketing.png',
-    coverImageAlt: 'Panel de automatización, CRM y secuencias de nurturing para ventas high-ticket.',
-    category: 'automation',
-    tags: ['Automatización', 'Lead Nurturing', 'High-Ticket', 'Ventas'],
-    author: {
-      name: 'Diego Ramírez',
-      role: 'Automation & CRM Architects',
-      avatar: '/images/team/diego-ramirez.svg',
-    },
-    createdAt: '2026-03-18',
-    readingTime: '6 min',
-    seoTitle: 'Automatización para negocios high-ticket y B2B | Insight Lab',
-    seoDescription:
-      'Descubre cómo implementar automatización comercial para nutrir leads, mejorar velocidad de respuesta y aumentar conversión.',
-    featured: true,
-    content: [
-      {
-        type: 'paragraph',
-        content:
-          'En negocios high-ticket, el lead rara vez compra en el primer contacto. Necesita contexto, confianza, seguimiento y timing. Ahí es donde la automatización deja de ser un lujo y se convierte en infraestructura comercial.',
-      },
-      {
-        type: 'heading',
-        content: 'Automatizar no es despersonalizar',
-      },
-      {
-        type: 'paragraph',
-        content:
-          'La mejor automatización combina señales de intención con mensajes relevantes. No se trata de disparar correos genéricos, sino de activar secuencias según comportamiento, origen del lead, interés y etapa del pipeline.',
-      },
-      {
-        type: 'list',
-        items: [
-          'Respuestas inmediatas cuando entra un lead de alta intención.',
-          'Secuencias de nutrición para leads aún no listos para compra.',
-          'Alertas al equipo comercial cuando el prospecto muestra intención clara.',
-        ],
-      },
-      {
-        type: 'paragraph',
-        content:
-          'Cuando estas reglas viven conectadas a tu CRM, el seguimiento deja de depender de memoria o disciplina individual. El resultado es una operación más rápida, más consistente y mucho más medible.',
-      },
-    ],
-  },
-  {
-    id: 'demand-gen-b2b-trust',
-    locale: 'es',
-    title: 'Generación de demanda B2B: cómo construir confianza antes de pedir la llamada',
-    slug: 'generacion-demanda-b2b-confianza',
-    excerpt:
-      'La demanda de calidad no se construye solo con pauta: requiere contenido, contexto y una narrativa alineada con el proceso comercial.',
+      'Tulum investment for Baby Boomers is no longer a trend, but a strategic decision driven by real estate ROI, wellness access, and Revenue Operations execution.',
     coverImage: '/images/real_state_development_marketing.png',
-    coverImageAlt: 'Estrategia digital B2B con contenido, demanda y optimización de conversión.',
-    category: 'growth',
-    tags: ['Demand Generation', 'B2B', 'Conversión', 'Contenido'],
+    coverImageAlt: 'Luxury real estate investors comparing Tulum opportunities versus Florida.',
+    category: 'revops',
+    tags: ['Tulum Investment', 'Baby Boomers', 'Real Estate', 'RevOps', 'Medical Tourism'],
     author: {
-      name: 'Camila Ortega',
-      role: 'Demand Generation Strategists',
-      avatar: '/images/team/camila-ortega.svg',
+      name: 'Emmanuel Quiroz Andrade',
+      role: 'CTO of Insight Lab',
     },
-    createdAt: '2026-03-21',
-    readingTime: '8 min',
-    seoTitle: 'Generación de demanda B2B y conversión | Insight Lab',
+    createdAt: '2026-03-28',
+    readingTime: '9 min',
+    seoTitle: 'Tulum Investment for Baby Boomers: The End of the Florida Era',
     seoDescription:
-      'Un enfoque práctico para construir demanda B2B, elevar confianza y mejorar la calidad del pipeline desde marketing.',
-    featured: false,
+      'Discover why Baby Boomers are choosing Tulum investment over Florida. We break down real estate ROI, medical tourism, and the winning RevOps strategy.',
+    featured: true,
     content: [
       {
         type: 'paragraph',
         content:
-          'Cuando el producto es complejo o la venta es consultiva, pedir una llamada demasiado pronto suele reducir conversión. La confianza se construye antes del formulario, con activos que respondan objeciones reales y eleven la percepción de valor.',
-      },
-      {
-        type: 'heading',
-        content: 'Qué necesita una estrategia de demanda orientada a revenue',
-      },
-      {
-        type: 'list',
-        items: [
-          'Mensajes alineados al problema de negocio, no a features aislados.',
-          'Contenido que ayude a comparar escenarios, riesgos y oportunidades.',
-          'Rutas de conversión progresivas para captar intención sin fricción innecesaria.',
-        ],
+          'The luxury real estate market is experiencing an unprecedented shift. While Florida has long been a preferred retirement haven, capital is now crossing borders. Tulum investment for Baby Boomers is not a passing trend; it is a data-driven financial and lifestyle decision.',
       },
       {
         type: 'paragraph',
         content:
-          'El objetivo no es solo generar tráfico. Es mover prospectos desde curiosidad hasta conversación comercial con evidencia, claridad y timing. Un blog bien integrado ayuda precisamente a eso: educa, segmenta intención y refuerza posicionamiento.',
+          'Today\'s U.S. investor is no longer looking for only an oceanfront condo. They want an ecosystem that combines quality of life with top-tier healthcare services at a fraction of the cost. In this context, Mexico is emerging as the winning destination, but only for developers that can operationalize this demand.',
+      },
+      {
+        type: 'heading',
+        content: 'Florida\'s decline versus the Riviera Maya boom',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Florida faces challenges that are eroding its appeal: rising tax burden, market saturation, and a cost of living that has soared over the last decade. By contrast, Tulum offers real estate ROI that, according to sector projections, consistently outperforms the margins of traditional U.S. markets.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Maintenance costs: property tax and coastal insurance in the U.S. are significantly higher than in Quintana Roo.',
+          'Purchasing power: a strong dollar enables access to ultra-luxury properties in Mexico for the same capital required for an average Miami unit.',
+          'Healthcare infrastructure: proximity to world-class medical tourism hubs is a decisive factor for the 60+ profile.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'The critical connection between Real Estate and Medical Tourism',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'For Baby Boomers, investment is inseparable from wellbeing. A Tulum real estate development that is not digitally or physically connected to premium healthcare services loses competitiveness. This is where technology infrastructure becomes essential.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'At Insight Lab, we have identified that developers integrating automation and a Revenue Operations (RevOps) strategy close deals 40% faster. Foreign investors do not wait; they demand transparency and immediate, data-backed responses—not promises.',
+      },
+      {
+        type: 'heading',
+        content: 'The mistake developers make when targeting this profile',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Many directors make the mistake of treating foreign investors like local buyers. U.S. Baby Boomers require a highly sophisticated lead nurturing system. A Facebook ad alone is not enough; a CRM framework that manages trust is required.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Marketing Automation: configure educational content flows around legal certainty in Mexico.',
+          'Sales alignment: ensure commercial teams speak the U.S. investment language (cap rates, escrow accounts).',
+          'Data traceability: implement systems that measure exactly which channel attracts the highest-capital investor profile.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'Why technology is the real closing differentiator',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Tulum investment for Baby Boomers is a trust race. If your sales process is manual and slow, distrust grows. Implementing robust CRM infrastructure enables personalized and professional interactions at every touchpoint, elevating the developer\'s brand perception.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'At Insight Lab, we help Real Estate firms stop being simple home sellers and become investment partners. Technology makes your inventory visible to the right profile at the right moment, optimizing every dollar invested in marketing.',
+      },
+      {
+        type: 'heading',
+        content: 'Is your sales infrastructure ready for the foreign market?',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Capital flow into the Mexican Caribbean is massive, but the opportunity window is closing for firms that fail to professionalize operations. At Insight Lab, we diagnose and optimize your Revenue Operations ecosystem to connect with this high-value market.',
       },
       {
         type: 'quote',
-        content: 'La mejor estrategia de demanda no empuja al lead: le reduce incertidumbre.',
+        content: 'Request a RevOps diagnostic session with our expert team here.',
       },
     ],
   },
