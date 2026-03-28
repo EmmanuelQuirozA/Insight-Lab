@@ -8,13 +8,14 @@ export const blogPosts: BlogPost[] = [
     slug: 'inversion-tulum-baby-boomers-vs-florida',
     excerpt:
       'La inversión en Tulum para Baby Boomers deja de ser tendencia y se consolida como una decisión financiera basada en ROI, bienestar y estrategia de Revenue Operations.',
-    coverImage: '/images/real_state_development_marketing.png',
+    coverImage: '/images/house_for_sale_in_tulum.png',
     coverImageAlt: 'Inversionistas analizando oportunidades inmobiliarias de lujo en Tulum frente a Florida.',
     category: 'revops',
     tags: ['Inversión en Tulum', 'Baby Boomers', 'Real Estate', 'RevOps', 'Medical Tourism'],
     author: {
       name: 'Emmanuel Quiroz Andrade',
       role: 'CTO de Insight Lab',
+      avatar: '/images/team/emmanuel_quiroz_casual.jpg',
     },
     createdAt: '2026-03-28',
     readingTime: '9 min',
@@ -117,13 +118,14 @@ export const blogPosts: BlogPost[] = [
     slug: 'tulum-investment-baby-boomers-vs-florida',
     excerpt:
       'Tulum investment for Baby Boomers is no longer a trend, but a strategic decision driven by real estate ROI, wellness access, and Revenue Operations execution.',
-    coverImage: '/images/real_state_development_marketing.png',
+    coverImage: '/images/house_for_sale_in_tulum.png',
     coverImageAlt: 'Luxury real estate investors comparing Tulum opportunities versus Florida.',
     category: 'revops',
     tags: ['Tulum Investment', 'Baby Boomers', 'Real Estate', 'RevOps', 'Medical Tourism'],
     author: {
       name: 'Emmanuel Quiroz Andrade',
       role: 'CTO of Insight Lab',
+      avatar: '/images/team/emmanuel_quiroz_casual.jpg',
     },
     createdAt: '2026-03-28',
     readingTime: '9 min',
