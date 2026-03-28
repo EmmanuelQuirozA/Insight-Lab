@@ -2622,3 +2622,79 @@ h1 {
     flex-direction: column;
   }
 }
+
+.cookie-consent-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 120;
+  margin: 0 auto;
+  max-width: 920px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgb(10 17 37 / 20%);
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.cookie-consent-banner__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cookie-consent-banner__description {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cookie-consent-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cookie-consent-banner__button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+}
+
+.cookie-consent-banner__button--reject,
+.cookie-consent-banner__button--configure {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.cookie-consent-banner__button--accept {
+  background: var(--primary);
+  color: #fff;
+}
+
+.cookie-consent-banner__button--accept:hover {
+  background: var(--primary-strong);
+}
+
+@media (max-width: 640px) {
+  .cookie-consent-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 14px;
+  }
+
+  .cookie-consent-banner__actions {
+    justify-content: stretch;
+  }
+
+  .cookie-consent-banner__button {
+    width: 100%;
+  }
+}

@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import AboutPage from './pages/AboutPage'
 import HomePage from './pages/HomePage'
 import SolutionsPage from './pages/SolutionsPage'
@@ -11,6 +11,14 @@ import BlogLandingPage from './pages/blog/BlogLandingPage'
 import BlogPostPage from './pages/blog/BlogPostPage'
 import { getBlogSlugFromPath, isBlogIndexPath, isBlogPostPath } from './blog/utils/routes'
 import { useUtmTracking } from './hooks/useUtmTracking'
+import CookieConsentBanner from './components/CookieConsentBanner'
+import {
+  applyDefaultConsent,
+  denyAnalyticsConsent,
+  getStoredConsent,
+  grantAnalyticsConsent,
+  setStoredConsent,
+} from './analytics/consentManager'
 
 const normalizePath = (pathname: string) => {
   if (pathname.length > 1 && pathname.endsWith('/')) {
@@ -30,8 +38,31 @@ function redirectTo(path: string) {
 
 function App() {
   useUtmTracking()
+
+  const [showCookieBanner, setShowCookieBanner] = useState(false)
   const pathname = useMemo(() => (typeof window === 'undefined' ? '/en' : normalizePath(window.location.pathname)), [])
   const preferredLanguage: Language = getPreferredLanguage()
+
+  useEffect(() => {
+    // Asegura denied por defecto en primera carga, alineado con Consent Mode.
+    applyDefaultConsent()
+
+    const storedConsent = getStoredConsent()
+
+    if (storedConsent === 'accepted') {
+      grantAnalyticsConsent()
+      setShowCookieBanner(false)
+      return
+    }
+
+    if (storedConsent === 'rejected') {
+      denyAnalyticsConsent()
+      setShowCookieBanner(false)
+      return
+    }
+
+    setShowCookieBanner(true)
+  }, [])
 
   const pathLanguage = getPathLanguage(pathname)
 
@@ -47,44 +78,52 @@ function App() {
     return null
   }
 
-  if (pathname === LOCALIZED_ROUTE_MAP.home.en || pathname === LOCALIZED_ROUTE_MAP.home.es) {
-    return <HomePage />
+  const handleAcceptCookies = () => {
+    setStoredConsent('accepted')
+    grantAnalyticsConsent()
+    setShowCookieBanner(false)
   }
+
+  const handleRejectCookies = () => {
+    setStoredConsent('rejected')
+    denyAnalyticsConsent()
+    setShowCookieBanner(false)
+  }
+
+  let page = <HomePage />
 
   if (pathname === LOCALIZED_ROUTE_MAP.solutions.en || pathname === LOCALIZED_ROUTE_MAP.solutions.es) {
-    return <SolutionsPage />
-  }
-
-  if (pathname === LOCALIZED_ROUTE_MAP.about.en || pathname === LOCALIZED_ROUTE_MAP.about.es) {
-    return <AboutPage />
-  }
-
-  if (pathname === LOCALIZED_ROUTE_MAP.successStories.en || pathname === LOCALIZED_ROUTE_MAP.successStories.es) {
-    return <SuccessStoriesPage />
-  }
-
-  if (pathname === LOCALIZED_ROUTE_MAP.contact.en || pathname === LOCALIZED_ROUTE_MAP.contact.es) {
-    return <ContactPage />
-  }
-
-  if (pathname === LOCALIZED_ROUTE_MAP.realEstateDiagnosis.en || pathname === LOCALIZED_ROUTE_MAP.realEstateDiagnosis.es) {
-    return <DigitalMaturityQuizPage />
-  }
-
-  if (isBlogIndexPath(pathname)) {
-    return <BlogLandingPage />
-  }
-
-  if (isBlogPostPath(pathname)) {
+    page = <SolutionsPage />
+  } else if (pathname === LOCALIZED_ROUTE_MAP.about.en || pathname === LOCALIZED_ROUTE_MAP.about.es) {
+    page = <AboutPage />
+  } else if (pathname === LOCALIZED_ROUTE_MAP.successStories.en || pathname === LOCALIZED_ROUTE_MAP.successStories.es) {
+    page = <SuccessStoriesPage />
+  } else if (pathname === LOCALIZED_ROUTE_MAP.contact.en || pathname === LOCALIZED_ROUTE_MAP.contact.es) {
+    page = <ContactPage />
+  } else if (pathname === LOCALIZED_ROUTE_MAP.realEstateDiagnosis.en || pathname === LOCALIZED_ROUTE_MAP.realEstateDiagnosis.es) {
+    page = <DigitalMaturityQuizPage />
+  } else if (isBlogIndexPath(pathname)) {
+    page = <BlogLandingPage />
+  } else if (isBlogPostPath(pathname)) {
     const slug = getBlogSlugFromPath(pathname)
 
     if (slug) {
-      return <BlogPostPage slug={slug} />
+      page = <BlogPostPage slug={slug} />
+    } else {
+      redirectTo(LOCALIZED_ROUTE_MAP.home[pathLanguage])
+      return null
     }
+  } else if (pathname !== LOCALIZED_ROUTE_MAP.home.en && pathname !== LOCALIZED_ROUTE_MAP.home.es) {
+    redirectTo(LOCALIZED_ROUTE_MAP.home[pathLanguage])
+    return null
   }
 
-  redirectTo(LOCALIZED_ROUTE_MAP.home[pathLanguage])
-  return null
+  return (
+    <>
+      {page}
+      {showCookieBanner ? <CookieConsentBanner onAccept={handleAcceptCookies} onReject={handleRejectCookies} /> : null}
+    </>
+  )
 }
 
 export default App
