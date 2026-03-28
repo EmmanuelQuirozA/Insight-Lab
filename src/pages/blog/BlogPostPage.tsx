@@ -10,6 +10,7 @@ const copy = {
     back: 'Volver al blog',
     related: 'Artículos relacionados',
     relatedDescription: 'Continúa explorando ideas para mejorar revenue, automatización y conversión.',
+    writtenBy: 'Escrito por',
     notFoundTitle: 'Artículo no encontrado',
     notFoundBody: 'El artículo que buscas no existe o todavía no está publicado.',
   },
@@ -17,6 +18,7 @@ const copy = {
     back: 'Back to blog',
     related: 'Related posts',
     relatedDescription: 'Keep exploring ideas to improve revenue, automation and conversion.',
+    writtenBy: 'Written by',
     notFoundTitle: 'Post not found',
     notFoundBody: 'The post you are looking for does not exist or has not been published yet.',
   },
@@ -109,10 +111,24 @@ function BlogPostPage({ slug }: { slug: string }) {
                     <h1>{post.title}</h1>
                     <p>{post.excerpt}</p>
 
-                    <div className="blog-post__author">
-                      <strong>{post.author.name}</strong>
-                      <span>{post.author.role}</span>
-                    </div>
+                    <section className="blog-post__author-section" aria-label={t.writtenBy}>
+                      <p className="blog-post__author-heading">{t.writtenBy}</p>
+                      <div className="blog-post__author">
+                        {post.author.avatar ? (
+                          <img
+                            src={post.author.avatar}
+                            alt={`${post.author.name} - ${post.author.role}`}
+                            className="blog-post__author-avatar"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        ) : null}
+                        <div className="blog-post__author-info">
+                          <strong>{post.author.name}</strong>
+                          <span>{post.author.role}</span>
+                        </div>
+                      </div>
+                    </section>
                   </header>
 
                   <img src={post.coverImage} alt={post.coverImageAlt} className="blog-post__cover" />
