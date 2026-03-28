@@ -10,6 +10,7 @@ import { getLegacyRedirectPath, getPathLanguage, LOCALIZED_ROUTE_MAP, type Langu
 import BlogLandingPage from './pages/blog/BlogLandingPage'
 import BlogPostPage from './pages/blog/BlogPostPage'
 import { getBlogSlugFromPath, isBlogIndexPath, isBlogPostPath } from './blog/utils/routes'
+import { useUtmTracking } from './hooks/useUtmTracking'
 
 const normalizePath = (pathname: string) => {
   if (pathname.length > 1 && pathname.endsWith('/')) {
@@ -28,6 +29,7 @@ function redirectTo(path: string) {
 }
 
 function App() {
+  useUtmTracking()
   const pathname = useMemo(() => (typeof window === 'undefined' ? '/en' : normalizePath(window.location.pathname)), [])
   const preferredLanguage: Language = getPreferredLanguage()
 
