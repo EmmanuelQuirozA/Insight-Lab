@@ -138,7 +138,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Solicita tu diagnóstico de automatización gratuito.',
+        content: 'Agenda tu auditoría aquí.',
       },
     ],
   },
@@ -279,7 +279,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Request your free automation diagnostic.',
+        content: 'Book your audit here.',
       },
     ],
   },
@@ -406,7 +406,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         content:
-          'Agenda tu llamada estratégica.',
+          'Agenda tu auditoría aquí.',
       },
     ],
   },
@@ -534,7 +534,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         content:
-          'Book your strategy call.',
+          'Book your audit here.',
       },
     ],
   },
@@ -668,7 +668,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         content:
-          'Solicita tu Auditoría gratuita de 30 minutos hoy y empieza a crecer con sistema, no con suerte.',
+          'Agenda tu auditoría aquí.',
       },
     ],
   },
@@ -801,7 +801,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         content:
-          'Book your free 30-minute audit today and start scaling with a system, not luck.',
+          'Book your audit here.',
       },
     ],
   },
@@ -912,7 +912,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Solicita una sesión de diagnóstico de RevOps con nuestro equipo experto aquí.',
+        content: 'Agenda tu auditoría aquí.',
       },
     ],
   },
@@ -1023,7 +1023,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Request a RevOps diagnostic session with our expert team here.',
+        content: 'Book your audit here.',
       },
     ],
   },
@@ -1175,7 +1175,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Solicita tu Auditoría gratuita de embudo.',
+        content: 'Agenda tu auditoría aquí.',
       },
     ],
   },
@@ -1326,7 +1326,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Request your free funnel audit.',
+        content: 'Book your audit here.',
       },
     ],
   },
