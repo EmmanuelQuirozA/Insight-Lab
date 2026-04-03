@@ -13,6 +13,7 @@ const copy = {
     writtenBy: 'Escrito por',
     notFoundTitle: 'Artículo no encontrado',
     notFoundBody: 'El artículo que buscas no existe o todavía no está publicado.',
+    auditCta: 'Agenda tu auditoría gratuita',
   },
   en: {
     back: 'Back to blog',
@@ -21,8 +22,12 @@ const copy = {
     writtenBy: 'Written by',
     notFoundTitle: 'Post not found',
     notFoundBody: 'The post you are looking for does not exist or has not been published yet.',
+    auditCta: 'Book your free audit',
   },
 } as const
+
+const calendlyUrl = 'https://calendly.com/insightlabconsultoria/consultoria-estrategica'
+const blogAuditCtaTexts = new Set(['Book your free commercial operations audit and stop losing patients before the first appointment.'])
 
 function BlogPostPage({ slug }: { slug: string }) {
   const currentPath = typeof window === 'undefined' ? getBlogPostPath('es', slug) : window.location.pathname
@@ -150,6 +155,16 @@ function BlogPostPage({ slug }: { slug: string }) {
                       }
 
                       if (block.type === 'quote') {
+                        if (blogAuditCtaTexts.has(block.content)) {
+                          return (
+                            <div key={`${block.type}-${index}`} className="blog-post__cta">
+                              <a href={calendlyUrl} className="primary-btn btn" target="_blank" rel="noreferrer">
+                                {t.auditCta}
+                              </a>
+                            </div>
+                          )
+                        }
+
                         return <blockquote key={`${block.type}-${index}`}>{block.content}</blockquote>
                       }
 
