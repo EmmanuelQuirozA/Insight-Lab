@@ -5,6 +5,8 @@ import FloatingWhatsAppButton from './FloatingWhatsAppButton'
 import useSystemTheme from '../hooks/useSystemTheme'
 import useDetectedLanguage from '../hooks/useDetectedLanguage'
 import SeoHead from '../seo/SeoHead'
+import { getTranslatedPostBySlug } from '../blog/utils/blog'
+import { getBlogIndexPath, getBlogPostPath, getBlogSlugFromPath, isBlogPostPath } from '../blog/utils/routes'
 import {
   getAlternateLanguagePath,
   getLocalizedPath,
@@ -89,6 +91,23 @@ function SiteLayout({ children, mainClassName, language: controlledLanguage, onL
     setLanguagePreference(nextLanguage)
 
     if (typeof window === 'undefined') {
+      return
+    }
+
+    if (isBlogPostPath(pathname)) {
+      const currentLanguage = getPathLanguage(pathname)
+      const currentSlug = getBlogSlugFromPath(pathname)
+
+      if (currentLanguage && currentSlug) {
+        const translatedPost = getTranslatedPostBySlug(currentSlug, currentLanguage, nextLanguage)
+
+        if (translatedPost) {
+          window.location.assign(getBlogPostPath(nextLanguage, translatedPost.slug))
+          return
+        }
+      }
+
+      window.location.assign(getBlogIndexPath(nextLanguage))
       return
     }
 

@@ -3,6 +3,7 @@ import type { BlogPost } from '../types'
 export const blogPosts: BlogPost[] = [
   {
     id: 'clinicas-medical-tourism-pierden-pacientes-antes-primera-cita-es',
+    translationGroup: 'medical-tourism-clinics-lose-patients-before-first-appointment',
     locale: 'es',
     title: 'Por qué las clínicas de medical tourism pierden pacientes antes de la primera cita',
     slug: 'clinicas-medical-tourism-pierden-pacientes-antes-primera-cita',
@@ -123,12 +124,13 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         content:
-          'Solicita hoy tu Auditoría gratuita de operación comercial y evita perder pacientes antes de la primera cita.',
+          'Agenda tu llamada estratégica.',
       },
     ],
   },
   {
     id: 'medical-tourism-clinics-lose-patients-before-first-appointment-en',
+    translationGroup: 'medical-tourism-clinics-lose-patients-before-first-appointment',
     locale: 'en',
     title: 'Why medical tourism clinics lose patients before the first appointment',
     slug: 'medical-tourism-clinics-lose-patients-before-first-appointment',
@@ -250,12 +252,13 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'quote',
         content:
-          'Book your free commercial operations audit and stop losing patients before the first appointment.',
+          'Book your strategy call.',
       },
     ],
   },
   {
     id: 'que-es-revenue-operations-real-estate-medical-tourism-es',
+    translationGroup: 'revenue-operations-real-estate-medical-tourism',
     locale: 'es',
     title: 'Qué es Revenue Operations y por qué tu empresa necesita más que marketing',
     slug: 'que-es-revenue-operations-empresa-real-estate-medical-tourism',
@@ -389,6 +392,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'what-is-revenue-operations-real-estate-medical-tourism-en',
+    translationGroup: 'revenue-operations-real-estate-medical-tourism',
     locale: 'en',
     title: 'What Revenue Operations Is and Why Your Company Needs More Than Marketing',
     slug: 'what-is-revenue-operations-why-your-company-needs-it-real-estate-medical-tourism',
@@ -521,6 +525,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'inversion-tulum-baby-boomers-vs-florida-es',
+    translationGroup: 'tulum-investment-baby-boomers-vs-florida',
     locale: 'es',
     title: 'Por qué los Baby Boomers están dejando de comprar en Florida para invertir en Tulum',
     slug: 'inversion-tulum-baby-boomers-vs-florida',
@@ -631,6 +636,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'tulum-investment-baby-boomers-vs-florida-en',
+    translationGroup: 'tulum-investment-baby-boomers-vs-florida',
     locale: 'en',
     title: 'Why Baby Boomers Are Stopping Purchases in Florida to Invest in Tulum',
     slug: 'tulum-investment-baby-boomers-vs-florida',

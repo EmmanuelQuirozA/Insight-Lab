@@ -17,6 +17,19 @@ export const getFeaturedPosts = (locale: Language = 'es'): BlogPost[] => getAllP
 export const getPostBySlug = (slug: string, locale: Language = 'es'): BlogPost | undefined =>
   getAllPosts(locale).find((post) => post.slug === slug)
 
+export const getTranslatedPostBySlug = (slug: string, fromLocale: Language, targetLocale: Language): BlogPost | undefined => {
+  const sourcePost = getPostBySlug(slug, fromLocale)
+
+  if (!sourcePost) {
+    return undefined
+  }
+
+  return (
+    getAllPosts(targetLocale).find((post) => post.translationGroup === sourcePost.translationGroup) ??
+    getPostBySlug(slug, targetLocale)
+  )
+}
+
 export const filterPostsByCategory = (posts: BlogPost[], category?: string): BlogPost[] => {
   if (!category || category === 'all') {
     return posts
