@@ -27,7 +27,7 @@ const copy = {
 } as const
 
 const calendlyUrl = 'https://calendly.com/insightlabconsultoria/consultoria-estrategica'
-const blogAuditCtaTexts = new Set(['Agenda tu llamada estratégica.', 'Book your strategy call.'])
+const blogAuditCtaTexts = new Set(['Agenda tu auditoría aquí.', 'Book your audit here.'])
 
 function BlogPostPage({ slug }: { slug: string }) {
   const currentPath = typeof window === 'undefined' ? getBlogPostPath('es', slug) : window.location.pathname
