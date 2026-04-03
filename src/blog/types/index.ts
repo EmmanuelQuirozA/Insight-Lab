@@ -25,6 +25,7 @@ export type BlogContentBlock =
 
 export type BlogPost = {
   id: string
+  translationGroup: string
   locale: BlogLocale
   title: string
   slug: string
