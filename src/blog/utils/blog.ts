@@ -8,8 +8,10 @@ export const BLOG_PAGE_SIZE = 6
 export const getBlogCategories = (): BlogCategory[] => blogCategories
 
 export const getAllPosts = (locale: Language = 'es'): BlogPost[] => {
-  const localizedPosts = blogPosts.filter((post) => post.locale === locale)
-  return localizedPosts.length > 0 ? localizedPosts : blogPosts.filter((post) => post.locale === 'es')
+  const localizedPosts = blogPosts.filter((post) => post.locale === locale && isPublishedPost(post))
+  return localizedPosts.length > 0
+    ? localizedPosts
+    : blogPosts.filter((post) => post.locale === 'es' && isPublishedPost(post))
 }
 
 export const getFeaturedPosts = (locale: Language = 'es'): BlogPost[] => getAllPosts(locale).filter((post) => post.featured)
@@ -103,6 +105,8 @@ const parseBlogDate = (date: string): Date => {
 
   return new Date(year, month - 1, day)
 }
+
+const isPublishedPost = (post: BlogPost): boolean => parseBlogDate(post.createdAt).getTime() <= new Date().getTime()
 
 export const formatBlogDate = (date: string, locale: Language = 'es') =>
   new Intl.DateTimeFormat(locale === 'es' ? 'es-MX' : 'en-US', {
