@@ -554,7 +554,7 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: 'David Bayardo',
       role: 'CCO de Insight Lab',
-      avatar: '/images/team/emmanuel_quiroz_casual.jpg',
+      avatar: '/images/team/david_bayardo.jpg',
     },
     createdAt: '2026-04-01',
     readingTime: '8 min',
@@ -687,7 +687,7 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: 'David Bayardo',
       role: 'CCO of Insight Lab',
-      avatar: '/images/team/emmanuel_quiroz_casual.jpg',
+      avatar: '/images/team/david_bayardo.jpg',
     },
     createdAt: '2026-04-01',
     readingTime: '8 min',
