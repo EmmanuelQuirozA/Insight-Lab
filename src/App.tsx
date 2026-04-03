@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import SolutionsPage from './pages/SolutionsPage'
 import SuccessStoriesPage from './pages/SuccessStoriesPage'
 import ContactPage from './pages/ContactPage'
+import BookSessionPage from './pages/BookSessionPage'
 import DigitalMaturityQuizPage from './pages/digital-maturity/DigitalMaturityQuizPage'
 import { getPreferredLanguage } from './hooks/useDetectedLanguage'
 import { getLegacyRedirectPath, getPathLanguage, LOCALIZED_ROUTE_MAP, type Language } from './routing/publicRoutes'
@@ -100,6 +101,8 @@ function App() {
     page = <SuccessStoriesPage />
   } else if (pathname === LOCALIZED_ROUTE_MAP.contact.en || pathname === LOCALIZED_ROUTE_MAP.contact.es) {
     page = <ContactPage />
+  } else if (pathname === LOCALIZED_ROUTE_MAP.bookSession.en || pathname === LOCALIZED_ROUTE_MAP.bookSession.es) {
+    page = <BookSessionPage />
   } else if (pathname === LOCALIZED_ROUTE_MAP.realEstateDiagnosis.en || pathname === LOCALIZED_ROUTE_MAP.realEstateDiagnosis.es) {
     page = <DigitalMaturityQuizPage />
   } else if (isBlogIndexPath(pathname)) {

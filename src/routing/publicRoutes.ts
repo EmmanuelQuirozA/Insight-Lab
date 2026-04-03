@@ -1,6 +1,6 @@
 export type Language = 'en' | 'es'
 
-export type RouteKey = 'home' | 'solutions' | 'successStories' | 'about' | 'contact' | 'realEstateDiagnosis' | 'blog'
+export type RouteKey = 'home' | 'solutions' | 'successStories' | 'about' | 'contact' | 'realEstateDiagnosis' | 'blog' | 'bookSession'
 
 export const LOCALIZED_ROUTE_MAP: Record<RouteKey, Record<Language, string>> = {
   home: { en: '/en', es: '/es' },
@@ -10,6 +10,7 @@ export const LOCALIZED_ROUTE_MAP: Record<RouteKey, Record<Language, string>> = {
   contact: { en: '/en/contact', es: '/es/contacto' },
   realEstateDiagnosis: { en: '/en/real-estate-diagnosis', es: '/es/diagnostico-inmobiliario' },
   blog: { en: '/en/blog', es: '/es/blog' },
+  bookSession: { en: '/en/book-session', es: '/es/agendar-sesion' },
 }
 
 const LEGACY_ROUTE_TO_KEY: Record<string, RouteKey> = {
@@ -21,6 +22,8 @@ const LEGACY_ROUTE_TO_KEY: Record<string, RouteKey> = {
   '/real-estate-diagnosis': 'realEstateDiagnosis',
   '/real-state-maturity-quiz': 'realEstateDiagnosis',
   '/blog': 'blog',
+  '/book-session': 'bookSession',
+  '/agendar-sesion': 'bookSession',
 }
 
 const normalizePath = (pathname: string) => {
