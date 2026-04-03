@@ -4,6 +4,7 @@ import BlogCard from '../../blog/components/BlogCard'
 import { getCategoryById, getPostBySlug, getRelatedPosts, formatBlogDate } from '../../blog/utils/blog'
 import { getBlogIndexPath, getBlogPostPath } from '../../blog/utils/routes'
 import { buildBreadcrumbStructuredData } from '../../seo/structuredData'
+import { getLocalizedPath } from '../../routing/publicRoutes'
 
 const copy = {
   es: {
@@ -26,7 +27,6 @@ const copy = {
   },
 } as const
 
-const calendlyUrl = 'https://calendly.com/insightlabconsultoria/consultoria-estrategica'
 const blogAuditCtaTexts = new Set(['Agenda tu auditoría aquí.', 'Book your audit here.'])
 
 function BlogPostPage({ slug }: { slug: string }) {
@@ -158,7 +158,7 @@ function BlogPostPage({ slug }: { slug: string }) {
                         if (blogAuditCtaTexts.has(block.content)) {
                           return (
                             <div key={`${block.type}-${index}`} className="blog-post__cta">
-                              <a href={calendlyUrl} className="primary-btn btn" target="_blank" rel="noreferrer">
+                              <a href={getLocalizedPath('bookSession', language)} className="primary-btn btn">
                                 {t.auditCta}
                               </a>
                             </div>
