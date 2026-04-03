@@ -40,8 +40,8 @@ export const searchPosts = (posts: BlogPost[], search = ''): BlogPost[] => {
 
 export const sortPostsByDate = (posts: BlogPost[], sort: BlogDateSort = 'newest'): BlogPost[] =>
   [...posts].sort((left, right) => {
-    const leftTime = new Date(left.createdAt).getTime()
-    const rightTime = new Date(right.createdAt).getTime()
+    const leftTime = parseBlogDate(left.createdAt).getTime()
+    const rightTime = parseBlogDate(right.createdAt).getTime()
 
     return sort === 'oldest' ? leftTime - rightTime : rightTime - leftTime
   })
@@ -82,9 +82,18 @@ export const queryPosts = (query: BlogQuery, locale: Language = 'es') => {
 export const getCategoryById = (categoryId: string): BlogCategory | undefined =>
   blogCategories.find((category) => category.id === categoryId)
 
+const parseBlogDate = (date: string): Date => {
+  const [year, month, day] = date.split('-').map(Number)
+  if (!year || !month || !day) {
+    return new Date(date)
+  }
+
+  return new Date(year, month - 1, day)
+}
+
 export const formatBlogDate = (date: string, locale: Language = 'es') =>
   new Intl.DateTimeFormat(locale === 'es' ? 'es-MX' : 'en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }).format(new Date(date))
+  }).format(parseBlogDate(date))
