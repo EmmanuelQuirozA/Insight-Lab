@@ -52,7 +52,7 @@ function BookSessionPage() {
               <p>{t.description}</p>
             </section>
 
-            <section className="container contact-form-wrap contact-reveal-item bg-white">
+            <section className="container">
               <div
                 className="calendly-inline-widget"
                 data-url="https://calendly.com/insightlabconsultoria/consultoria-estrategica"
