@@ -68,6 +68,12 @@ export const PUBLIC_ROUTE_SEO: Record<SeoLang, Record<string, SeoRoute>> = {
         'Explore Revenue Operations, automation, CRM and demand generation insights for high-ticket and B2B growth teams.',
       path: '/en/blog',
     },
+    bookSession: {
+      title: 'Book a Strategy Session | Insight Lab',
+      description:
+        'Schedule your strategic consulting call with Insight Lab through Calendly and choose the best time for your team.',
+      path: '/en/book-session',
+    },
   },
 
   es: {
@@ -120,6 +126,12 @@ export const PUBLIC_ROUTE_SEO: Record<SeoLang, Record<string, SeoRoute>> = {
         'Contenido sobre Revenue Operations, automatización, CRM y estrategia digital para negocios high-ticket y B2B.',
       path: '/es/blog',
     },
+    bookSession: {
+      title: 'Agenda una Sesión Estratégica | Insight Lab',
+      description:
+        'Agenda tu llamada de consultoría estratégica con Insight Lab en Calendly y elige el horario ideal para tu equipo.',
+      path: '/es/agendar-sesion',
+    },
   },
 }
 
@@ -155,4 +167,5 @@ export const RECOMMENDED_URL_MIGRATIONS: Array<{ current: string; recommended: s
   { current: '/real-estate-diagnosis', recommended: LOCALIZED_ROUTE_MAP.realEstateDiagnosis.en },
   { current: '/real-state-maturity-quiz', recommended: LOCALIZED_ROUTE_MAP.realEstateDiagnosis.en },
   { current: '/blog', recommended: LOCALIZED_ROUTE_MAP.blog.en },
+  { current: '/book-session', recommended: LOCALIZED_ROUTE_MAP.bookSession.en },
 ]
