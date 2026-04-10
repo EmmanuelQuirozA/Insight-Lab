@@ -22,7 +22,16 @@ type SiteLayoutProps = {
   onLanguageChange?: (language: Language) => void
   seoPath?: string
   seoStructuredData?: (language: Language) => Record<string, unknown> | Array<Record<string, unknown>>
-  seoOverride?: (language: Language) => { title: string; description: string; ogType?: 'website' | 'article'; ogImage?: string } | undefined
+  seoOverride?: (language: Language) => {
+    title: string
+    description: string
+    ogType?: 'website' | 'article'
+    ogImage?: string
+    canonicalPath?: string
+    alternatePath?: string
+    xDefaultPath?: string
+    robots?: string
+  } | undefined
 }
 
 const layoutCopy = {
