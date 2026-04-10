@@ -50,7 +50,7 @@ function BlogLandingPage() {
     >
       {({ language }) => {
         const t = copy[language]
-        const categories = getBlogCategories()
+        const categories = getBlogCategories(language)
         const featuredPosts = getFeaturedPosts(language)
         const result = queryPosts({ category: selectedCategory, sort: selectedSort, search, page, pageSize: BLOG_PAGE_SIZE }, language)
 

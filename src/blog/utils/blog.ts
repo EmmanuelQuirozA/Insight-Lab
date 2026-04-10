@@ -5,7 +5,10 @@ import type { Language } from '../../routing/publicRoutes'
 
 export const BLOG_PAGE_SIZE = 6
 
-export const getBlogCategories = (): BlogCategory[] => blogCategories
+export const getBlogCategories = (locale: Language = 'es'): BlogCategory[] => {
+  const categoryIds = new Set(getAllPosts(locale).map((post) => post.category))
+  return blogCategories.filter((category) => categoryIds.has(category.id))
+}
 
 export const getAllPosts = (locale: Language = 'es'): BlogPost[] => {
   const localizedPosts = blogPosts.filter((post) => post.locale === locale && isPublishedPost(post))
