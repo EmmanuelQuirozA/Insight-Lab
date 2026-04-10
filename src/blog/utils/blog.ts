@@ -7,7 +7,9 @@ export const BLOG_PAGE_SIZE = 6
 
 export const getBlogCategories = (locale: Language = 'es'): BlogCategory[] => {
   const categoryIds = new Set(getAllPosts(locale).map((post) => post.category))
-  return blogCategories.filter((category) => categoryIds.has(category.id))
+  const configuredCategories = new Map(blogCategories.map((category) => [category.id, category]))
+
+  return Array.from(categoryIds).map((categoryId) => configuredCategories.get(categoryId) ?? createFallbackCategory(categoryId))
 }
 
 export const getAllPosts = (locale: Language = 'es'): BlogPost[] => {
@@ -110,6 +112,22 @@ const parseBlogDate = (date: string): Date => {
 }
 
 const isPublishedPost = (post: BlogPost): boolean => parseBlogDate(post.createdAt).getTime() <= new Date().getTime()
+
+const createFallbackCategory = (categoryId: string): BlogCategory => {
+  const normalized = categoryId.trim()
+  const words = normalized
+    .split(/[-_]/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+
+  return {
+    id: normalized,
+    slug: normalized.toLowerCase().replace(/\s+/g, '-'),
+    label: words || 'General',
+    description: `Posts in ${words || 'General'}.`,
+    color: '#64748b',
+  }
+}
 
 export const formatBlogDate = (date: string, locale: Language = 'es') =>
   new Intl.DateTimeFormat(locale === 'es' ? 'es-MX' : 'en-US', {
