@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react'
 import SiteLayout from '../../components/SiteLayout'
 import BlogCard from '../../blog/components/BlogCard'
-import { getCategoryById, getPostBySlug, getRelatedPosts, formatBlogDate } from '../../blog/utils/blog'
+import { getCategoryById, getPostBySlug, getRelatedPosts, getTranslatedPostBySlug, formatBlogDate } from '../../blog/utils/blog'
 import { getBlogIndexPath, getBlogPostPath } from '../../blog/utils/routes'
 import { buildBreadcrumbStructuredData } from '../../seo/structuredData'
 import { getLocalizedPath } from '../../routing/publicRoutes'
@@ -38,6 +38,8 @@ function BlogPostPage({ slug }: { slug: string }) {
       seoPath={currentPath}
       seoOverride={(language) => {
         const post = getPostBySlug(slug, language)
+        const alternateLanguage = language === 'es' ? 'en' : 'es'
+        const translatedPost = getTranslatedPostBySlug(slug, language, alternateLanguage)
 
         return post
           ? {
@@ -45,6 +47,9 @@ function BlogPostPage({ slug }: { slug: string }) {
               description: post.seoDescription,
               ogType: 'article',
               ogImage: post.coverImage,
+              canonicalPath: getBlogPostPath(language, post.slug),
+              alternatePath: translatedPost ? getBlogPostPath(alternateLanguage, translatedPost.slug) : getBlogIndexPath(alternateLanguage),
+              xDefaultPath: getBlogPostPath('en', translatedPost && alternateLanguage === 'en' ? translatedPost.slug : post.slug),
             }
           : undefined
       }}
@@ -70,6 +75,16 @@ function BlogPostPage({ slug }: { slug: string }) {
             description: post.seoDescription,
             image: post.coverImage,
             datePublished: post.createdAt,
+            dateModified: post.createdAt,
+            mainEntityOfPage: `https://www.insightlab.com.mx${getBlogPostPath(language, post.slug)}`,
+            publisher: {
+              '@type': 'Organization',
+              name: 'Insight Lab',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.insightlab.com.mx/brand/logo.png',
+              },
+            },
             author: {
               '@type': 'Person',
               name: post.author.name,
