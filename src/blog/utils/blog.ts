@@ -1,4 +1,3 @@
-import { blogCategories } from '../data/categories'
 import { blogPosts } from '../data/posts'
 import type { BlogCategory, BlogDateSort, BlogPost, BlogQuery } from '../types'
 import type { Language } from '../../routing/publicRoutes'
@@ -7,9 +6,7 @@ export const BLOG_PAGE_SIZE = 6
 
 export const getBlogCategories = (locale: Language = 'es'): BlogCategory[] => {
   const categoryIds = new Set(getAllPosts(locale).map((post) => post.category))
-  const configuredCategories = new Map(blogCategories.map((category) => [category.id, category]))
-
-  return Array.from(categoryIds).map((categoryId) => configuredCategories.get(categoryId) ?? createFallbackCategory(categoryId))
+  return Array.from(categoryIds).map((categoryId) => createFallbackCategory(categoryId))
 }
 
 export const getAllPosts = (locale: Language = 'es'): BlogPost[] => {
@@ -100,7 +97,7 @@ export const queryPosts = (query: BlogQuery, locale: Language = 'es') => {
 }
 
 export const getCategoryById = (categoryId: string): BlogCategory | undefined =>
-  blogCategories.find((category) => category.id === categoryId)
+  getAllCategories().find((category) => category.id === categoryId)
 
 const parseBlogDate = (date: string): Date => {
   const [year, month, day] = date.split('-').map(Number)
@@ -112,6 +109,11 @@ const parseBlogDate = (date: string): Date => {
 }
 
 const isPublishedPost = (post: BlogPost): boolean => parseBlogDate(post.createdAt).getTime() <= new Date().getTime()
+
+const getAllCategories = (): BlogCategory[] => {
+  const categoryIds = new Set(blogPosts.map((post) => post.category))
+  return Array.from(categoryIds).map((categoryId) => createFallbackCategory(categoryId))
+}
 
 const createFallbackCategory = (categoryId: string): BlogCategory => {
   const normalized = categoryId.trim()
