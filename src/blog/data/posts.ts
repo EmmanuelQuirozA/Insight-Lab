@@ -139,7 +139,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Botón: Agendar llamada',
+        content: 'Agenda tu auditoría aquí.',
       },
     ],
   },
@@ -280,7 +280,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Button: Book a call',
+        content: 'Book your audit here.',
       },
     ],
   },
@@ -417,7 +417,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Botón: Agendar llamada',
+        content: 'Agenda tu auditoría aquí.',
       },
     ],
   },
@@ -553,7 +553,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: 'quote',
-        content: 'Button: Book a call',
+        content: 'Book your audit here.',
       },
     ],
   },
@@ -2549,7 +2549,7 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: 'Luis Francisco Albarrán',
       role: 'CEO de Insight Lab',
-      avatar: '/images/team/emmanuel_quiroz_casual.jpg',
+      avatar: '/images/team/luis_francisco.jpg',
     },
     createdAt: '2026-04-27',
     readingTime: '9 min',
@@ -2572,6 +2572,10 @@ export const blogPosts: BlogPost[] = [
       { type: 'list', items: ['PropTech inexistente: recorridos 3D y firma electrónica ya no son diferenciadores; son estándar mínimo para viabilidad comercial internacional.', 'Velocidad de respuesta: el primer broker que responde con brochure financiero (no comercial) gana atención.', 'Análisis y opinión: un sitio lento o sin SSL deteriora confianza de inmediato en inversionistas de EE. UU. y Canadá.'] },
       { type: 'heading', content: 'Domina el Mercado Internacional (La Solución)' },
       { type: 'paragraph', content: 'Dejar de competir por precio y empezar a competir por datos es la única forma de escalar. En Insight Lab diseñamos embudos de venta transfronterizos que precalifican capacidad real de compra antes de que el lead entre al CRM. No entregamos “prospectos interesados”; entregamos inversionistas educados en tu oferta, con capacidad demostrada y listos para una reunión de cierre.' },
+      {
+        type: 'quote',
+        content: 'Agenda tu auditoría aquí.',
+      },
     ],
   },
   {
@@ -2590,7 +2594,7 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: 'Luis Francisco Albarrán',
       role: 'CEO of Insight Lab',
-      avatar: '/images/team/emmanuel_quiroz_casual.jpg',
+      avatar: '/images/team/luis_francisco.jpg',
     },
     createdAt: '2026-04-27',
     readingTime: '9 min',
@@ -2610,6 +2614,10 @@ export const blogPosts: BlogPost[] = [
       { type: 'list', items: ['PropTech baseline: 3D tours and e-signature are minimum market standards, not innovation.', 'Response speed: high-value investors contact multiple projects simultaneously; first credible financial response wins mindshare.', 'Analysis: slow websites and poor digital trust signals reduce perceived project quality instantly.'] },
       { type: 'heading', content: 'Own the International Market (The Solution)' },
       { type: 'paragraph', content: 'Stop competing on price and start competing on data. At Insight Lab, we build cross-border funnels that pre-qualify purchasing capacity before leads enter your CRM. We do not deliver “interested prospects”; we deliver educated, verified investors prepared for a closing conversation.' },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
     ],
   },
 
