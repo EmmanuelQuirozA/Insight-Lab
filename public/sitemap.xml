@@ -324,4 +324,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.insightlab.com.mx/en/blog/medical-tourism-mexico-2026-paid-media-us-canada</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightlab.com.mx/en/blog/medical-tourism-mexico-2026-paid-media-us-canada" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.insightlab.com.mx/es/blog/turismo-medico-mexico-2026-estrategias-pauta-us-canada" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.insightlab.com.mx/en/blog/medical-tourism-mexico-2026-paid-media-us-canada" />
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.insightlab.com.mx/es/blog/turismo-medico-mexico-2026-estrategias-pauta-us-canada</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightlab.com.mx/en/blog/medical-tourism-mexico-2026-paid-media-us-canada" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.insightlab.com.mx/es/blog/turismo-medico-mexico-2026-estrategias-pauta-us-canada" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.insightlab.com.mx/en/blog/medical-tourism-mexico-2026-paid-media-us-canada" />
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.insightlab.com.mx/en/blog/world-cup-2026-155-percent-rental-surge</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightlab.com.mx/en/blog/world-cup-2026-155-percent-rental-surge" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.insightlab.com.mx/es/blog/efecto-mundial-2026-repunte-renta-corto-plazo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.insightlab.com.mx/en/blog/world-cup-2026-155-percent-rental-surge" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.insightlab.com.mx/es/blog/efecto-mundial-2026-repunte-renta-corto-plazo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.insightlab.com.mx/en/blog/world-cup-2026-155-percent-rental-surge" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.insightlab.com.mx/es/blog/efecto-mundial-2026-repunte-renta-corto-plazo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.insightlab.com.mx/en/blog/world-cup-2026-155-percent-rental-surge" />
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

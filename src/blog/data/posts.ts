@@ -2710,4 +2710,152 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 
+
+  {
+    id: 'efecto-mundial-2026-repunte-renta-corto-plazo-es',
+    translationGroup: 'world-cup-2026-short-term-rental-demand-surge',
+    locale: 'es',
+    title: 'Efecto Mundial 2026: El repunte del 155% que el sector no sabe capitalizar',
+    slug: 'efecto-mundial-2026-repunte-renta-corto-plazo',
+    excerpt:
+      'La demanda de renta a corto plazo rumbo al Mundial 2026 se dispara, pero muchos brokers aún no ejecutan una estrategia internacional para capturar valor real.',
+    coverImage: '/images/house_for_sale_in_tulum.png',
+    coverImageAlt:
+      'Vista urbana de propiedades en renta en zonas turísticas de CDMX con contexto de demanda internacional por el Mundial 2026.',
+    category: 'real-estate',
+    tags: [
+      'mundial 2026 renta cdmx',
+      'renta corto plazo mexico',
+      'brokers inmobiliarios mexico',
+      'pauta internacional real estate',
+      'pricing dinámico inmobiliario',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO de Insight Lab',
+      avatar: '/images/team/luis_francisco.jpg',
+    },
+    createdAt: '2026-05-02',
+    readingTime: '7 min',
+    seoTitle: 'Efecto Mundial 2026 en CDMX: cómo capitalizar el repunte del 155% en renta',
+    seoDescription:
+      'La demanda de vivienda en renta para el Mundial 2026 proyecta un repunte del 155%. Estrategias de pauta internacional, conversión sin fricción y pricing dinámico para brokers.',
+    featured: true,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'Los datos de la Asociación Mexicana de Profesionales Inmobiliarios (AMPI) acaban de confirmar lo que se veía venir: la demanda de vivienda en renta para el Mundial 2026 tiene un repunte proyectado del 155%. El mercado ya está reaccionando. Hoy, las zonas con vocación turística en la CDMX registran incrementos en sus rentas de entre un 15% y un 20%. Esa es la estadística oficial, pero la realidad operativa es mucho más cruda.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'La mayoría de los pequeños y medianos brokers están sentados sobre un inventario valiosísimo de renta a corto plazo y, siendo francos, no saben qué hacer con él. Tienen el producto, pero carecen de una estrategia de go-to-market. No saben cómo pautar, cómo segmentar, ni cómo hablarle al aficionado internacional de alto poder adquisitivo.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Si el equipo sigue esperando que un cliente extranjero aterrice de forma orgánica en un anuncio genérico publicado en portales locales, estamos perdiendo dinero y tiempo. Este perfil de cliente no está buscando “un cuarto para dormir”; está buscando una experiencia transaccional sin fricciones, seguridad, contratos claros y un proceso que se sienta tan ágil y confiable como una compra de eCommerce de alto nivel.',
+      },
+      { type: 'heading', content: '¿Qué necesitamos ajustar de inmediato?' },
+      {
+        type: 'paragraph',
+        content:
+          '1. Pauta Inteligente y Segmentación Internacional: Se acabó el disparar al aire. Hay que estructurar campañas digitales hipersegmentadas hacia Norteamérica y Europa. Tenemos que llegar a ellos en el momento exacto en el que aseguran sus vuelos y entradas, no cuando ya aterrizaron en México.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          '2. Cero Fricción en la Conversión: El extranjero de alto ticket exige inmediatez. Nuestro inventario debe estar optimizado con recorridos virtuales, procesos de reserva automatizados, contratos digitales y pasarelas de pago internacionales que no fallen.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          '3. Pricing Dinámico y Basado en Datos: El aumento del 20% que reporta la AMPI es solo el piso, no el techo. La presión por la demanda y la reducción de oferta para residentes permanentes va a encarecer la zona. Si no iteramos nuestros precios basándonos en datos en tiempo real, vamos a dejar nuestro margen de ganancia sobre la mesa.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'El Mundial es una ventana de oportunidad brutal, pero con fecha de caducidad. El inventario ya lo tenemos; el reto es ejecutar la comercialización al estándar global que exige el mercado. Quien no adapte su tecnología y su estrategia de pauta hoy, se va a quedar mirando cómo otros cierran las transacciones.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
+  {
+    id: 'world-cup-2026-155-percent-rental-surge-en',
+    translationGroup: 'world-cup-2026-short-term-rental-demand-surge',
+    locale: 'en',
+    title: 'World Cup 2026 Effect: The 155% Surge the Sector Still Fails to Monetize',
+    slug: 'world-cup-2026-155-percent-rental-surge',
+    excerpt:
+      'Short-term rental demand ahead of World Cup 2026 is accelerating fast, but most brokers still lack the international go-to-market execution needed to capture margin.',
+    coverImage: '/images/house_for_sale_in_tulum.png',
+    coverImageAlt:
+      'Urban rental inventory in high-tourism Mexico City neighborhoods preparing for international demand during World Cup 2026.',
+    category: 'real-estate',
+    tags: [
+      'world cup 2026 rentals mexico city',
+      'short-term rentals mexico',
+      'real estate brokers mexico',
+      'international paid media real estate',
+      'dynamic pricing rentals',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO of Insight Lab',
+      avatar: '/images/team/luis_francisco.jpg',
+    },
+    createdAt: '2026-05-02',
+    readingTime: '7 min',
+    seoTitle: 'World Cup 2026 in Mexico City: how to capitalize on a 155% rental demand surge',
+    seoDescription:
+      'Rental housing demand for World Cup 2026 is projected to rise 155%. Learn the playbook for international targeting, frictionless conversion, and data-driven pricing.',
+    featured: false,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'Data from the Mexican Association of Real Estate Professionals (AMPI) has now confirmed what many expected: rental housing demand for World Cup 2026 is projected to surge by 155%. The market is already reacting. High-tourism areas in Mexico City are currently posting rental increases between 15% and 20%. That is the official statistic, but the operating reality is much harsher.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Most small and mid-sized brokers are sitting on highly valuable short-term rental inventory and, frankly, they do not know how to monetize it. They have the product, but they lack a go-to-market strategy. They do not know how to run paid media, how to segment, or how to communicate with high-spending international fans.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'If teams keep waiting for foreign clients to land organically on a generic listing inside local portals, they are losing both money and time. This buyer profile is not looking for “a room to sleep”; they are buying a frictionless transaction, safety, clear contracts, and a process that feels as agile and trustworthy as premium eCommerce.',
+      },
+      { type: 'heading', content: 'What must be adjusted immediately?' },
+      {
+        type: 'paragraph',
+        content:
+          '1. Smart Paid Media and International Segmentation: Random targeting is over. Teams need hyper-segmented digital campaigns across North America and Europe. Reach prospects when they secure flights and match tickets, not after they arrive in Mexico.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          '2. Zero Friction in Conversion: High-ticket foreign renters demand immediate execution. Inventory should be optimized with virtual tours, automated booking flows, digital contracts, and reliable international payment gateways.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          '3. Dynamic, Data-Driven Pricing: The 20% increase reported by AMPI is only the floor, not the ceiling. Demand pressure and reduced supply for long-term residents will push prices higher. If pricing is not iterated with real-time signals, margins will be left on the table.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'World Cup season is a massive window of opportunity, but it expires quickly. The inventory already exists; the challenge is executing commercialization at global standards. Whoever delays technology upgrades and paid media strategy will simply watch others close the deals.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
+
 ]
