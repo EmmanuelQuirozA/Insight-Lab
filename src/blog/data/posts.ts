@@ -1,6 +1,193 @@
 import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
+  // 2026-05-18 - Vivienda Vertical 2026 en CDMX y Guadalajara: El fin del marketing aspiracional y el dominio del dato
+  {
+    id: 'vivienda-vertical-2026-cdmx-guadalajara-fin-marketing-aspiracional-dominio-dato-es',
+    translationGroup: 'vertical-housing-2026-cdmx-guadalajara-end-of-aspirational-marketing-and-data-dominance',
+    locale: 'es',
+    title:
+      'Vivienda Vertical 2026 en CDMX y Guadalajara: El fin del marketing aspiracional y el dominio del dato',
+    slug: 'vivienda-vertical-2026-cdmx-guadalajara-fin-marketing-aspiracional-dominio-dato',
+    excerpt:
+      'La compra impulsiva murió: en 2026, el comprador vertical en CDMX y Guadalajara decide por ROI, costo por m² y plusvalía proyectada.',
+    coverImage: '/images/real_state_development_marketing.png',
+    coverImageAlt:
+      'Skyline urbano con torres residenciales y paneles de métricas inmobiliarias para análisis de preventa en CDMX y Guadalajara.',
+    category: 'revops',
+    tags: [
+      'vivienda vertical 2026',
+      'preventa departamentos CDMX',
+      'plusvalía Zapopan',
+      'costo por metro cuadrado',
+      'marketing inmobiliario basado en datos',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO de Insight Lab',
+    },
+    createdAt: '2026-05-18',
+    readingTime: '7 min',
+    seoTitle:
+      'Vivienda vertical 2026 en CDMX y Guadalajara: preventa, plusvalía y métricas que cierran ventas',
+    seoDescription:
+      'Análisis del mercado vertical 2026: barrera de $58,000 MXN/m² en CDMX, tickets por corredor, plusvalía en Zapopan y cómo convertir con datos, no promesas.',
+    featured: true,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'El mercado de la vivienda vertical ha dictado una nueva sentencia para 2026: la compra impulsiva ha muerto. Hoy, la preventa de departamentos domina las transacciones en los principales hubs económicos del país, pero el perfil del comprador mutó radicalmente. El inversionista y el usuario final ya no se dejan deslumbrar por el marketing aspiracional genérico, renders hiperrealistas o promesas de “estilo de vida”. El cliente de hoy toma decisiones basadas en datos crudos: ubicación estratégica, funcionalidad arquitectónica y, sobre todo, el costo real por metro cuadrado. Si tu fuerza de ventas sigue vendiendo emociones en lugar de rentabilidad y métricas, estás perdiendo mercado.',
+      },
+      {
+        type: 'heading',
+        content: 'Radiografía del ticket y la plusvalía: CDMX vs. Guadalajara',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Para estructurar campañas de pauta rentables, es indispensable entender la fragmentación del ticket y cómo el mercado está absorbiendo los precios. La Ciudad de México impone la barrera de entrada, mientras Guadalajara redefine la plusvalía a mediano plazo.',
+      },
+      {
+        type: 'list',
+        items: [
+          'CDMX: La barrera de los $58,000 MXN. Este es el costo promedio por metro cuadrado en la capital, una métrica que obliga al comprador a hiper-analizar el retorno de inversión (ROI) antes de firmar un apartado.',
+          'Corredor Premium (Polanco / Ángel de la Independencia): El mercado de lujo no cede. Los tickets de preventa y venta oscilan entre los $7,000,000 y más de $15,000,000 MXN. Aquí, el cliente no busca espacio, busca resguardo de capital y estatus transaccional.',
+          'Corredor de Alta Demanda (Del Valle / Roma): El epicentro de la clase media alta y nómadas digitales. Con tickets que van de los $4,400,000 a los $6,300,000 MXN, la exigencia principal es la conectividad y la funcionalidad para formatos de coliving o renta a corto plazo.',
+          'El Fenómeno Zapopan (GDL): Guadalajara ofrece una barrera de entrada más asequible frente a la CDMX, pero Zapopan se ha consolidado como el eje definitivo de mayor plusvalía vertical. La clave aquí es el timing: la adquisición es más accesible hoy, pero el alza sostenida en las rentas asegura un cap rate (tasa de capitalización) sumamente agresivo para quien invierte en preventa.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'La transición comercial: Vender métricas, no sueños',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'El cambio de paradigma es claro. El lead calificado de 2026 exige transparencia financiera desde el primer punto de contacto. Si tu landing page no muestra la proyección de plusvalía, la conectividad exacta de la zona y el desglose del costo por metro cuadrado, el prospecto rebotará hacia la competencia.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Las desarrolladoras y brokers que están dominando el mercado son aquellos que integran calculadoras de hipoteca, proyecciones de renta y análisis comparativos de mercado directamente en sus herramientas de venta. El marketing inmobiliario dejó de ser una galería de imágenes para convertirse en una presentación de negocios.',
+      },
+      {
+        type: 'heading',
+        content: 'El Bottom Line del mercado vertical',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'La preventa de vivienda vertical en CDMX y Guadalajara sigue siendo uno de los vehículos de inversión más seguros, pero el embudo de ventas requiere una reingeniería urgente. El consumidor hiper-informado exige un proceso comercial sin fricciones, donde el dato duro mate a la narrativa vacía. Quien domine la entrega de esta información de manera ágil y digital, se quedará con los cierres de mayor valor en este ciclo.',
+      },
+      {
+        type: 'heading',
+        content: 'Da el siguiente paso',
+      },
+      {
+        type: 'paragraph',
+        content:
+          '¿Tu estrategia comercial sigue vendiendo renders en lugar de datos de alto impacto? Audita tus canales de venta y asegura que tu mensaje esté alineado con el comprador analítico de 2026. Contáctanos y estructura tu estrategia de conversión hoy.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
+  {
+    id: 'vertical-housing-2026-cdmx-guadalajara-end-of-aspirational-marketing-and-data-dominance-en',
+    translationGroup: 'vertical-housing-2026-cdmx-guadalajara-end-of-aspirational-marketing-and-data-dominance',
+    locale: 'en',
+    title:
+      'Vertical Housing 2026 in Mexico City and Guadalajara: The End of Aspirational Marketing and the Rise of Data',
+    slug: 'vertical-housing-2026-mexico-city-guadalajara-end-aspirational-marketing-rise-data',
+    excerpt:
+      'Impulse buying is over: in 2026, vertical housing buyers in Mexico City and Guadalajara decide using ROI, price per m², and projected appreciation.',
+    coverImage: '/images/real_state_development_marketing.png',
+    coverImageAlt:
+      'Urban skyline with residential towers and real estate analytics overlays for pre-sale performance in Mexico City and Guadalajara.',
+    category: 'revops',
+    tags: [
+      'vertical housing 2026',
+      'mexico city pre-sale apartments',
+      'zapopan appreciation',
+      'price per square meter',
+      'data-driven real estate marketing',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO of Insight Lab',
+    },
+    createdAt: '2026-05-18',
+    readingTime: '7 min',
+    seoTitle:
+      'Vertical housing 2026 in Mexico City and Guadalajara: pre-sales, appreciation, and metrics that close deals',
+    seoDescription:
+      'A 2026 vertical housing breakdown: $58,000 MXN/m² entry barrier in Mexico City, corridor ticket ranges, Zapopan appreciation dynamics, and how to convert with data over hype.',
+    featured: false,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'Mexico’s vertical housing market has issued a clear verdict for 2026: impulse buying is dead. Apartment pre-sales now dominate transactions across the country’s top economic hubs, but the buyer profile has changed radically. Both investors and end users are no longer impressed by generic aspirational branding, hyperrealistic renders, or “lifestyle” promises. Today’s buyer decides on hard data: strategic location, architectural functionality, and above all, real cost per square meter. If your sales force is still selling emotions instead of profitability and metrics, you are losing market share.',
+      },
+      {
+        type: 'heading',
+        content: 'Ticket-size and appreciation snapshot: Mexico City vs. Guadalajara',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'To build profitable paid-media campaigns, teams must understand ticket segmentation and how demand is absorbing prices. Mexico City sets the entry barrier, while Guadalajara is reshaping medium-term appreciation dynamics.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Mexico City: The $58,000 MXN barrier. This is the average price per square meter in the capital, a metric that forces buyers to hyper-analyze return on investment (ROI) before signing a reservation.',
+          'Premium Corridor (Polanco / Ángel de la Independencia): The luxury market remains resilient. Pre-sale and resale ticket sizes range from $7,000,000 to more than $15,000,000 MXN. In this segment, buyers are not seeking space; they are seeking capital protection and transactional status.',
+          'High-Demand Corridor (Del Valle / Roma): The core zone for upper-middle-class professionals and digital nomads. With ticket sizes between $4,400,000 and $6,300,000 MXN, the main requirement is connectivity and functional layouts for coliving and short-term rental formats.',
+          'The Zapopan Effect (GDL): Guadalajara offers a lower entry barrier than Mexico City, but Zapopan has emerged as the strongest vertical appreciation axis. Timing is the strategic key: acquisition is more accessible today, while sustained rent growth secures an aggressive cap rate for pre-sale investors.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'The commercial transition: Sell metrics, not dreams',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The paradigm shift is undeniable. Qualified leads in 2026 demand financial transparency from the very first touchpoint. If your landing page does not show projected appreciation, exact area connectivity, and price-per-square-meter breakdowns, prospects will bounce to competitors.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Developers and brokers outperforming the market are embedding mortgage calculators, rental projections, and market comparison analyses directly into their sales tools. Real estate marketing is no longer an image gallery; it is now a business case presentation.',
+      },
+      {
+        type: 'heading',
+        content: 'The bottom line for the vertical market',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Vertical housing pre-sales in Mexico City and Guadalajara remain one of the safest investment vehicles, but the sales funnel now requires urgent reengineering. The hyper-informed buyer expects a frictionless commercial process where hard data kills empty narratives. Whoever delivers this information quickly and digitally will win the highest-value closings in this cycle.',
+      },
+      {
+        type: 'heading',
+        content: 'Take the next step',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Is your commercial strategy still selling renders instead of high-impact data? Audit your sales channels and make sure your message aligns with the analytical 2026 buyer. Contact us and structure your conversion strategy today.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
   // 2026-05-12 - Seguridad Quirúrgica en el Turismo Médico: El Punto de Fricción que Define tu Rentabilidad
   {
     id: 'seguridad-quirurgica-turismo-medico-punto-friccion-rentabilidad-es',
