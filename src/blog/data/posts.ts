@@ -1,6 +1,203 @@
 import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
+  // 2026-05-22 - Turismo Médico 2026: Cómo Captar el Mercado de $1,150 MDD Vendiendo Valor y No Solo Precio
+  {
+    id: 'turismo-medico-2026-captar-mercado-1150-mdd-vendiendo-valor-no-solo-precio-es',
+    translationGroup: 'medical-tourism-2026-capturing-the-1150m-market-by-selling-value-not-just-price',
+    locale: 'es',
+    title: 'Turismo Médico 2026: Cómo Captar el Mercado de $1,150 MDD Vendiendo Valor y No Solo Precio',
+    slug: 'turismo-medico-2026-captar-mercado-1150-mdd-vendiendo-valor-no-solo-precio',
+    excerpt:
+      'El turismo médico en México apunta a $1,150 MDD en 2026: el precio atrae, pero la infraestructura clínica y la telemedicina son las que cierran y retienen pacientes premium.',
+    coverImage: '/images/medical_tourism_clinics_marketing.png',
+    coverImageAlt:
+      'Paciente internacional en consulta digital con equipo clínico mexicano, integrando telemedicina y seguimiento postoperatorio.',
+    category: 'revops',
+    tags: [
+      'turismo médico méxico 2026',
+      'all-on-4 mexico precio',
+      'telemedicina postoperatoria',
+      'paciente internacional premium',
+      'marketing clínicas alta especialidad',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO de Insight Lab',
+    },
+    createdAt: '2026-05-22',
+    readingTime: '7 min',
+    seoTitle:
+      'Turismo médico 2026 en México: cómo captar el mercado de $1,150 MDD vendiendo valor y seguridad',
+    seoDescription:
+      'El mercado de turismo médico en México crece 19% en 2026. Descubre cómo pasar de competir por precio a cerrar pacientes premium con telemedicina, seguimiento y experiencia clínica integral.',
+    featured: true,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'El turismo médico en México ha dejado de ser un nicho para consolidarse como una industria de alta precisión, con una valoración proyectada de $1,150 millones de dólares para el cierre de 2026. Este crecimiento anual del 19% ya no se sostiene únicamente por la proximidad geográfica con Estados Unidos y Canadá, sino por la integración de tecnología avanzada y seguros especializados. El mercado es masivo, pero la competencia es feroz. Si tu estrategia comercial sigue dependiendo exclusivamente de gritar “somos más baratos”, estás atrayendo leads transaccionales de bajo valor y dejando ir al paciente premium que exige una experiencia clínica integral.',
+      },
+      {
+        type: 'heading',
+        content: 'El arbitraje de costos: Tu lead magnet crudo, no tu cierre',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Es innegable que el ahorro del 50% al 80% es el gancho perfecto. El diferencial cambiario y operativo permite a las clínicas mexicanas ofrecer márgenes altamente competitivos sin sacrificar calidad. En el sector de alta especialidad dental, los números hablan por sí solos.',
+      },
+      {
+        type: 'list',
+        items: [
+          'All-on-4 (arcada completa): Mientras en EE. UU. el costo ronda los $20,000 a $35,000 USD, en México se ejecuta con la misma calidad de materiales por un ticket de $8,000 a $12,500 USD.',
+          'Boca completa (2 arcadas): El paciente norteamericano cotiza entre $40,000 y $70,000 USD en su país; en territorio nacional, la inversión es de $16,000 a $25,000 USD.',
+          'Implante dental unitario: Una reducción drástica de $3,000 a $6,000 USD frente a los $850 a $1,500 USD locales.',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Este es tu lead magnet de atracción. El problema radica en que todas las clínicas de la frontera y de los hubs turísticos tienen acceso a este mismo argumento de venta. Para dominar el mercado, el diferenciador debe evolucionar.',
+      },
+      {
+        type: 'heading',
+        content: 'La evolución de la demanda: telemedicina y retención a largo plazo',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Los datos de consumo de 2026 son claros: el lead de alto ticket cruzó una línea de madurez. Ya no busca un simple procedimiento de entrada por salida. Busca mitigar la ansiedad de operarse en el extranjero mediante un ecosistema de confianza.',
+      },
+      {
+        type: 'list',
+        items: [
+          'El fin de la transacción aislada: El paciente norteamericano exige un paquete de recuperación personalizado. Valora infinitamente más a la clínica que le ofrece segundas opiniones expertas y apoyo a largo plazo que a la que le da un descuento extra.',
+          'Telemedicina como ancla de seguridad: El seguimiento postoperatorio asíncrono y remoto es el nuevo estándar. Si tu clínica no ofrece un modelo digital para monitorear al paciente una vez que regresa a su país (videoconsultas, expedientes en la nube, comunicación 24/7), el lead de alto valor buscará a quien sí lo tenga. La infraestructura tecnológica es lo que realmente justifica y cierra el ticket alto.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'El bottom line del turismo médico de alta especialidad',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'El mercado de $1,150 MDD pertenece a las clínicas que entiendan que el precio atrae, pero la infraestructura, la tecnología y el acompañamiento retienen. Vender turismo médico en 2026 es vender mitigación de riesgo. Las estructuras operativas que logren empaquetar sus procedimientos con telemedicina de seguimiento y una logística sin fricciones son las que absorberán ese crecimiento del 19%.',
+      },
+      {
+        type: 'heading',
+        content: 'Da el siguiente paso',
+      },
+      {
+        type: 'paragraph',
+        content:
+          '¿Tu clínica sigue compitiendo por precio o ya estructuró un ecosistema de atracción para pacientes internacionales premium? Audita tu oferta de valor, integra procesos de telemedicina y domina tu mercado. Contáctanos y estructura tu estrategia hoy.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
+  {
+    id: 'medical-tourism-2026-capturing-the-1150m-market-by-selling-value-not-just-price-en',
+    translationGroup: 'medical-tourism-2026-capturing-the-1150m-market-by-selling-value-not-just-price',
+    locale: 'en',
+    title: 'Medical Tourism 2026: How to Capture the $1.15B Market by Selling Value, Not Just Price',
+    slug: 'medical-tourism-2026-capture-1150m-market-selling-value-not-just-price',
+    excerpt:
+      'Mexico’s medical tourism market is projected at $1.15B in 2026: price attracts, but clinical infrastructure and telemedicine are what close and retain premium patients.',
+    coverImage: '/images/medical_tourism_clinics_marketing.png',
+    coverImageAlt:
+      'International patient in a remote follow-up consultation with a Mexican clinical team, showcasing telemedicine-enabled care.',
+    category: 'revops',
+    tags: [
+      'mexico medical tourism 2026',
+      'all-on-4 mexico pricing',
+      'post-op telemedicine',
+      'premium international patients',
+      'specialty clinic marketing',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO of Insight Lab',
+    },
+    createdAt: '2026-05-22',
+    readingTime: '7 min',
+    seoTitle:
+      'Medical tourism in Mexico 2026: capture the $1.15B market by selling value, trust, and continuity of care',
+    seoDescription:
+      'Mexico’s medical tourism market is growing 19% in 2026. Learn how to move beyond price competition and win premium patients with telemedicine, post-op monitoring, and frictionless logistics.',
+    featured: false,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'Medical tourism in Mexico is no longer a niche; it has become a high-precision industry projected to reach $1.15 billion by the end of 2026. This 19% annual growth is no longer sustained only by geographic proximity to the United States and Canada, but by the integration of advanced technology and specialized insurance. The market is massive, but competition is fierce. If your commercial strategy still depends only on shouting “we are cheaper,” you are attracting low-value transactional leads and losing the premium patient who demands an end-to-end clinical experience.',
+      },
+      {
+        type: 'heading',
+        content: 'Cost arbitrage: Your raw lead magnet, not your close',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'There is no denying that 50% to 80% savings is the perfect hook. Currency and operating differentials allow Mexican clinics to offer highly competitive margins without sacrificing quality. In high-specialty dental care, the numbers speak for themselves.',
+      },
+      {
+        type: 'list',
+        items: [
+          'All-on-4 (full arch): While U.S. pricing is typically around $20,000 to $35,000 USD, the same material quality in Mexico is delivered at a ticket of $8,000 to $12,500 USD.',
+          'Full mouth (2 arches): North American patients are quoted between $40,000 and $70,000 USD at home; in Mexico, the investment is around $16,000 to $25,000 USD.',
+          'Single dental implant: A sharp reduction from $3,000 to $6,000 USD down to roughly $850 to $1,500 USD locally.',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'This is your attraction lead magnet. The challenge is that every border clinic and tourism medical hub has access to this exact same sales argument. To dominate the market, your differentiator must evolve.',
+      },
+      {
+        type: 'heading',
+        content: 'Demand evolution: telemedicine and long-term retention',
+      },
+      {
+        type: 'paragraph',
+        content:
+          '2026 consumption data is clear: high-ticket leads have crossed a maturity threshold. They are no longer looking for a simple fly-in, fly-out procedure. They want to reduce the anxiety of surgery abroad through a trust-based care ecosystem.',
+      },
+      {
+        type: 'list',
+        items: [
+          'The end of isolated transactions: North American patients expect a personalized recovery package. They value clinics that provide expert second opinions and long-term support far more than those offering one more discount.',
+          'Telemedicine as a safety anchor: Asynchronous remote post-op follow-up is now the standard. If your clinic does not offer a digital model to monitor patients once they return home (video consultations, cloud records, 24/7 communication), high-value leads will choose a provider that does. Technology infrastructure is what truly justifies and closes high-ticket cases.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'The bottom line for high-specialty medical tourism',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The $1.15B market belongs to clinics that understand price attracts, but infrastructure, technology, and continuity retain. Selling medical tourism in 2026 means selling risk mitigation. Operating models that package procedures with telemedicine follow-up and frictionless logistics are the ones that will absorb that 19% growth.',
+      },
+      {
+        type: 'heading',
+        content: 'Take the next step',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Is your clinic still competing on price, or have you already built a premium international patient acquisition ecosystem? Audit your value proposition, integrate telemedicine processes, and own your market. Contact us and structure your strategy today.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
   // 2026-05-18 - Vivienda Vertical 2026 en CDMX y Guadalajara: El fin del marketing aspiracional y el dominio del dato
   {
     id: 'vivienda-vertical-2026-cdmx-guadalajara-fin-marketing-aspiracional-dominio-dato-es',
