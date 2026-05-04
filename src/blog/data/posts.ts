@@ -3548,4 +3548,175 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 
+
+  {
+    id: 'boom-roi-vacacional-quintana-roo-es',
+    translationGroup: 'quintana-roo-vacation-rental-roi-boom-2026',
+    locale: 'es',
+    title: 'El Boom del ROI Vacacional en Quintana Roo',
+    slug: 'boom-roi-vacacional-quintana-roo-2026',
+    excerpt:
+      'Análisis de mayo 2026 sobre la rentabilidad de rentas vacacionales en Cancún y por qué el capital extranjero está blindando su dinero en México.',
+    coverImage: '/images/real_state_development_marketing.png',
+    coverImageAlt:
+      'Desarrollo inmobiliario premium en Cancún enfocado en rentas vacacionales de alto rendimiento para inversionistas extranjeros.',
+    category: 'real-estate',
+    tags: ['rentabilidad inmobiliaria cancún', 'roi vacacional quintana roo', 'inversionistas canada mexico', 'rentas corto plazo cancun', 'proforma inmobiliaria 2026'],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO de Insight Lab',
+      avatar: '/images/team/luis_francisco.jpg',
+    },
+    createdAt: '2026-05-12',
+    readingTime: '9 min',
+    seoTitle: 'Rentabilidad Inmobiliaria en Cancún 2026: ROI Real del 15%',
+    seoDescription:
+      'Análisis de mayo 2026 sobre la rentabilidad de rentas vacacionales en Cancún. Descubre por qué el capital extranjero está blindando su dinero en México.',
+    featured: true,
+    content: [
+      {
+        type: 'heading',
+        content: 'Adiós a la Inflación: por qué el inversionista de US y Canadá exige Cancún en 2026',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'El mercado de bienes raíces en Quintana Roo dejó de ser un destino aspiracional para convertirse en un escudo financiero calculable. A mayo de 2026, el mensaje es contundente: dejar capital estático en bancos norteamericanos implica perder poder adquisitivo frente a inflación, impuestos y devaluación relativa.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'La rentabilidad inmobiliaria en Cancún está registrando un ROI anual de entre 8% y 15% en esquemas de renta vacacional de corto plazo. En propiedades premium bien operadas, esto se traduce en flujos mensuales de entre $3,500 y $8,000 USD con trazabilidad operativa.',
+      },
+      { type: 'heading', content: 'La anatomía del ROI: por qué Quintana Roo supera a Florida' },
+      {
+        type: 'paragraph',
+        content:
+          'Este rendimiento no depende de storytelling comercial, sino de una ecuación financiera más eficiente en 2026. Mientras en Miami un inversionista puede perder hasta 45% del ingreso bruto entre Property Tax, HOA y fricción operativa, en Cancún el predial anual rara vez supera 0.3% del valor comercial y la administración profesional suele oscilar entre 20% y 25%. El resultado directo es un Net Operating Income (NOI) más robusto.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Además, la ocupación se estabilizó. Con la expansión aeroportuaria y el efecto de conectividad del Tren Maya, la estacionalidad se redujo de forma estructural. En operación profesional, la ocupación anual promedio ya se sostiene por arriba de 72%, consolidando un RevPAR competitivo para activos de ticket alto.',
+      },
+      { type: 'heading', content: 'El dolor del inversionista canadiense: supervivencia patrimonial, no turismo' },
+      {
+        type: 'paragraph',
+        content:
+          'El capital canadiense no entra a Cancún por impulso vacacional; entra por preservación de patrimonio. Entre la crisis de asequibilidad de vivienda en ciudades como Toronto y Ontario, y una presión fiscal creciente sobre ganancias de capital, un inversionista con $350,000 CAD tiene opciones limitadas para adquirir activos rentables en su mercado doméstico.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Cancún le ofrece una alternativa concreta: acceso a activos de lujo con estructuras de compra de contado o pagos en preventa, y flujo en USD con demanda internacional constante. Para este buyer persona, no es una compra emocional; es una cobertura estratégica contra erosión cambiaria y pérdida de rendimiento real.',
+      },
+      { type: 'heading', content: 'El embudo inmobiliario de 2026: sin proforma financiera no hay cierre' },
+      {
+        type: 'paragraph',
+        content:
+          'Los brokers que siguen enviando PDFs con renders y amenidades están compitiendo en una liga equivocada. El inversionista extranjero de 2026 exige una proforma financiera desde el primer contacto para validar riesgo, flujo y horizonte de salida.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Ingresos brutos estimados (tarifa promedio por noche x ocupación anual).',
+          'Deducciones transparentes: mantenimiento, utilities, honorarios de administración y reservas de reposición.',
+          'TIR proyectada y plusvalía conservadora a 5 años con escenarios base, optimista y defensivo.',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Cuando una landing page presenta este nivel de estructura financiera, la conversación cambia: el broker deja de percibirse como vendedor de estilo de vida y se posiciona como asesor de capital. Esa diferencia es la que acelera decisiones B2B y reduce ciclos de cierre con inversionistas de US y Canadá.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
+  {
+    id: 'quintana-roo-vacation-rental-roi-boom-en',
+    translationGroup: 'quintana-roo-vacation-rental-roi-boom-2026',
+    locale: 'en',
+    title: 'The Vacation Rental ROI Boom in Quintana Roo',
+    slug: 'quintana-roo-vacation-rental-roi-boom-2026',
+    excerpt:
+      'May 2026 breakdown of Cancun vacation rental profitability and why foreign capital is using Mexico as a defensive wealth strategy.',
+    coverImage: '/images/real_state_development_marketing.png',
+    coverImageAlt:
+      'Premium real estate development in Cancun focused on high-yield vacation rentals for foreign investors.',
+    category: 'real-estate',
+    tags: ['cancun real estate roi', 'quintana roo vacation rentals', 'canadian investors mexico', 'short-term rental yield cancun', 'real estate pro forma 2026'],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO of Insight Lab',
+      avatar: '/images/team/luis_francisco.jpg',
+    },
+    createdAt: '2026-05-12',
+    readingTime: '9 min',
+    seoTitle: 'Cancun Real Estate Profitability 2026: A Real 15% ROI',
+    seoDescription:
+      'May 2026 analysis of Cancun vacation rental profitability. Discover why foreign capital is using Mexico to defend purchasing power.',
+    featured: false,
+    content: [
+      { type: 'heading', content: 'Goodbye inflation: why U.S. and Canadian investors demand Cancun in 2026' },
+      {
+        type: 'paragraph',
+        content:
+          'Real estate in Quintana Roo is no longer an aspirational destination play; it is now a measurable financial hedge. As of May 2026, the message is clear: leaving capital idle in North American banks means losing purchasing power to inflation, tax drag, and currency pressure.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Cancun vacation-rental assets are posting annual ROI between 8% and 15% in short-term rental models. For properly operated premium units, that translates into monthly cash flow between $3,500 and $8,000 USD with verifiable operating data.',
+      },
+      { type: 'heading', content: 'ROI anatomy: why Quintana Roo outperforms Florida' },
+      {
+        type: 'paragraph',
+        content:
+          'This spread is not marketing inflation; it is a cleaner financial equation in 2026. In Miami, investors can lose up to 45% of gross income to property taxes, HOA burden, and operating friction. In Cancun, annual property tax is often below 0.3% of commercial value, while professional management commonly ranges from 20% to 25%. The direct outcome is materially stronger net operating income (NOI).',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Occupancy has also stabilized. With airport expansion and new connectivity effects from the Maya Train, seasonality has structurally softened. In professional operations, annual occupancy now sustains above 72%, supporting competitive RevPAR performance for high-ticket assets.',
+      },
+      { type: 'heading', content: 'The Canadian investor pain point: wealth survival, not leisure' },
+      {
+        type: 'paragraph',
+        content:
+          'Canadian capital is not moving into Cancun for beaches; it is moving for balance-sheet defense. Between affordability pressure in markets like Toronto/Ontario and rising fiscal pressure on capital gains, an investor with CAD 350,000 has limited pathways to acquire cash-flowing assets domestically.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Cancun offers a clear alternative: access to luxury assets through cash purchases or construction-stage payment structures, plus USD-denominated income tied to resilient international demand. For this buyer persona, this is not emotional consumption; it is strategic currency and yield protection.',
+      },
+      { type: 'heading', content: 'The 2026 real estate funnel: no pro forma, no close' },
+      {
+        type: 'paragraph',
+        content:
+          'Brokers still sending amenity-heavy PDFs are competing in the wrong game. The 2026 foreign investor expects a financial pro forma from day one to evaluate risk, cash flow, and exit horizon.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Estimated gross income (average nightly rate x annual occupancy).',
+          'Transparent deductions: HOA/maintenance, utilities, management fees, and reserve assumptions.',
+          'Projected IRR and conservative 5-year appreciation across base, upside, and defensive scenarios.',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'When a landing page shows this level of financial structure, positioning changes immediately: the broker is perceived as a capital advisor, not a lifestyle seller. That shift shortens B2B sales cycles and improves close rates with U.S. and Canadian investors.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
+
 ]
