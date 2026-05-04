@@ -1,6 +1,159 @@
 import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
+  // 2026-05-12 - Seguridad Quirúrgica en el Turismo Médico: El Punto de Fricción que Define tu Rentabilidad
+  {
+    id: 'seguridad-quirurgica-turismo-medico-punto-friccion-rentabilidad-es',
+    translationGroup: 'surgical-safety-medical-tourism-friction-point-defines-profitability',
+    locale: 'es',
+    title: 'Seguridad Quirúrgica en el Turismo Médico: El Punto de Fricción que Define tu Rentabilidad',
+    slug: 'seguridad-quirurgica-turismo-medico-punto-friccion-rentabilidad',
+    excerpt:
+      'En 2026, el paciente internacional premium ya no compra precio: compra seguridad verificable. Así se convierte la confianza clínica en rentabilidad sostenida.',
+    coverImage: '/images/medical_tourism_clinics_marketing.png',
+    coverImageAlt:
+      'Equipo clínico y directivo validando protocolos de seguridad quirúrgica y cumplimiento regulatorio para pacientes internacionales.',
+    category: 'revops',
+    tags: [
+      'seguridad quirúrgica turismo médico',
+      'CMCPER certificación',
+      'paciente internacional premium',
+      'riesgo clínico y legal',
+      'rentabilidad clínica 2026',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO de Insight Lab',
+    },
+    createdAt: '2026-05-12',
+    readingTime: '7 min',
+    seoTitle: 'Seguridad quirúrgica en turismo médico: la ventaja competitiva para escalar rentabilidad en 2026',
+    seoDescription:
+      'La crisis de confianza en turismo médico en México exige protocolos verificables, certificación CMCPER y operación clínica blindada para captar pacientes premium de EE.UU. y Canadá.',
+    featured: true,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'El mercado del turismo médico en México atraviesa una crisis de confianza profunda. La proliferación de clínicas clandestinas y la falta de regulación han provocado que, en la última década, se reporten decenas de fallecimientos de extranjeros por malas prácticas. Para el lead de alto valor de Estados Unidos y Canadá, la conversación cambió: ya no busca ahorrarse unos dólares, busca garantizar su vida. Hoy, quien basa su pauta comercial en “el precio más bajo” está atrayendo al cliente equivocado y asumiendo un riesgo legal y operativo brutal. El paciente internacional premium exige protocolos verificables, no promesas vacías.',
+      },
+      {
+        type: 'heading',
+        content: 'El costo de la negligencia y la oportunidad para el sector de alto ticket',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Ignorar la percepción de riesgo del paciente extranjero es un error que quiebra negocios. La prensa internacional documenta constantemente las negligencias en nuestro país, lo que obliga a los operadores serios a blindar sus procesos y desmarcarse con total contundencia.',
+      },
+      {
+        type: 'list',
+        items: [
+          'La crisis en datos duros: Investigaciones recientes confirman el fallecimiento de más de 40 mujeres extranjeras por procedimientos estéticos mal ejecutados en la última década en México. Los casos de usurpación de funciones médicas y clínicas sin licencia han encendido las alertas de los consulados, frenando el flujo hacia instalaciones no reguladas.',
+          'El CMCPER como embudo de conversión: El paciente norteamericano investiga a fondo. No va a transferir un dólar si el cirujano no cuenta con la certificación vigente del Consejo Mexicano de Cirugía Plástica, Estética y Reconstructiva (CMCPER). Mostrar este aval en la primera línea de tu ecosistema digital dejó de ser un simple requisito médico para convertirse en tu principal motor de ventas.',
+          'Protocolos de seguridad verificables: El journey del paciente premium requiere transparencia absoluta. Esto incluye evidencia de infraestructura hospitalaria para emergencias, seguros de responsabilidad civil transfronterizos y claridad transaccional en los contratos. Si tu operación no está estructurada para soportar auditorías de seguridad clínica, el mercado de alto nivel te va a rechazar.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'El Bottom Line de la seguridad clínica',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'La confianza es el único activo que importa al escalar la oferta hacia el extranjero. Los perfiles de Norteamérica están dispuestos a pagar márgenes premium siempre y cuando la propuesta de valor garantice la erradicación de sus miedos. Operar como una clínica con estándares globales, procesos sin fricción y médicos avalados por el CMCPER es la única estrategia de go-to-market sostenible y rentable para dominar el sector este 2026.',
+      },
+      {
+        type: 'heading',
+        content: 'Da el siguiente paso',
+      },
+      {
+        type: 'paragraph',
+        content:
+          '¿Tu modelo operativo está estructurado para proyectar confianza y captar al paciente internacional de alto ticket? Audita tus procesos comerciales, alinea tus protocolos de seguridad y optimiza tus canales de conversión. Contáctanos y estructura tu estrategia hoy.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
+  {
+    id: 'surgical-safety-medical-tourism-friction-point-defines-profitability-en',
+    translationGroup: 'surgical-safety-medical-tourism-friction-point-defines-profitability',
+    locale: 'en',
+    title: 'Surgical Safety in Medical Tourism: The Friction Point That Defines Your Profitability',
+    slug: 'surgical-safety-medical-tourism-friction-point-defines-profitability',
+    excerpt:
+      'In 2026, premium international patients are not buying low prices; they are buying verifiable safety. Here is how clinical trust becomes sustainable profitability.',
+    coverImage: '/images/medical_tourism_clinics_marketing.png',
+    coverImageAlt:
+      'Clinical and executive team validating surgical safety protocols and regulatory compliance for international patients.',
+    category: 'revops',
+    tags: [
+      'surgical safety medical tourism',
+      'CMCPER certification',
+      'premium international patients',
+      'clinical legal risk',
+      'healthcare profitability 2026',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO of Insight Lab',
+    },
+    createdAt: '2026-05-12',
+    readingTime: '7 min',
+    seoTitle: 'Surgical safety in medical tourism: the competitive edge for profitable growth in 2026',
+    seoDescription:
+      'Mexico’s medical tourism trust crisis requires verifiable protocols, active CMCPER certification, and risk-proof operations to win premium U.S. and Canadian patients.',
+    featured: false,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'Mexico’s medical tourism market is going through a deep trust crisis. The spread of clandestine clinics and weak oversight has led to dozens of reported foreign patient deaths over the last decade due to malpractice. For high-value leads from the United States and Canada, the conversation has changed: they are no longer trying to save a few dollars; they are trying to safeguard their lives. Any provider anchoring its commercial strategy on “the lowest price” is attracting the wrong client while taking on brutal legal and operational risk. Premium international patients demand verifiable protocols, not empty promises.',
+      },
+      {
+        type: 'heading',
+        content: 'The cost of negligence and the high-ticket opportunity',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Ignoring foreign patient risk perception is a business-breaking mistake. International media consistently documents negligence cases in Mexico, forcing serious operators to harden their processes and differentiate themselves with total clarity.',
+      },
+      {
+        type: 'list',
+        items: [
+          'The crisis in hard data: Recent investigations confirm the deaths of more than 40 foreign women linked to poorly executed aesthetic procedures in Mexico over the last decade. Cases of medical impersonation and unlicensed clinics have triggered consular alerts, slowing patient flow to unregulated facilities.',
+          'CMCPER as a conversion filter: North American patients perform deep due diligence. They will not transfer a dollar if the surgeon does not hold current certification from the Mexican Board of Plastic, Aesthetic and Reconstructive Surgery (CMCPER). Displaying this credential in the first line of your digital ecosystem is no longer a simple medical requirement; it is now a primary sales driver.',
+          'Verifiable safety protocols: The premium patient journey demands radical transparency. This includes evidence of emergency-capable hospital infrastructure, cross-border liability insurance, and transaction clarity in contracts. If your operation is not built to withstand clinical safety audits, the high-end market will reject you.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'The bottom line of clinical safety',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Trust is the only asset that matters when scaling care for international markets. North American profiles are willing to pay premium margins as long as your value proposition eliminates their core fears. Operating as a clinic with global standards, frictionless processes, and CMCPER-backed surgeons is the only sustainable and profitable go-to-market strategy to dominate this sector in 2026.',
+      },
+      {
+        type: 'heading',
+        content: 'Take the next step',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Is your operating model structured to project trust and capture high-ticket international patients? Audit your commercial processes, align your safety protocols, and optimize your conversion channels. Contact us and structure your strategy today.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
   // 2026-05-06 - Turismo Médico 2026: Cómo capitalizar el crecimiento del 19% sin romper la operación
   {
     id: 'turismo-medico-2026-capitalizar-crecimiento-19-operacion-es',
