@@ -1,6 +1,217 @@
 import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
+  // 2026-05-25 - Acreditación JCI en México: El Fin del Turismo Médico "Low Cost"
+  {
+    id: 'acreditacion-jci-mexico-fin-turismo-medico-low-cost-es',
+    translationGroup: 'jci-accreditation-in-mexico-the-end-of-low-cost-medical-tourism',
+    locale: 'es',
+    title: 'Acreditación JCI en México: El Fin del Turismo Médico "Low Cost"',
+    slug: 'acreditacion-jci-mexico-fin-turismo-medico-low-cost',
+    excerpt:
+      'Los pacientes de Norteamérica ya no buscan cirugía barata, exigen seguridad; en 2026 las acreditaciones y la cobertura de complicaciones son el nuevo imán de leads premium.',
+    coverImage: '/images/medical_tourism_clinics_marketing.png',
+    coverImageAlt:
+      'Equipo médico en quirófano moderno con señalización de acreditación internacional y experiencia de paciente internacional.',
+    category: 'revops',
+    tags: [
+      'acreditación JCI méxico',
+      'CMCPER cirugía plástica',
+      'medical travel shield',
+      'turismo médico premium',
+      'trust funnel clínicas',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO de Insight Lab',
+    },
+    createdAt: '2026-05-25',
+    readingTime: '7 min',
+    seoTitle:
+      'Acreditación JCI en México: el fin del turismo médico low cost y la era del prestigio clínico',
+    seoDescription:
+      'Los pacientes de Norteamérica ya no compran precio: compran seguridad. Descubre cómo JCI, CMCPER y coberturas de complicaciones convierten más leads premium en 2026.',
+    featured: true,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'Si tu clínica sigue usando el ángulo del “70% de descuento” como gancho principal en sus campañas de EE. UU., estás atrayendo al paciente equivocado. A mediados de 2026, el paciente de alto ticket ya sabe que México es más económico; su fricción de compra ya no es el dinero, es el miedo a la mala praxis.',
+      },
+      {
+        type: 'heading',
+        content: 'De precio a prestigio: cómo la seguridad mató al turismo médico barato',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'El mercado se movió. Hoy la decisión no se toma por el porcentaje de ahorro, sino por la percepción de riesgo clínico. En la mente del paciente norteamericano, la pregunta clave ya no es “¿cuánto me ahorro?”, sino “¿qué tan blindado estoy si algo sale mal?”. Las clínicas que entienden este cambio estructuran su posicionamiento sobre certificaciones, protocolos y continuidad asistencial.',
+      },
+      {
+        type: 'heading',
+        content: 'El efecto “nota roja”: la barrera del miedo y cómo destruirla',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'El paciente estadounidense de 2026 investiga a las clínicas mexicanas como si fuera el FBI. Tras casos mediáticos de malas prácticas en clínicas fronterizas clandestinas, el comprador asume riesgo por defecto. Tu marketing debe neutralizar esa sospecha en los primeros segundos.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Validación JCI y CMCPER: Mostrar el logo del Consejo Mexicano de Cirugía Plástica (CMCPER) o de la Joint Commission International (JCI) no es vanidad, es un filtro de viabilidad comercial.',
+          'Prueba instantánea de credenciales: Si el paciente no encuentra la cédula del médico y su certificación internacional en los primeros 5 segundos de entrar al sitio web, abandona la página y se va con la clínica que sí lo muestra.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'La bala de plata en la venta: seguros de complicaciones',
+      },
+      {
+        type: 'list',
+        items: [
+          'El problema: El mayor terror del paciente extranjero es regresar a Texas tras operarse en Guadalajara y enfrentar una complicación que su seguro local se niegue a cubrir por haberse atendido fuera de EE. UU.',
+          'La solución: Pólizas tipo “Medical Travel Shield”. Clínicas de alta gama ya están absorbiendo el costo de esta póliza (aprox. $250 a $400 USD) y empaquetándola dentro de la cirugía.',
+          'El ángulo de marketing (SEM): Cambia tu copy a un mensaje de protección total: “Tu cirugía incluye cobertura internacional de complicaciones hasta por $50,000 USD”. Esto reduce drásticamente la objeción lógica del lead.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'Arquitectura del Trust Funnel: un embudo que grita primer mundo',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'La pauta ya no debe enviar tráfico a una página de contacto genérica. Debe dirigir a un ecosistema de confianza diseñado para demostrar estándares de primer mundo antes de pedir datos de contacto.',
+      },
+      {
+        type: 'list',
+        items: [
+          'El quirófano: Video en 4K mostrando instalaciones, esterilización y habitaciones de recuperación. El paciente necesita validar que la infraestructura es igual o superior a la de un hospital en Los Ángeles.',
+          'Equipo concierge: Entrevistas en video con personal de enfermería bilingüe. El lead necesita saber que, si tiene dolor a las 3:00 AM, alguien responderá en perfecto inglés.',
+          'Logística en burbuja: Comunicación explícita de transporte privado aeropuerto-hospital-hotel para eliminar la fricción de “navegar por México” sin acompañamiento.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'El nuevo estándar para escalar facturación en 2026',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Las clínicas que quieren pasar de facturar 1 millón a 10 millones de dólares no venden cirugías, venden certeza operativa y cobertura de riesgo. En turismo médico de alto ticket, el prestigio verificable es el verdadero motor de adquisición.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
+  {
+    id: 'jci-accreditation-in-mexico-the-end-of-low-cost-medical-tourism-en',
+    translationGroup: 'jci-accreditation-in-mexico-the-end-of-low-cost-medical-tourism',
+    locale: 'en',
+    title: 'JCI Accreditation in Mexico: The End of “Low-Cost” Medical Tourism',
+    slug: 'jci-accreditation-mexico-end-low-cost-medical-tourism',
+    excerpt:
+      'North American patients are no longer looking for cheap surgery—they demand safety. In 2026, accreditation and complication coverage are the strongest premium lead magnets.',
+    coverImage: '/images/medical_tourism_clinics_marketing.png',
+    coverImageAlt:
+      'Surgical team in a modern operating room highlighting international accreditation standards and premium patient care.',
+    category: 'revops',
+    tags: [
+      'jci accreditation mexico',
+      'mexican board certified plastic surgeon',
+      'medical travel shield policy',
+      'premium medical tourism',
+      'clinic trust funnel',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO of Insight Lab',
+    },
+    createdAt: '2026-05-25',
+    readingTime: '7 min',
+    seoTitle:
+      'JCI accreditation in Mexico: why low-cost medical tourism is losing to safety and clinical prestige',
+    seoDescription:
+      'North American patients no longer buy on price alone. Learn how JCI, board credentials, and complication coverage help clinics convert high-ticket leads in 2026.',
+    featured: false,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'If your clinic still uses the “70% discount” angle as its main hook in U.S. campaigns, you are attracting the wrong patient. By mid-2026, high-ticket patients already know Mexico is more affordable; their buying friction is no longer money—it is fear of malpractice.',
+      },
+      {
+        type: 'heading',
+        content: 'From price to prestige: how safety killed cheap medical tourism',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The market has shifted. Decisions are no longer made on savings percentage, but on perceived clinical risk. In the North American patient mindset, the key question is no longer “how much do I save?” but “how protected am I if something goes wrong?”. Top-performing clinics position around credentials, protocols, and continuity of care.',
+      },
+      {
+        type: 'heading',
+        content: 'The media-risk effect: fear as the main conversion barrier',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'In 2026, U.S. patients investigate Mexican clinics with extreme scrutiny. After high-visibility malpractice stories tied to clandestine border clinics, buyers assume risk by default. Your marketing has to neutralize that suspicion in seconds.',
+      },
+      {
+        type: 'list',
+        items: [
+          'JCI and board validation: Displaying Joint Commission International (JCI) and board credentials is not vanity—it is a commercial viability filter.',
+          'Instant proof of credentials: If patients cannot find the surgeon’s license and international certifications within the first five seconds on your website, they bounce and choose the clinic that does show them clearly.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'The silver bullet in sales: complication insurance',
+      },
+      {
+        type: 'list',
+        items: [
+          'The problem: The biggest fear for international patients is returning to Texas after surgery in Guadalajara and facing a complication their local insurer refuses to cover because treatment happened abroad.',
+          'The solution: “Medical Travel Shield”-style policies. Premium clinics are absorbing this policy cost (about $250 to $400 USD) and bundling it into procedures.',
+          'The SEM angle: Shift ad messaging to full protection, such as “Your surgery includes international complication coverage up to $50,000 USD.” This removes the lead’s core logical objection.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'Trust funnel architecture: build a first-world care signal',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Paid traffic should no longer land on a generic contact page. It should route to a trust ecosystem that proves first-world standards before asking for contact information.',
+      },
+      {
+        type: 'list',
+        items: [
+          'The operating room: 4K video of facilities, sterilization systems, and recovery suites. Patients need to verify infrastructure at least equal to a Los Angeles hospital.',
+          'Concierge care team: Video interviews with bilingual nursing staff. Leads need confidence that if pain spikes at 3:00 AM, someone answers in fluent English.',
+          'Bubble logistics: Clear communication of private airport-hospital-hotel transport to remove the friction of navigating Mexico alone.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'The 2026 growth standard for premium clinics',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Clinics aiming to scale from $1M to $10M in revenue are not selling surgeries—they are selling operational certainty and risk coverage. In high-ticket medical tourism, verifiable prestige is the true acquisition engine.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
   // 2026-05-22 - Turismo Médico 2026: Cómo Captar el Mercado de $1,150 MDD Vendiendo Valor y No Solo Precio
   {
     id: 'turismo-medico-2026-captar-mercado-1150-mdd-vendiendo-valor-no-solo-precio-es',
