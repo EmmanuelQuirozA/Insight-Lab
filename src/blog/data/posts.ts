@@ -1,6 +1,159 @@
 import type { BlogPost } from '../types'
 
 export const blogPosts: BlogPost[] = [
+  // 2026-05-06 - Turismo Médico 2026: Cómo capitalizar el crecimiento del 19% sin romper la operación
+  {
+    id: 'turismo-medico-2026-capitalizar-crecimiento-19-operacion-es',
+    translationGroup: 'medical-tourism-2026-capitalize-19-growth-without-breaking-operations',
+    locale: 'es',
+    title: 'Turismo Médico 2026: Cómo capitalizar el crecimiento del 19% sin romper la operación',
+    slug: 'turismo-medico-2026-capitalizar-crecimiento-19-operacion',
+    excerpt:
+      'México proyecta un crecimiento del 19% en turismo médico para 2026. Descubre cómo escalar captación internacional con excelencia operativa, mitigación de riesgo y rentabilidad.',
+    coverImage: '/images/tecnologia_empresarial_futurista_y_RevOps.png',
+    coverImageAlt:
+      'Equipo médico y de operaciones revisando indicadores de captación internacional y experiencia del paciente en un dashboard ejecutivo.',
+    category: 'revops',
+    tags: [
+      'turismo médico México 2026',
+      'pacientes internacionales',
+      'captación médica digital',
+      'gestión de riesgo clínico',
+      'operación healthcare',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO de Insight Lab',
+    },
+    createdAt: '2026-05-06',
+    readingTime: '7 min',
+    seoTitle: 'Turismo Médico 2026 en México: cómo escalar 19% sin romper la operación',
+    seoDescription:
+      'Guía estratégica para captar y retener pacientes de EE.UU. y Canadá en 2026 con procesos digitales, mitigación legal y expansión en hubs como Cancún, CDMX y Guadalajara.',
+    featured: true,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'El mercado está dictando las reglas: México ya recibe más de 1.2 millones de visitantes internacionales al año buscando servicios de salud. Con una tasa de crecimiento proyectada del 19% para el cierre de 2026, la oportunidad es innegable. El paciente de Estados Unidos y Canadá cruza nuestras fronteras atraído por ahorros de hasta el 70% en procedimientos de alta especialidad. Sin embargo, absorber este mercado no es solo cuestión de abrir agendas; requiere una infraestructura operativa y comercial implacable. El flujo de capital extranjero exige estándares globales de principio a fin.',
+      },
+      {
+        type: 'heading',
+        content: 'Pilares estratégicos para captar y retener la demanda internacional',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Atraer al paciente es solo la fase inicial; el verdadero reto operativo es la experiencia del usuario sin fricciones y la mitigación de riesgos de alto nivel.',
+      },
+      {
+        type: 'list',
+        items: [
+          'Optimización del Journey de punta a punta: El cliente extranjero de alto ticket no tolera procesos burocráticos ni caídas en el servicio. Desde la pauta inicial y la automatización de citas, hasta las pasarelas de pago internacionales y el seguimiento post-operatorio asíncrono, todo el ecosistema digital debe funcionar con precisión de eCommerce.',
+          'Gestión de riesgo y estandarización global: Escalar en este sector conlleva un aumento en la exposición legal, dada la alta cultura de litigio del mercado norteamericano. La rentabilidad se esfuma sin una gestión rigurosa. Es obligatorio contar con protocolos clínicos blindados y pólizas de responsabilidad civil especializadas para proteger la estabilidad financiera y reputacional de la operación.',
+          'Expansión en Hubs Estratégicos: Aunque las ciudades fronterizas son la entrada natural, el crecimiento de mayor valor se está consolidando en polos con conectividad internacional y vocación turística premium. Operar y estructurar servicios en plazas clave como Cancún, CDMX y Guadalajara permite fusionar la atención médica de primer nivel con logística y experiencias de recuperación, elevando drásticamente el ticket promedio.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'El Bottom Line del sector salud internacional',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'El turismo médico en México dejó de ser una tendencia para convertirse en un motor económico de alta precisión. El crecimiento a doble dígito está respaldado por los datos, pero el éxito individual de cada proyecto dependerá de su madurez operativa. Las estructuras que dominen la digitalización para captar la demanda y los procesos para mitigar el riesgo serán las que monopolicen esta ventana de oportunidad.',
+      },
+      {
+        type: 'heading',
+        content: 'Da el siguiente paso',
+      },
+      {
+        type: 'paragraph',
+        content:
+          '¿Tu modelo operativo está preparado para el volumen internacional que exige el 2026? Audita tus procesos de captación y asegura que tu infraestructura digital esté al nivel del mercado global.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
+  {
+    id: 'medical-tourism-2026-capitalize-19-growth-without-breaking-operations-en',
+    translationGroup: 'medical-tourism-2026-capitalize-19-growth-without-breaking-operations',
+    locale: 'en',
+    title: 'Medical Tourism 2026: How to capitalize on 19% growth without breaking operations',
+    slug: 'medical-tourism-2026-capitalize-19-growth-without-breaking-operations',
+    excerpt:
+      'Mexico’s medical tourism market is projected to grow 19% by 2026. Learn how to scale international demand with operational discipline and risk control.',
+    coverImage: '/images/tecnologia_empresarial_futurista_y_RevOps.png',
+    coverImageAlt:
+      'Medical and operations leaders reviewing international patient acquisition and care continuity metrics in an executive dashboard.',
+    category: 'revops',
+    tags: [
+      'medical tourism mexico 2026',
+      'international patient acquisition',
+      'healthcare operations',
+      'clinical risk management',
+      'cross-border healthcare growth',
+    ],
+    author: {
+      name: 'Luis Francisco Albarrán',
+      role: 'CEO of Insight Lab',
+    },
+    createdAt: '2026-05-06',
+    readingTime: '7 min',
+    seoTitle: 'Medical Tourism 2026 in Mexico: scale 19% growth without operational breakdown',
+    seoDescription:
+      'A practical framework to attract and retain U.S. and Canadian patients in 2026 through digital journey optimization, legal risk mitigation, and strategic hub expansion.',
+    featured: false,
+    content: [
+      {
+        type: 'paragraph',
+        content:
+          'The market is setting the rules: Mexico already receives more than 1.2 million international visitors per year seeking healthcare services. With a projected growth rate of 19% by the end of 2026, the opportunity is undeniable. Patients from the United States and Canada cross the border attracted by savings of up to 70% on high-specialty procedures. However, absorbing this market is not just about opening more appointment slots; it requires an uncompromising operational and commercial infrastructure. Foreign capital flow demands global standards from end to end.',
+      },
+      {
+        type: 'heading',
+        content: 'Strategic pillars to capture and retain international demand',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Attracting the patient is only the initial phase; the true operational challenge is delivering a frictionless user experience while mitigating high-level risk.',
+      },
+      {
+        type: 'list',
+        items: [
+          'End-to-end journey optimization: High-ticket international clients do not tolerate bureaucratic processes or service failures. From initial ad touchpoints and appointment automation to international payment gateways and asynchronous post-op follow-up, the digital ecosystem must perform with eCommerce-grade precision.',
+          'Risk management and global standardization: Scaling in this sector increases legal exposure due to the high litigation culture of the North American market. Profitability evaporates without rigorous risk governance. Robust clinical protocols and specialized liability policies are mandatory to protect financial and reputational stability.',
+          'Expansion across strategic hubs: While border cities remain a natural entry point, higher-value growth is consolidating in hubs with international connectivity and premium tourism appeal. Structuring services in key markets like Cancun, Mexico City, and Guadalajara allows providers to combine top-tier clinical care with recovery logistics and premium experiences, significantly increasing average ticket value.',
+        ],
+      },
+      {
+        type: 'heading',
+        content: 'The bottom line for international healthcare',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Medical tourism in Mexico is no longer a trend; it is a high-precision economic engine. Double-digit growth is supported by data, but each project’s success will depend on operational maturity. Organizations that master demand-capture digitalization and risk-mitigation processes will dominate this window of opportunity.',
+      },
+      {
+        type: 'heading',
+        content: 'Take the next step',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Is your operating model ready for the international volume that 2026 demands? Audit your acquisition processes and ensure your digital infrastructure is aligned with global market expectations.',
+      },
+      {
+        type: 'quote',
+        content: 'Book your audit here.',
+      },
+    ],
+  },
   // 2026-04-18 - Qué es un sistema de captación y por qué es diferente a una campaña de marketing
   {
     id: 'que-es-sistema-captacion-leads-vs-campana-marketing-es',
